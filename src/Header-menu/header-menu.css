@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,400&display=swap');
 .header-menu {
-    padding: 10px 20px;
+    padding: 20px 30px;
     background-color: rgba(42,160,188, 0.9);
 
-    height: 55px;
+    height: 75px;
     width: 100%;
 
     display: flex;
@@ -15,7 +15,7 @@
     position: fixed;
     box-sizing: border-box;
 
-    z-index: 1000;
+    z-index: 3000;
 
     color: #fff;
 }
@@ -90,4 +90,57 @@
 
 .header-menu__menu-burger {
     min-height: 20px;
+}
+.header-menu__menu-burger > a:first-child {
+    padding-right: 30px;
+}
+.header-menu__menu-burger > a > button {
+    border-radius: 10px;
+    background-color:transparent;
+    border: none;
+}
+.header-menu__menu-burger > a > button:hover {
+    cursor: pointer;
+    background-color:rgba(49, 49, 49, 0.2);
+}
+.header-menu__menu-burger > a > button:active {
+    background-color:rgba(0, 0, 0, 0.3);
+}
+
+.callback-btn {
+    padding: 10px 20px 13px 20px;
+    box-sizing: border-box;
+
+    color:#fff;
+    background-color:rgb(0, 108, 133);
+
+    position: fixed;
+
+    top: 160px;
+    right: -68px;
+
+    z-index: 1000;
+
+    transform:rotate(270deg);
+
+}
+.scroll-up-btn {
+    margin: 7px 10px 5px 10px;
+    box-sizing: border-box;
+
+    border: none;
+    
+    color:#fff;
+    background-color:transparent;
+
+    position: fixed;
+
+    bottom: 30px;
+    right: 40px;
+
+    z-index: 1000;
+
+}
+.scroll-up-btn:hover {
+    cursor: pointer;
 }
