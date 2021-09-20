@@ -1,0 +1,118 @@
+.callback-form {
+    background-color: rgb(0, 147, 180);
+
+    min-height: 880px;
+    color:#fff;
+
+    background-image: url(../img/mz_knight.cf09.jpg);
+    background-repeat: no-repeat;
+    background-size: 325px;
+    background-position-x: 100%;
+    background-position-y: 100%;
+}
+.callback-form_flex {
+    padding: 90px 150px 60px 150px;
+
+    display: flex;
+    align-items: flex-start;
+}
+.callback-form__form {
+    margin-right: 40px;
+    padding: 40px;
+
+    max-width: 300px;
+
+    background-color: rgb(0, 0, 0, 0.1);
+
+    border: 1px solid #fff;
+    border-radius: 10px;
+
+    text-shadow: 1px 2px 2px black;
+}
+.callback-form__form > h1 {
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #fff;
+}
+
+.callback-form__text {
+    padding:30px;
+    max-width: 500px;
+    height: auto;
+
+    border: 1px solid #fff;
+    border-radius: 10px;
+
+    background-color: rgb(0, 0, 0, 0.1);
+
+    text-shadow: 1px 2px 2px black;
+    text-align: justify;
+    line-height: 1.4rem;
+}
+.callback-form__text >h1 {
+    padding: 24px 0 10px 0;
+    line-height: 2.2rem;
+}
+.callback-form__text > .header-block {
+    margin-bottom: 40px;
+
+    box-shadow: 1px 2px 2px black;
+}
+.callback-form__text > p {
+    margin: 20px 0;
+
+    text-indent: 25px;
+}
+
+.callback-form__btn {
+    text-shadow: 1px 2px 2px #000;
+}
+.callback-form__text > .btn {
+    margin-top: 20px;
+    width: 290px;
+}
+.callback-form__btn:hover {
+    text-shadow: none;
+}
+.callback-form__btn:active {
+    text-shadow: none;
+}
+
+.callback-form__form__input {
+    margin: 10px 0;
+    width: 300px;
+    height: 40px;
+
+    font-size: 1.1rem;
+    text-shadow: 1px 2px 2px #000;
+
+    border: none;
+    border-bottom: 1px solid #fff;
+
+    resize: none;
+    outline: none;
+
+    background-color: transparent;
+
+    color: #fff;
+}
+.textarea {
+    margin-bottom: 20px;
+    padding:10px;
+
+    width: 278px;
+    height: 240px;
+
+    border: 1px solid #fff;
+    border-radius: 10px;
+
+    overflow-wrap: break-word;
+
+    text-align: justify;
+}
+.callback-form__form__input::placeholder {
+    font-size: 1rem;
+    color:rgba(180,180,180);
+    text-shadow: 1px 2px 2px #000;
+    font-style: italic;
+}

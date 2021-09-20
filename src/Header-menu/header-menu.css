@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,400&display=swap');
+.header-menu {
+    padding: 10px 20px;
+    background-color: rgba(42,160,188, 0.9);
+
+    height: 55px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    box-sizing: border-box;
+
+    z-index: 1000;
+
+    color: #fff;
+}
+
+.header-menu__logo {
+    padding: 7px 0 0 7px;
+    min-width: 260px;
+    width: 260px;
+}
+.header-menu__logo > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.header-menu__menu-section > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.header-menu__menu-section > ul > li {
+    padding: 0 10px;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+}
+.header-menu__menu-section > ul > li > a {
+    text-decoration: none;
+    color: #fff;
+}
+.header-menu__menu-section > ul > li > a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+.header-menu__menu-section > ul > li > a:hover {
+    text-decoration: underline;
+}
+.header-menu__phones {
+    padding-left: 23px;
+}
+.header-menu__phones > ul {
+    list-style: none;
+}
+.header-menu__phones > ul > li {
+    position: relative;
+    min-width: 144px;
+}
+.header-menu__phones > ul > li > a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-style: italic;
+    text-decoration: none;
+    color: #fff;
+}
+.header-menu__phones > ul > li > a:hover {
+    cursor: pointer;
+}
+.header-menu__phones > ul > li > a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+.header-menu__phones > ul > li::before {
+    content:'';
+    position: absolute;
+    left: -22px;
+    top: 2px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url(../img/mz_ic-phone.1f66.png) center no-repeat;
+    background-size: 100%;
+}
+
+.header-menu__menu-burger {
+    min-height: 20px;
+}

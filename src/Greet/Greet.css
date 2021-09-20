@@ -1,0 +1,86 @@
+.greet {
+    background-image:url(../img/mz_bg-1.1b3e.jpg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+
+    overflow: hidden;
+
+    min-height: 650px;
+
+    position: relative;
+}
+@media screen and (min-width: 1270px) {
+    .greet {background-size: 100% auto;}
+}
+.greet__info {
+    color:#fff;
+
+    position: absolute;
+    top: 150px;
+    left: 90px;
+
+    display: flex;
+    flex-direction: column;
+}
+.greet__info__big {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 700;
+    text-shadow: 0 0 5px gray,
+        0 0 10px rgb(100, 100, 100);
+    max-width: 300px;
+    line-height: 30px;
+}
+.greet__info__years {
+    padding-right: 25px;
+    font-size: 9rem;
+    font-weight: 700;
+    font-style: italic;
+}
+.greet__info__stat{
+    display: flex;
+    padding-top: 50px;
+}
+.greet__info__stat > div {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 0 0 5px rgb(128, 128, 128),
+        0 0 10px rgb(100, 100, 100),
+        0 0 15px rgb(70, 70, 70);
+}
+.greet__info__stat__num {
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.greet__scroll {
+    position: absolute;
+    right: 50%;
+    bottom: 5%;
+    height: 40px;
+
+    animation: cubic-bezier(0.5, 0, 0.5, 1) 1s infinite alternate bouce;
+}
+
+.greet__logo {
+    width: 250px;
+    position: absolute;
+    top: 100px;
+    right: 50px;
+}
+
+.greet__info > .btn {
+    margin-top: 60px;
+}
+
+@keyframes bouce {
+    from { bottom: 4% } to { bottom: 6% } };
