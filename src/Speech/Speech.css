@@ -24,7 +24,7 @@
     transition: 1s;
 }
 .speech-photo:hover {
-    box-shadow: 5px 5px 20px black;
+    box-shadow: 5px 5px 20px 5px gray;
 
     transition: 0.6s;
 }

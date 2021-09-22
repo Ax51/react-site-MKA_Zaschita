@@ -1,3 +1,90 @@
 .footer {
+    padding: 50px 150px;
+
+    background-color: rgb(235, 246, 249);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: grey;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo > img {
+    width: 315px;
+}
+
+.flex-container {
+    padding-left: 150px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    width: 100%;
+}
+.footer-menu {
+    padding: 35px 0;
+}
+.footer-menu > ul > li {
+    padding: 12px 0;
+    
+    list-style: none;
+}
+.footer-menu > ul > li > a {
+    text-decoration: none;
+    color:gray;
+    transition: 5s;
+}
+.footer-menu > ul > li > a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.footer-menu > ul > li > a:active {
+    color:black;
+    transition: 0.2s;
+}
+.buisness-card {
+    padding: 20px;
+
+    display: block;
+    box-sizing: border-box;
+
     text-align: center;
+
+    border: 1px solid rgb(0, 147, 180);
+    border-radius: 10px;
+
+    box-shadow: 0 0 5px gray,
+        0 0 10px gray,
+        0 0 15px gray;
+    transition: 1s;
+
+    background-color: #fff;
+}
+.buisness-card:hover {
+    box-shadow: 5px 5px 20px 5px gray;
+
+    transition: 0.6s;
+}
+.buisness-card > * {
+    padding: 14px 0;
+}
+.buisness-card > h3 {
+    text-decoration: underline;
+}
+.buisness-card > a {
+    text-decoration: none;
+    display: block;
+    color:gray;
+    transition: 5s;
+}
+.buisness-card > a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.buisness-card > a:active {
+    color:black;
+    transition: none;
 }
