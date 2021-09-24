@@ -8,13 +8,15 @@ import MapApi from "../Map-API/Map-API";
 
 import './Main-page.css';
 
-const MainPage = () => {
+const MainPage = ({ buisnessActive, setBuisnessActive }) => {
     return (
         <div className="main-page">
             <main>
                 <Greet/>
                 <Speech/>
-                <Carousel/>
+                <Carousel
+                    buisnessActive={buisnessActive}
+                    setBuisnessActive={setBuisnessActive}/>
                 <CallbackForm/>
                 <MapApi/>                
             </main>

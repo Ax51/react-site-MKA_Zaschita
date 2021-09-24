@@ -1,17 +1,19 @@
 import React from 'react';
 import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import BuisnessSwitch from '../Buisness-switch/Buisness-switch.js';
 
-import carouselArray from './Carousel_items';
+import buisnessArray from './Db/Buisness-carousel_items.js';
+import privateArray from './Db/Private-carousel_items.js'
 
 import 'swiper/swiper.min.css';
 
 import './Carousel.css';
 
-SwiperCore.use([Autoplay]);
+SwiperCore.use([ Autoplay ]);
 
-const Carousel = () => {
-    const slides = carouselArray.map((item) => {
+const Carousel = ({ buisnessActive, setBuisnessActive }) => {
+    const buisnessSlides = /* carouselArray */buisnessArray.map((item) => {
         let { name, img, text } = item;
         return (
             <SwiperSlide key={name}>
@@ -25,13 +27,32 @@ const Carousel = () => {
                 <p className="swiper-slide--text">{text}</p>
             </SwiperSlide>
         )
-    })
+    });
+    const privateSlides = /* carouselArray */privateArray.map((item) => {
+        let { name, img, text } = item;
+        return (
+            <SwiperSlide key={name}>
+                <div className="swiper-slide-title_flex">
+                    <p className="swiper-slide--title">{name}</p>
+                    <img
+                        className="swiper-slide--logo"
+                        src={img}
+                        alt="logo" />
+                </div>
+                <p className="swiper-slide--text">{text}</p>
+            </SwiperSlide>
+        )
+    });
+
     return (
         <div className="swiper-block">
             <div className="swiper-title">
                 <h1>Практики коллегии</h1>
                 <div className="header-block header-block_dark"/>
             </div>
+            <BuisnessSwitch
+                styles="btn-dark"
+                setBuisnessActive={setBuisnessActive}/>
             <div className="swiper">
                 <Swiper
                     modules={[Autoplay]}
@@ -39,7 +60,7 @@ const Carousel = () => {
                     spaceBetween={20}
                     loop={true}
                     centeredSlides={true}
-                    autoplay={{delay: 5000}}
+                    autoplay={{delay: 3000}}
                     breakpoints= {{
                         "0": {
                             "slidesPerView": 1,
@@ -59,7 +80,7 @@ const Carousel = () => {
                           } 
                         }
                     }>
-                        {slides}
+                        {buisnessActive ? buisnessSlides : privateSlides}
                 </Swiper>
             </div>
             <button

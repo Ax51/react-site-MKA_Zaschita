@@ -14,12 +14,16 @@ function App() {
         {name:"Карьера", site:"#"},
         {name:"Контакты", site:"#"}
     ]);
+
+    const [ buisnessActive, setBuisnessActive ] = useState(false);
     
     return (
         <>
             <HeaderMenu
                 menuItems={menuItems}/>
-            <MainPage/>
+            <MainPage
+                buisnessActive={buisnessActive}
+                setBuisnessActive={setBuisnessActive}/>
             <Footer
                 menuItems={menuItems}/>
         </>

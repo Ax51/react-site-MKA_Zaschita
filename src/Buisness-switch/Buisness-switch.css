@@ -1,0 +1,21 @@
+.buisness-switch {
+    margin: 0 150px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.buisness-switch > .btn {
+    margin-left: 15px;
+}
+.buisness-switch > .active {
+    box-shadow: 10px 10px 20px rgb(59, 59, 59);
+    background-color: rgb(0, 108, 133);
+    color: #fff;
+}
+.buisness-switch > .active:hover {
+    box-shadow: 10px 10px 20px rgb(59, 59, 59);
+    background-color: rgb(0, 108, 133);
+    color: #fff;
+}
