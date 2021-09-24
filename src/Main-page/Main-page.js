@@ -3,7 +3,6 @@ import React from "react";
 import Greet from "../Greet/Greet";
 import Speech from "../Speech/Speech";
 import Carousel from "../Carousel/Carousel";
-import CallbackForm from "../Callback-form/Callback-form";
 import MapApi from "../Map-API/Map-API";
 
 import './Main-page.css';
@@ -17,8 +16,7 @@ const MainPage = ({ buisnessActive, setBuisnessActive }) => {
                 <Carousel
                     buisnessActive={buisnessActive}
                     setBuisnessActive={setBuisnessActive}/>
-                <CallbackForm/>
-                <MapApi/>                
+                <MapApi/>
             </main>
         </div>
     );

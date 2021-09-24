@@ -14,7 +14,7 @@ SwiperCore.use([ Autoplay ]);
 
 const Carousel = ({ buisnessActive, setBuisnessActive }) => {
     const buisnessSlides = /* carouselArray */buisnessArray.map((item) => {
-        let { name, img, text } = item;
+        let { name, img, shortText } = item;
         return (
             <SwiperSlide key={name}>
                 <div className="swiper-slide-title_flex">
@@ -24,12 +24,12 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
                         src={img}
                         alt="logo" />
                 </div>
-                <p className="swiper-slide--text">{text}</p>
+                <p className="swiper-slide--text">{shortText}</p>
             </SwiperSlide>
         )
     });
     const privateSlides = /* carouselArray */privateArray.map((item) => {
-        let { name, img, text } = item;
+        let { name, img, shortText } = item;
         return (
             <SwiperSlide key={name}>
                 <div className="swiper-slide-title_flex">
@@ -39,7 +39,7 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
                         src={img}
                         alt="logo" />
                 </div>
-                <p className="swiper-slide--text">{text}</p>
+                <p className="swiper-slide--text">{shortText}</p>
             </SwiperSlide>
         )
     });
@@ -57,26 +57,26 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
                 <Swiper
                     modules={[Autoplay]}
                     slidesPerView={5}
-                    spaceBetween={20}
+                    spaceBetween={15}
                     loop={true}
                     centeredSlides={true}
                     autoplay={{delay: 3000}}
                     breakpoints= {{
                         "0": {
                             "slidesPerView": 1,
-                            "spaceBetween": 10
+                            "spaceBetween": 8
                           },
                         "640": {
                             "slidesPerView": 2,
-                            "spaceBetween": 15
+                            "spaceBetween": 10
                           },
                           "768": {
                             "slidesPerView": 4,
-                            "spaceBetween": 20
+                            "spaceBetween": 12
                           },
                           "1024": {
                             "slidesPerView": 5,
-                            "spaceBetween": 20
+                            "spaceBetween": 15
                           } 
                         }
                     }>

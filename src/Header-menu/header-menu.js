@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 
+import CallbackForm from '../Callback-form/Callback-form.js';
+
 import './header-menu.css';
 
 import logo from '../img/mz_logo-name.2c83.png'
@@ -7,11 +9,11 @@ import phone from '../img/telephone-fill__white.png'
 import menu from '../img/mz_menu-17.3a29.png'
 import arrowUp from '../img/arrow-up-circle.png'
 
-const HeaderMenu = (props) => {
+const HeaderMenu = ({ menuItems }) => {
     const myRef = useRef(null);
     const scrollUpFunc = () => myRef.current.scrollIntoView()
 
-    const menuList = props.menuItems.map((item) => <li key={item.name}><a href={item.site}>{item.name}</a></li>)
+    const menuList = menuItems.map((item) => <li key={item.name}><a href={item.site}>{item.name}</a></li>)
 
     return (
         <>
@@ -55,15 +57,13 @@ const HeaderMenu = (props) => {
                         </a>
                     </div>}
             </header>
-            <a href="#">
-                <div className="callback-btn">Заказать звонок</div>
-            </a>
             <button className="scroll-up-btn"
                 onClick={scrollUpFunc}>
                 <img
                     src={arrowUp}
                     alt='scroll up' />
             </button>
+            <CallbackForm/>
         </>
     );
 };
