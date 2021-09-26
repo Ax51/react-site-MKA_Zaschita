@@ -91,3 +91,22 @@ h1 {
 .header-block_dark {
     background-color:rgb(42, 160, 188);
 }
+
+._nav-main {
+    margin-right: 20px;
+
+    text-decoration: none;
+    color: gray;
+
+    transition: 1s;
+}
+._nav-main:hover {
+    color:#000;
+    text-decoration: underline;
+
+    transition: 0.3s;
+}
+._nav-this {
+    margin-left: 20px;
+    
+}
