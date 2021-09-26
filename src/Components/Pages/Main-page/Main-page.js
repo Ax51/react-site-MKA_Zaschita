@@ -1,10 +1,13 @@
+// modules
 import React from "react";
 
-import Greet from "../Greet/Greet";
-import Speech from "../Speech/Speech";
-import Carousel from "../Carousel/Carousel";
-import MapApi from "../Map-API/Map-API";
+// Components
+import Greet from "./Components/Greet/Greet";
+import Speech from "./Components/Speech/Speech";
+import Carousel from "./Components/Carousel/Carousel";
+import MapApi from "./Components/Map-API/Map-API";
 
+// styles
 import './Main-page.css';
 
 const MainPage = ({ buisnessActive, setBuisnessActive }) => {

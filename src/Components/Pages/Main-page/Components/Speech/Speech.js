@@ -1,7 +1,11 @@
+// modules
 import React from "react";
 
+// pics
+import photo from '../../../../img/mz_ph.43b8.jpg';
+
+// styles
 import './Speech.css';
-import photo from '../img/mz_ph.43b8.jpg';
 
 const Speech = () => {
     return (

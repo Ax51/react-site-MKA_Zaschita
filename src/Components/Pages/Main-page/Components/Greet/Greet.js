@@ -1,8 +1,12 @@
+// modules
 import React from "react";
 
+// pics
+import mouseImg from "../../../../img/mz_mouse.7e7e.png";
+import logo from "../../../../img/mz_logo-wh.a5b7.png";
+
+// styles
 import './Greet.css';
-import mouseImg from "../img/mz_mouse.7e7e.png";
-import logo from "../img/mz_logo-wh.a5b7.png";
 
 const Greet = () => {
     const companyAge = new Date().getFullYear() - 1995;

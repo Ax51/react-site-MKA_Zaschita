@@ -1,13 +1,17 @@
+// modules
 import React from 'react';
 import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import BuisnessSwitch from '../Buisness-switch/Buisness-switch.js';
 
+// Components
+import BuisnessSwitch from '../../../../Buisness-switch/Buisness-switch.js';
+
+// Data
 import buisnessArray from './Db/Buisness-carousel_items.js';
 import privateArray from './Db/Private-carousel_items.js'
 
+// styles
 import 'swiper/swiper.min.css';
-
 import './Carousel.css';
 
 SwiperCore.use([ Autoplay ]);

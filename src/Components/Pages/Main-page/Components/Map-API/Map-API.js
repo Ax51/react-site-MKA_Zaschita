@@ -1,7 +1,8 @@
+// modules
 import React from "react";
-
 import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 
+// styles
 import './Map-API.css';
 
 // Ymaps API keys:

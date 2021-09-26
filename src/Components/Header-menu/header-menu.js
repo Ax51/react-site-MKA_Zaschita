@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { NavLink } from "react-router-dom";
 
 import CallbackForm from '../Callback-form/Callback-form.js';
 
@@ -13,18 +14,23 @@ const HeaderMenu = ({ menuItems }) => {
     const myRef = useRef(null);
     const scrollUpFunc = () => myRef.current.scrollIntoView()
 
-    const menuList = menuItems.map((item) => <li key={item.name}><a href={item.site}>{item.name}</a></li>)
+    const menuList = menuItems.map((item) =>
+        <li key={item.name}>
+            <NavLink to={item.site}>{item.name}</NavLink>
+        </li>)
 
     return (
         <>
-        <div ref={myRef}/>  {/* div with zero position to scroll to */}
+            <div ref={myRef} />  {/* div with zero position to scroll to */}
             <header className="header-menu">
                 <div className="header-menu__logo">
-                    <a href="#">
+                    <NavLink to="/">
                         <img
-                        src={logo}
-                        alt='logo' />
-                    </a>
+                            className="header-menu__logo-img"
+                            src={logo}
+                            alt='logo'
+                            title='На главную'/>
+                    </NavLink>
                 </div>
                 {window.innerWidth > 1000 ?
                     <>
@@ -63,7 +69,7 @@ const HeaderMenu = ({ menuItems }) => {
                     src={arrowUp}
                     alt='scroll up' />
             </button>
-            <CallbackForm/>
+            <CallbackForm />
         </>
     );
 };

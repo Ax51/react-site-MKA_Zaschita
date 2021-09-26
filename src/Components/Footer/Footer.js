@@ -1,18 +1,25 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import logo from '../img/mz_logo-blue.4cf7.png'
 
 import './Footer.css';
 
 const Footer = (props) => {
-    const menuList = props.menuItems.map((item) => <li key={item.name}><a href={item.site}>{item.name}</a></li>)
+    const menuList = props.menuItems.map((item) =>
+        <li key={item.name}>
+            <NavLink to={item.site}>{item.name}</NavLink>
+        </li>)
+
     return (
         <div className="footer">
-            <div className="logo">
+            <NavLink to='/' className="logo">
                 <img
+                    className="logo-img"
                     src={logo}
-                    alt='logo'/>
-            </div>
+                    alt='logo'
+                    title='На главную'/>
+            </NavLink>
             <div className="flex-container">
                 <div className="footer-menu">
                     <ul>

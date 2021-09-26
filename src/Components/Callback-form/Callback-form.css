@@ -10,9 +10,9 @@
     min-height: 880px;
     color:#fff;
 }
-.active {
+.active-modal {
     display: block;
-    z-index: 3100;
+    z-index: 3300;
 }
 
 .callback-form_flex {

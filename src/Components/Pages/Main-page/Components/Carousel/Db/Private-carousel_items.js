@@ -1,6 +1,6 @@
 // source: http://xn--80aaa0agin7c5c.xn--p1ai/services/dlya-fizicheskikh-lits/
 
-import img from '../../img/mz_ic-1.fcb9.png';
+import img from '../../../../../img/mz_ic-1.fcb9.png';
 
 const posts = [
     {

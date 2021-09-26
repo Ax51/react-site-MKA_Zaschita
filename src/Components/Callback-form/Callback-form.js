@@ -9,8 +9,8 @@ const CallbackForm = () => {
 
 
     const openModal = () => {
-        setModalClassName("callback-form active");
-        // document.body.style.overflow = "hidden";
+        setModalClassName("callback-form active-modal");
+        document.body.style.overflow = "hidden";
     }
     const closeModal = () => {
         setModalClassName("callback-form");
