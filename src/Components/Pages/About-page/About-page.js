@@ -1,9 +1,13 @@
+// modules
 import React from "react";
+
+// styles
+import './About-page.css';
 
 const AboutPage = () => {
     return (
         <div className="about-page">
-            this is about page. trust me
+            this is About page. trust me
         </div>
     )
 }

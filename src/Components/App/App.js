@@ -4,7 +4,14 @@ import { Route } from 'react-router-dom'
 
 // Components
 import HeaderMenu from '../Header-menu/header-menu.js';
+
 import MainPage from '../Pages/Main-page/Main-page.js';
+import AboutPage from '../Pages/About-page/About-page.js';
+import ServicesPage from '../Pages/Services-page/Services-page.js';
+import TeamPage from '../Pages/Team-page/Team-page.js';
+import CareerPage from '../Pages/Career-page/Career-page.js';
+import ContactsPage from '../Pages/Contacts-page/Contacts-page.js';
+
 import Footer from '../Footer/Footer.js';
 
 // styles
@@ -31,6 +38,26 @@ function App() {
                     <MainPage
                         buisnessActive={buisnessActive}
                         setBuisnessActive={setBuisnessActive}/>}/>
+            <Route
+                path='/about'
+                render={() =>
+                    <AboutPage/>}/>
+            <Route
+                path='/services'
+                render={() =>
+                    <ServicesPage/>}/>
+            <Route
+                path='/team'
+                render={() =>
+                    <TeamPage/>}/>
+            <Route
+                path='/career'
+                render={() =>
+                    <CareerPage/>}/>
+            <Route
+                path='/contacts'
+                render={() =>
+                    <ContactsPage/>}/>
             <Footer
                 menuItems={menuItems}/>
         </>
