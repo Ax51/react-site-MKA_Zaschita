@@ -1,0 +1,8 @@
+._nav-line {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+._nav-route_img {
+    height: 1rem;
+}

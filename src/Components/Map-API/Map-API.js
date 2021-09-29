@@ -15,7 +15,11 @@ import './Map-API.css';
 
 const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
 
-    const showAllBrances = Object.keys(Db).map((i) => {
+    const branches = Object.keys(Db);
+    const someBranch = Db[Object.keys(Db)[branchCode]];
+
+    const showAllBrances = branches.map((i) => {
+        let balloonImg = Db[i].balloonImg ? `<br><img src=${Db[i].balloonImg} height="200" width="250">` : "";
         return (
             <Placemark
                 key={Db[i].iconCaption}
@@ -24,7 +28,8 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
                 properties={{
                     iconContent: Db[i].iconContent,
                     iconCaption: Db[i].iconCaption,
-                    balloonContentBody:Db[i].comment
+                    balloonContentHeader:`<a href=${Db[i].link || "http://мказащита.рф"}>${Db[i].iconCaption || Db[i].iconContent}</a>`,
+                    balloonContentBody:`${Db[i].balloonText}${balloonImg}`
                 }}
                 options={{
                     preset: Db[i].preset,
@@ -36,17 +41,18 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
 
     const showOneBranch =
         <Placemark
-            key={Db[Object.keys(Db)[branchCode]].iconCaption}
+            key={someBranch.iconCaption}
             modules={['geoObject.addon.balloon']}
-            geometry={Db[Object.keys(Db)[branchCode]].geometry || [0, 0]}
+            geometry={(someBranch.geometry || [55.767379, 37.584293])}
             properties={{
-                iconContent: Db[Object.keys(Db)[branchCode]].iconContent,
-                iconCaption: Db[Object.keys(Db)[branchCode]].iconCaption,
-                balloonContentHeader:'<a href="https://yandex.ru/">МКА Защита</a>',
-                balloonContentBody:'Здесь располагается Головой Офис<br><img src="https://avatars.mds.yandex.net/get-altay/2838749/2a000001734cd3aca10546fd4c4c22f8e8dd/XXXL" height="200" width="250">'
+                iconContent: someBranch.iconContent,
+                iconCaption: someBranch.iconCaption,
+                balloonContentHeader:`<a href=${someBranch.link || "http://мказащита.рф"}>${someBranch.iconCaption || someBranch.iconContent}</a>`,
+                balloonContentBody:`${someBranch.balloonText}
+                ${someBranch.balloonImg ? `<br><img src=${someBranch.balloonImg} height="200" width="250">` : ""}`
             }}
             options={{
-                preset: Db[Object.keys(Db)[branchCode]].preset,
+                preset: someBranch.preset,
                 draggable: false,
                 iconCaptionMaxWidth: 120
             }} />;
@@ -58,7 +64,7 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
                 <div className="map-container">
                     <Map
                         state={{
-                            center: fromMainPage ? [55.767379, 37.584293] : Db[Object.keys(Db)[branchCode]].geometry,
+                            center: fromMainPage ? [55.767379, 37.584293] : (Db[Object.keys(Db)[branchCode]].geometry || [55.767379, 37.584293]),
                             zoom: 18
                         }}
                         width={'100%'}

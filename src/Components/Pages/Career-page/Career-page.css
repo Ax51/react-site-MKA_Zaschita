@@ -2,14 +2,6 @@
     padding: 120px 130px 60px 130px;
 }
 
-.career-page_nav {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-}
-._nav-route_img {
-    height: 1rem;
-}
 .career-page_text > p {
     padding: 30px 0;
 

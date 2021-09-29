@@ -1,4 +1,23 @@
 .contacts-page {
-    padding-top: 80px;
+    padding: 120px 130px 0 130px;
+    margin-bottom: 20px;
     text-align: center;
+}
+
+.contacts-page_buttons > .btn {
+    margin: 10px;
+    width: 130px;
+    height: 40px;
+    font-size: 0.7rem;
+}
+
+.contacts-page_contacts {
+    margin: 20px 40px;
+}
+
+.contacts-page_buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
 }

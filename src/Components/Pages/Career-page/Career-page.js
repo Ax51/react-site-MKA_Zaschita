@@ -2,8 +2,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-// pics
-import arrowRight from "../../img/arrow-right.png";
+// components
+import NavLine from "../../Nav-line/Nav-line";
 
 // styles
 import './Career-page.css';
@@ -11,18 +11,8 @@ import './Career-page.css';
 const CareerPage = () => {
     return (
         <div className="career-page">
-            <div className="career-page_nav">
-                <NavLink
-                    className="_nav-main"
-                    to='/'>Главная</NavLink>
-                <img
-                    className="_nav-route_img"
-                    src={arrowRight}
-                    alt="path" />
-                <div className="_nav-this">
-                    Карьера
-                </div>
-            </div>
+            <NavLine
+                thisPageName='Карьера'/>
             <div className="career-page_header">
                 <h1>Информация для будущих помощников / стажеров</h1>
                 <div className="header-block header-block_dark" />

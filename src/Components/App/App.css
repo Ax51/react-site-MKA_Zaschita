@@ -60,6 +60,7 @@ h1 {
     color: rgb(59, 59, 59);
     border: 1px solid rgb(59, 59, 59);
     box-shadow: 1px 2px 2px rgb(80, 80, 80);
+    transition: 0.5s;
 
 }
 .btn-dark:hover {
@@ -72,10 +73,9 @@ h1 {
     transition: 0.5s;
 }
 .btn-dark:active {
-    box-shadow: 1px 2px 2px rgb(80, 80, 80),
-        inset 0 0 5px gray,
-        inset 0 0 10px rgb(80, 80, 80),
-        inset 0 0 15px rgb(49, 49, 49);
+    box-shadow: 0 0 0 gray,
+        inset 2px 2px 5px gray,
+        inset 4px 4px 10px rgb(80, 80, 80);
     background-color:rgba(0, 0, 0, 0.2);
     transition: 0.1s;
 }
@@ -109,4 +109,7 @@ h1 {
 ._nav-this {
     margin-left: 20px;
     
+}
+._nav-this:hover {
+    cursor: pointer;
 }
