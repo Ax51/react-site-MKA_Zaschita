@@ -1,4 +1,93 @@
 .about-page {
     padding: 120px 130px 60px 130px;
+}
+
+.about-page_block > h2 {
+    padding-top: 40px;
+}
+.about-page_block > p {
+    padding: 10px 0;
+
+    color: gray;
+    text-align: justify;
+
+    text-indent: 25px;
+    line-height: 1.4rem;
+}
+
+.about-page_block > ul {
+    padding: 0 60px;
+}
+.about-page_block > ul > li {
+    padding: 5px 15px;
+
+    color: gray;
+    text-align: justify;
+
+    line-height: 1.4rem;
+}
+.about-page_block > ul > li:first-of-type {
+    padding-top: 30px;
+}
+.about-page_block > ul > li:last-of-type {
+    padding-bottom: 30px;
+}
+
+.about-page_big-stat_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.about-page_big-stat_block {
+    display: flex;
+    flex-direction: column;
+}
+.big-stat_big-num {
+    font-size: 5rem;
+    font-weight: 700;
     text-align: center;
+
+    color: rgb(0, 108, 133);
+}
+.big-stat_big-name {
+    font-size: 2rem;
+    text-align: center;
+
+    color: rgb(42, 160, 188);
+}
+
+.about-page_awards_wrapper {
+    padding: 30px 80px;
+    justify-content: space-between;
+    vertical-align: center;
+}
+
+._award {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+._awards-name > p {
+    max-width: 800px;
+    padding: 20px 0;
+
+    font-size: 1.1rem;
+    color:gray;
+}
+._awards-num {
+    /* display: flex; */
+    flex-direction: column;
+}
+._awards-num > p {
+    padding: 20px; 
+
+    font-size: 1.2rem;
+    text-align: right;
+    font-weight: 700;
+    color:rgb(0, 108, 133);
 }

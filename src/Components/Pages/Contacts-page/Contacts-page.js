@@ -10,7 +10,7 @@ import NavLine from "../../Nav-line/Nav-line.js";
 import './Contacts-page.css';
 
 const ContactsPage = () => {
-    let [branchCode, setBranchCode] = useState(7);
+    let [ branchCode, setBranchCode ] = useState(8);
 
     let selectedBranch = Db[Object.keys(Db)[branchCode]];
 
@@ -18,7 +18,7 @@ const ContactsPage = () => {
         return (
             <button
                 key={Db[item].iconCaption}
-                className="btn btn-dark"
+                className={branchCode === num ? "btn btn-dark active" : "btn btn-dark"}
                 onClick={() => setBranchCode(num)}>
                 {Db[item].iconCaption || Db[item].iconContent}
             </button>
@@ -29,11 +29,13 @@ const ContactsPage = () => {
             <div className="contacts-page">
                 <NavLine
                     thisPageName='Контакты' />
-                <div className='contacts-page_buttons'>
-                    {buttons}
-                </div>
-                <div className="contacts-page_contacts">
-                    {selectedBranch.comment}
+                <div className="contacts-page_wrapper">
+                    <div className='contacts-page_buttons'>
+                        {buttons}
+                    </div>
+                    <div className="contacts-page_contacts">
+                        {selectedBranch.comment}
+                    </div>
                 </div>
             </div>
             <MapApi

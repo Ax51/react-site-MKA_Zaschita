@@ -83,6 +83,11 @@ h1 {
 .header-block {
     margin-top: 10px;
     width: 70px;
+    height: 3px;
+}
+.header-sub-block {
+    margin-top: 10px;
+    width: 60px;
     height: 2px;
 }
 .header-block_white {
