@@ -12,7 +12,7 @@ const CareerPage = () => {
     return (
         <div className="career-page">
             <NavLine
-                thisPageName='Карьера'/>
+                pathArray={[{name:"Карьера"}]} />
             <div className="career-page_header">
                 <h1>Информация для будущих помощников / стажеров</h1>
                 <div className="header-block header-block_dark" />

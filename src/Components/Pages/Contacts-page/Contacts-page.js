@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 // Components
 import MapApi from "../../Map-API/Map-API.js";
-import Db from '../../Map-API/Db/Map-coordinates.js';
+import Db from '../../../Db/Map-API-Db/Map-coordinates.js';
 import NavLine from "../../Nav-line/Nav-line.js";
 
 // styles
@@ -28,7 +28,11 @@ const ContactsPage = () => {
         <>
             <div className="contacts-page">
                 <NavLine
-                    thisPageName='Контакты' />
+                    pathArray={[{name:"Контакты"}]} />
+                <div className="contacts-page_header">
+                    <h1>Реквизиты наших филиалов</h1>
+                    <div className="header-block header-block_dark"/>
+                </div>
                 <div className="contacts-page_wrapper">
                     <div className='contacts-page_buttons'>
                         {buttons}

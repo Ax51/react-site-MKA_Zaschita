@@ -10,7 +10,7 @@ const coordinates = {
         comment:"Филиал № 2, г. Москва, Рубцовская набережная, д. 4, корп. 3"
     },
     branch_3:{
-        geometry:"",
+        geometry:null,
         iconContent:'',
         iconCaption:"Филиал №3",
         preset:"islands#blueCircleDotIconWithCaption",

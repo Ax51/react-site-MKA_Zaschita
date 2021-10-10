@@ -7,8 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import BuisnessSwitch from '../../../../Buisness-switch/Buisness-switch.js';
 
 // Data
-import buisnessArray from './Db/Buisness-carousel_items.js';
-import privateArray from './Db/Private-carousel_items.js'
+import buisnessArray from '../../../../../Db/Carousel-Db/Buisness-carousel_items.js';
+import privateArray from '../../../../../Db/Carousel-Db/Private-carousel_items'
 
 // styles
 import 'swiper/swiper.min.css';

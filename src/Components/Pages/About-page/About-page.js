@@ -12,7 +12,7 @@ const AboutPage = () => {
     return (
         <div className="about-page">
             <NavLine
-                thisPageName="О нас" />
+                pathArray={[{name:"О нас"}]} />
             <div className="about-page_header">
                 <h1>Информация о нашей коллегии</h1>
                 <div className="header-block header-block_dark" />

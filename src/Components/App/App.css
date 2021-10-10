@@ -10,7 +10,17 @@
     padding: 0;
     
     font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
     /* font-weight: 400; */
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.6rem;
+}
+h3 {
+    font-size: 1.2rem;
 }
 html {
     scroll-behavior: smooth;
@@ -105,16 +115,13 @@ h1 {
 
     transition: 1s;
 }
+._nav-main:not(:first-child) {
+    margin: 0 20px;
+}
 ._nav-main:hover {
     color:#000;
     text-decoration: underline;
+    cursor: pointer;
 
     transition: 0.3s;
-}
-._nav-this {
-    margin-left: 20px;
-    
-}
-._nav-this:hover {
-    cursor: pointer;
 }

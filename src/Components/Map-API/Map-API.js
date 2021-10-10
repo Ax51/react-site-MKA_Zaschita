@@ -3,7 +3,7 @@ import React from "react";
 import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 
 //Db
-import Db from './Db/Map-coordinates.js'
+import Db from '../../Db/Map-API-Db/Map-coordinates.js'
 
 // styles
 import './Map-API.css';

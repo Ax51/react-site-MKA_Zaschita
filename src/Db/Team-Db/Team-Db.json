@@ -1,0 +1,59 @@
+{
+    "sample":{
+        "name":"Имя",
+        "surname":"Фамилия",
+        "middlename":"Отчество",
+        "reestr_ID":"Реестровый номер",
+        "cert_ID":"Номер удостоверения",
+        "branch":"в каком филиале?(null если не состоит в филиале)",
+        "degree":"Образование/ученая степень",
+        "gen_exp":"Общий стаж по юриспруденции",
+        "adv_exp":"Адвокатский стаж",
+        "specialization":["Предпочитаемые специализации"],
+        "rewards":["Имеющиеся награды"],
+        "contacts":{
+            "email":"Ivan@ivanov.ru",
+            "tel":["+7(999)911-15-00","+7(123)444-55-66","+7(333)565-77-65"],
+            "site":"yandex.ru"
+        },
+        "photo":"URL фотографии"
+    },
+    "77/15032":{
+        "name":"Александр",
+        "surname":"Поляков",
+        "middlename":"Игоревич",
+        "reestr_ID":"77/15032",
+        "cert_ID":"17909",
+        "branch":"Филиал № 1",
+        "degree":"Магистр права",
+        "gen_exp":50,
+        "adv_exp":3,
+        "specialization":["lightsaber master"],
+        "rewards":null,
+        "contacts":{
+            "email":null,
+            "tel":null,
+            "site":null
+        },
+        "photo":"https://22.img.avito.st/image/1/ry8u6raxA8YYXYHLfKypL7hJA8KSSwnE"
+    },
+    "77/00001":{
+        "surname":"Иванов",
+        "name":"Иван",
+        "middlename":"Иванович",
+        "reestr_ID":"77/00001",
+        "cert_ID":"123456",
+        "branch":"Филиал в Вашингтонской области №7357/55",
+        "degree":"Доктор околонаучных наук",
+        "gen_exp":65,
+        "adv_exp":60,
+        "specialization":["Уголовное право","Гражданское право", "Право Социального Обеспечения"],
+        "rewards":["Шпага императора", "Орден 25 степени за заслуги", "Почетная грамота за 7 класс"],
+        "contacts":{
+            "email":"Ivan@ivanov.ru",
+            "tel":["+7(999)911-15-00","+7(123)444-55-66","+7(333)565-77-65"],
+            "site":"http://yandex.ru"
+        },
+        "photo":null
+    }
+}

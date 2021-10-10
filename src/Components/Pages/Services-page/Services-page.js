@@ -11,8 +11,11 @@ const ServicesPage = () => {
     return (
         <div className="services-page">
             <NavLine
-                thisPageName="Услуги и Цены"/>
-            this is Services page. trust me
+                pathArray={[{name:"Услуги и цены"}]}/>
+            <div className="services-page_header">
+                <h1>This is Services page. Trust me</h1>
+                <div className="header-block header-block_dark"/>
+            </div>
         </div>
     )
 }

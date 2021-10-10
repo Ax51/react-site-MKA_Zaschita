@@ -17,47 +17,55 @@ import Footer from '../Footer/Footer.js';
 // styles
 import './App.css';
 
+// temporary
+import AdvPage from '../Pages/Team-page/Adv-page/Adv-page.js';
+import Db from '../../Db/Team-Db/Team-Db.json'
+
 function App() {
     const [menuItems] = useState([
-        {name:"О нас", site:"about"},
-        {name:"Услуги", site:"services"},
-        {name:"Наш коллектив", site:"team"},
-        {name:"Карьера", site:"career"},
-        {name:"Контакты", site:"contacts"}
+        {name:"О нас", site:"about", component:AboutPage},
+        {name:"Услуги", site:"services", component:ServicesPage},
+        {name:"Наш коллектив", site:"team", component:TeamPage},
+        {name:"Карьера", site:"career", component:CareerPage},
+        {name:"Контакты", site:"contacts", component:ContactsPage}
     ]);
 
     const [ buisnessActive, setBuisnessActive ] = useState(false);
     
+    const routes = menuItems.map((item) => {
+        return (
+            <Route
+                key={item.name}
+                path={`/${item.site}`}>
+                <item.component/>
+            </Route>
+        )
+    })
+
+    const advRoutes = Object.keys(Db).map((item) => {
+        const key = Db[item]["reestr_ID"];
+        return (
+            <Route
+                key={key}
+                path={`/${key}`}>
+                <AdvPage
+                    advocate={item}/>
+            </Route>
+        )
+    });
+
     return (
         <>
             <HeaderMenu
                 menuItems={menuItems}/>
             <Route
-                exact path='/'
-                render={() => 
-                    <MainPage
+                exact path='/'>
+                <MainPage
                         buisnessActive={buisnessActive}
-                        setBuisnessActive={setBuisnessActive}/>}/>
-            <Route
-                path='/about'
-                render={() =>
-                    <AboutPage/>}/>
-            <Route
-                path='/services'
-                render={() =>
-                    <ServicesPage/>}/>
-            <Route
-                path='/team'
-                render={() =>
-                    <TeamPage/>}/>
-            <Route
-                path='/career'
-                render={() =>
-                    <CareerPage/>}/>
-            <Route
-                path='/contacts'
-                render={() =>
-                    <ContactsPage/>}/>
+                        setBuisnessActive={setBuisnessActive}/>
+            </Route>
+            {routes}
+            {advRoutes}
             <Footer
                 menuItems={menuItems}/>
         </>
