@@ -1,0 +1,8 @@
+.adv-component_rewards {
+    display: flex;
+    flex-direction:column;
+    align-items:flex-end;
+}
+.adv-component_tel {
+    font-family: 'IBM Plex Mono', monospace;
+}
