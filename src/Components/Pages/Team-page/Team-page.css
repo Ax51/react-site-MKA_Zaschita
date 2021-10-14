@@ -9,12 +9,12 @@
 .adv-name > a {
     text-decoration: none;
     color: gray;
-    transition: 1s;
+    transition: 3s;
 }
 .adv-name > a:hover {
     text-decoration: underline;
     color: black;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 .team-page_body {
     margin-top: 20px;
@@ -22,4 +22,5 @@
 .team-page_body > ul {
     list-style: none;
     columns: 3;
+    line-height: 2rem;
 }

@@ -65,7 +65,7 @@ const coordinates = {
         iconCaption:"Филиал Интерлоер",
         preset:"islands#blueCircleDotIconWithCaption",
         balloonText:"Заведующий филиалом «Интерлоер»:<br><b>Охраменко Владимир Владимирович</b>",
-        link:"",
+        link:"http://www.interlawyer.info",
         balloonImg:"",
         comment:"Филиал Интерлоер, гор. Москва,  ул. Кутузова, д. 2,/111"
     },

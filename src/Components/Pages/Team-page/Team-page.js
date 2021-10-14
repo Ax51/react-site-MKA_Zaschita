@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 
 // components
 import NavLine from "../../Nav-line/Nav-line";
-import AdvPage from "./Adv-page/Adv-page.js";
+import AdvComponent from "../../Adv-component/Adv-component";
+// import AdvPage from "./Adv-page/Adv-page.js";
 
 // Data
 import Db from '../../../Db/Team-Db/Team-Db.json';
@@ -15,7 +16,8 @@ import './Team-page.css';
 const TeamPage = () => {
     const DbArray = Object.keys(Db);
 
-    const advList = DbArray.map((item) => {
+    const advList = DbArray.sort((a,b) => Db[a].surname > Db[b].surname ? 1 : -1)
+        .map((item) => {
         const name = Db[item]["name"],
             middlename = Db[item]["middlename"],
             surname = Db[item]["surname"],
@@ -39,9 +41,9 @@ const TeamPage = () => {
             </div>
             <div className="team-page_body">
                 <ul>{advList}</ul>
-                <AdvPage
+                {/* <AdvComponent
                     advocate="77/15032"
-                    modal={true}/>
+                    /> */}
             </div>
         </div>
     )
