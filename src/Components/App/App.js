@@ -11,15 +11,13 @@ import ServicesPage from '../Pages/Services-page/Services-page.js';
 import TeamPage from '../Pages/Team-page/Team-page.js';
 import CareerPage from '../Pages/Career-page/Career-page.js';
 import ContactsPage from '../Pages/Contacts-page/Contacts-page.js';
+import AdvPage from '../Pages/Team-page/Adv-page/Adv-page.js';
+import Db from '../../Db/Team-Db/Team-Db.json'
 
 import Footer from '../Footer/Footer.js';
 
 // styles
 import './App.css';
-
-// temporary
-import AdvPage from '../Pages/Team-page/Adv-page/Adv-page.js';
-import Db from '../../Db/Team-Db/Team-Db.json'
 
 function App() {
     const [menuItems] = useState([

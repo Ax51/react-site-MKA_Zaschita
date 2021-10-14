@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 // components
 import NavLine from "../../Nav-line/Nav-line";
+import AdvPage from "./Adv-page/Adv-page.js";
 
 // Data
 import Db from '../../../Db/Team-Db/Team-Db.json';
@@ -12,7 +13,6 @@ import Db from '../../../Db/Team-Db/Team-Db.json';
 import './Team-page.css';
 
 const TeamPage = () => {
-    
     const DbArray = Object.keys(Db);
 
     const advList = DbArray.map((item) => {
@@ -31,7 +31,7 @@ const TeamPage = () => {
         <div className="team-page">
             <NavLine
                 pathArray={[
-                    {name:"Наш коллектив", path:"team"}
+                    { name: "Наш коллектив", path: "team" }
                 ]} />
             <div className="team-page_header">
                 <h1>Наши Адвокаты</h1>
@@ -39,6 +39,9 @@ const TeamPage = () => {
             </div>
             <div className="team-page_body">
                 <ul>{advList}</ul>
+                <AdvPage
+                    advocate="77/15032"
+                    modal={true}/>
             </div>
         </div>
     )

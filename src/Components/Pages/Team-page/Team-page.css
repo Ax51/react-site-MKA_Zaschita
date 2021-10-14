@@ -1,3 +1,25 @@
 .team-page {
     padding: 120px 130px 60px 130px;
 }
+
+.adv-name {
+    padding: 5px 0;
+    text-align: center;
+}
+.adv-name > a {
+    text-decoration: none;
+    color: gray;
+    transition: 1s;
+}
+.adv-name > a:hover {
+    text-decoration: underline;
+    color: black;
+    transition: 0.3s;
+}
+.team-page_body {
+    margin-top: 20px;
+}
+.team-page_body > ul {
+    list-style: none;
+    columns: 3;
+}

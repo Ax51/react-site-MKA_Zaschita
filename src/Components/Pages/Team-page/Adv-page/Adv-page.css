@@ -16,11 +16,12 @@
     border:13px solid rgb(235,246,249);
     border-radius: 25px;
     padding:40px 50px 20px 50px;
+    max-width: 500px;
+
 }
 .adv-page_table > table {
     /* border: 20px solid rgb(240,240,240); */
     border-collapse: collapse;
-    max-width: 600px;
 }
 .adv-page_table > table > thead > tr > td {
     /* border: 1px solid gray; */
