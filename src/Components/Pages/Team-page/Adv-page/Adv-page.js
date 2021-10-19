@@ -26,14 +26,16 @@ const AdvPage = ({ advocate, modal = false }) => {
 
     if (!modal) {
         return (
-            <div className="adv-page">
+            <div className="adv-page"
+            onClick={() => console.log('click on adv page bubbling!')}>
                 <NavLine
                     pathArray={[
                         { name: "Наш коллектив", path: "team" },
                         { name: `${fullName}` }]} />
-                <AdvComponent
-                    advocate={advocate}/>
-
+                <div className="adv-page_wrapper">
+                    <AdvComponent
+                        advocate={advocate}/>
+                </div>
 
                 {/* <div className="adv-page_wrapper">
                     <img

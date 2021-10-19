@@ -26,13 +26,13 @@ const Greet = () => {
                     </div>
                     <div>
                         <div className="greet__info__stat__num">
-                            235
+                            210
                         </div>
                         адвокатов в реестре
                     </div>
                     <div>
                         <div className="greet__info__stat__num">
-                            15
+                            9
                         </div>
                         филиалов в москве и МО
                     </div>

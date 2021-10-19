@@ -6,3 +6,72 @@
 .adv-component_tel {
     font-family: 'IBM Plex Mono', monospace;
 }
+#adv-component_href {
+    text-decoration: underline;
+}
+.adv-component_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.adv-component_wrapper_modal {
+    align-items: center;
+}
+.adv-component_adv-pic {
+    margin-right: 20px;
+    width: 450px;
+    position: sticky;
+    top: 100px;
+}
+.adv-component_adv-pic_modal {
+    margin-right: 20px;
+    width: 350px;
+}
+.adv-component_table_modal {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+.adv-component_table {
+    background-color: #fff;
+    border:13px solid rgb(235,246,249);
+    border-radius: 25px;
+    padding:40px 50px 20px 50px;
+    max-width: 500px;
+
+}
+.adv-component_table > table {
+    border-collapse: collapse;
+}
+.adv-component_table > table > thead > tr > td {
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.adv-component_table > table tbody > tr > td {
+    padding: 7px 0;    
+}
+.adv-component_table > table tbody > tr > td > a {
+    color:black;
+    text-decoration: none;
+    transition: 1s;
+}
+.adv-component_table > table tbody > tr > td > a:hover {
+    color: gray;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+.adv-component_table_body_data {
+    text-align: end;
+    line-height: 1.4rem;
+}
+.adv-component_table_body_rewards {
+    vertical-align: baseline !important;
+}
+.adv-component_table_body_rewards_text_modal {
+    position: sticky;
+    top: 0;
+}
+.adv-component_table_body_rewards_text {
+    position: sticky;
+    top: 100px;
+}

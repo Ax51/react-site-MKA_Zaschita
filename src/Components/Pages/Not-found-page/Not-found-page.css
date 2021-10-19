@@ -1,0 +1,7 @@
+.empty-page_wrapper {
+    text-align: center;
+    padding: 120px 130px 60px 130px;
+}
+.empty-page_wrapper > h1,h3 {
+    margin-bottom: 30px;
+}

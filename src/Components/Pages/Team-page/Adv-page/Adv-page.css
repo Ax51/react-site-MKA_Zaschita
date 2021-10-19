@@ -4,7 +4,8 @@
 
 .adv-page_wrapper {
     padding-top: 50px;
-    display: flex;
+}
+    /* display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -20,18 +21,15 @@
 
 }
 .adv-page_table > table {
-    /* border: 20px solid rgb(240,240,240); */
     border-collapse: collapse;
 }
 .adv-page_table > table > thead > tr > td {
-    /* border: 1px solid gray; */
     padding-bottom: 40px;
     text-align: center;
     font-size: 1.3rem;
 }
 .adv-page_table > table tbody > tr > td {
     padding: 7px 0;
-    /* border: 1px solid gray; */
     
 }
 .adv-page_table > table tbody > tr > td > a {
@@ -47,4 +45,4 @@
 .adv-page_table_body_data {
     text-align: end;
     line-height: 1.4rem;
-}
+} */

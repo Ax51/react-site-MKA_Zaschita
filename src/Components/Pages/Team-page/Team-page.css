@@ -1,17 +1,17 @@
 .team-page {
     padding: 120px 130px 60px 130px;
+    min-height: 600px;
 }
 
 .adv-name {
     padding: 5px 0;
-    text-align: center;
 }
-.adv-name > a {
+.adv-name > span {
     text-decoration: none;
-    color: gray;
+    color: rgb(114, 114, 114);
     transition: 3s;
 }
-.adv-name > a:hover {
+.adv-name > span:hover {
     text-decoration: underline;
     color: black;
     transition: 0.1s;
@@ -23,4 +23,125 @@
     list-style: none;
     columns: 3;
     line-height: 2rem;
+}
+.team-page_adv-index {
+    font-family: 'IBM Plex Mono', monospace;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.team-page_empty-search_wrapper {
+    display: flex;
+    justify-content: center;
+
+}
+.team-page_empty-search > ul {
+    list-style: none;
+}
+.team-page_empty-search > ul > li {
+    font-size: 1.1rem;
+    line-height: 3rem;
+}
+.team-page_empty-search > ul> li::before {
+    content: "\2022";
+    color: rgb(0, 147, 180);
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 1.5rem;
+    margin-left: -1.5rem;
+}
+.team-page_empty-search > ul > li > a {
+    color: rgb(0, 147, 180);
+    text-decoration: none;
+}
+.team-page_empty-search > ul > li > a:hover {
+    text-decoration: underline;
+}
+.team-page_empty-search > ul > li > a:visited {
+    color: rgb(0, 147, 180);
+}
+.team-page_empty-search > h1 {
+    font-size: 2.6rem;
+}
+.team-page_empty-search > .header-block {
+    margin-bottom: 20px;
+}
+
+.team-page_search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.team-page_search > .header-block {
+    margin-top: 0;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+.team-page_search-input {
+    margin-bottom: -3px;
+    width: 180px;
+    padding: 0 10px;
+    height: 52px;
+
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: center;
+
+    border: 1px solid #000;
+    border-radius: 10px;
+
+    box-shadow: 0 15px 15px -10px gray;
+    transition: 0.7s;
+    z-index: 3;
+    cursor: pointer;
+}
+.team-page_search-input::placeholder {
+    font-size: 1.1rem;
+    text-align: center;
+    color: rgba(250,250,250, 0.8);
+}
+.team-page_search-input, textarea {
+    background-color:rgb(0,108,133);
+}
+.team-page_search-input:focus {
+    margin-bottom: 50px;
+    padding: 5px 20px;
+    width: 600px;
+    height: 55px;
+    outline: none;
+    font-size: 1.3rem;
+    text-align: start;
+    color: gray;
+    background-color: rgb(245,245,245);
+    box-shadow: 0 0 0 3px rgb(42, 160, 188),
+        inset 0px 0px 5px 1px rgb(42,160,188),
+        10px 10px 20px 10px gray;
+    border-radius: 25px;
+    cursor: text;
+    transition: 0.4s;
+}
+.team-page_search-input:focus::placeholder {
+    font-size: 1.1rem;
+    text-align: start;
+    color: rgba(0, 108, 133, 0.7);
+}
+
+/* modal personal file */
+.team-page_personal-file_wrapper {
+    position: fixed;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.team-page_personal-file {
+    margin-top: 50px;
 }

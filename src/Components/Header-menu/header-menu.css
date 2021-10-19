@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,400&display=swap');
 .header-menu {
     padding: 20px 30px;
     background-color: rgba(42,160,188, 0.9);
 
     height: 75px;
     width: 100%;
+    max-width: 1920px;
     top:0;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.55);
