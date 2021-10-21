@@ -9,7 +9,8 @@
 
     overflow: hidden;
 
-    min-height: 70vh;
+    height:70vh;
+    min-height: 530px;
 
     position: relative;
 }
@@ -83,7 +84,7 @@
     right: 90px;
 }
 
-.greet__info > .btn {
+.greet__info .btn {
     margin-top: 60px;
 }
 

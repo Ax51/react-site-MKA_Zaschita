@@ -1,5 +1,6 @@
 // modules
 import React from "react";
+import { NavLink } from 'react-router-dom';
 
 // pics
 import mouseImg from "../../../../img/mz_mouse.7e7e.png";
@@ -37,10 +38,12 @@ const Greet = () => {
                         филиалов в москве и МО
                     </div>
                 </div>
-                <button
-                    className="btn btn-white">
-                    Подробнее
-                </button>
+                <NavLink to='/about'>
+                    <button
+                        className="btn btn-white">
+                        Подробнее
+                    </button>
+                </NavLink>
             </div>
             <img
                 className="greet__scroll"

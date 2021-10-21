@@ -104,6 +104,7 @@ const TeamPage = () => {
 
     function openAdvComponent() {
         if (selectedAdv) {
+            document.body.style.overflow = "hidden";
             return (
                 <div className="team-page_personal-file_wrapper"
                     onClick={() => setSelectedAdv(null)}>
@@ -115,6 +116,8 @@ const TeamPage = () => {
                     </div>
                 </div>
             )
+        } else {
+            document.body.style.overflow = "";
         }
     }
 

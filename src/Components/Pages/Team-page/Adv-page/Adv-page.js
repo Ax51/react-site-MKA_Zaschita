@@ -26,8 +26,7 @@ const AdvPage = ({ advocate, modal = false }) => {
 
     if (!modal) {
         return (
-            <div className="adv-page"
-            onClick={() => console.log('click on adv page bubbling!')}>
+            <div className="adv-page">
                 <NavLine
                     pathArray={[
                         { name: "Наш коллектив", path: "team" },

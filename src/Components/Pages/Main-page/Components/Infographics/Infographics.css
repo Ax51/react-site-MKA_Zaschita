@@ -1,0 +1,14 @@
+.infographics_wrapper {
+    margin: auto;
+    padding: 20px 80px 80px 80px;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+}
+.infographics_colored-bcg {
+    background-color: #ebf6f9;
+}
+.infographics_title {
+    padding: 90px 0 0 130px;
+    font-weight: 700;
+}

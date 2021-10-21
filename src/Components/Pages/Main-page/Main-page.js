@@ -5,6 +5,7 @@ import React from "react";
 import Greet from "./Components/Greet/Greet";
 import Speech from "./Components/Speech/Speech";
 import Carousel from "./Components/Carousel/Carousel";
+import Infographics from "./Components/Infographics/Infographics";
 import MapApi from "../../Map-API/Map-API.js";
 
 // styles
@@ -19,6 +20,7 @@ const MainPage = ({ buisnessActive, setBuisnessActive }) => {
                 <Carousel
                     buisnessActive={buisnessActive}
                     setBuisnessActive={setBuisnessActive}/>
+                <Infographics/>
                 <MapApi
                     fromMainPage={true}/>
             </main>

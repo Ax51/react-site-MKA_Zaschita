@@ -1,5 +1,6 @@
 // modules
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -87,9 +88,11 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
                         {buisnessActive ? buisnessSlides : privateSlides}
                 </Swiper>
             </div>
-            <button
-                className="btn btn-dark">Смотреть все
-            </button>
+            <NavLink to='/services'>
+                <button
+                    className="btn btn-dark swiper-block_goto-btn">Смотреть все
+                </button>
+            </NavLink>
         </div>
     )
 }

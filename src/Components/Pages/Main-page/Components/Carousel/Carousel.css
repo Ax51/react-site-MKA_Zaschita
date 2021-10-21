@@ -66,6 +66,6 @@
     text-align: justify;
 }
 
-.swiper-block > .btn {
+.swiper-block_goto-btn {
     margin-left: 90px;
 }
