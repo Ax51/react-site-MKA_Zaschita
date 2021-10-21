@@ -1,0 +1,33 @@
+.services-card_wrapper {
+    margin: 0 5px 20px 0;
+}
+
+.services-card {
+    padding: 30px;
+    width: 240px;
+    height: 180px;
+    background-color: rgb(240,240,240);
+    overflow: hidden;
+    transition: 1s;
+}
+.services-card_wrapper a {
+    text-decoration: none;
+}
+.services-card:hover {
+    box-shadow: 5px 7px 5px 2px gray;
+}
+.services-card:active {
+    background-color: rgb(220,220,220);
+    box-shadow: 20px 20px 15px gray;
+    transition: 0.15s;
+}
+.services-card img {
+    width: 80px;
+}
+.services-card p {
+    margin-top: 40px;
+
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: black;
+}

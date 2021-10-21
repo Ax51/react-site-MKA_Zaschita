@@ -15,7 +15,7 @@
     transition: 0.3s;
 }
 .infographics-component_wrapper_mirror {
-    align-self: end;
+    align-self: flex-end;
 }
 .infographics-label-pic {
     width: 170px;

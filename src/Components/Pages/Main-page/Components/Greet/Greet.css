@@ -84,9 +84,10 @@
     right: 90px;
 }
 
-.greet__info .btn {
+.greet__info a {
     margin-top: 60px;
+    margin-right: auto;
 }
 
 @keyframes bouce {
-    from { bottom: 4% } to { bottom: 6% } };
+    from { bottom: 4% } to { bottom: 6% } }

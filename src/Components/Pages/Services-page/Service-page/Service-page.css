@@ -1,0 +1,22 @@
+.service-page_wrapper {
+    padding: 120px 130px 60px 130px;
+}
+.service-page_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.service-page_header h1 {
+    margin-left: 30px;
+}
+.service-page_text {
+    margin: 30px 0;
+    text-align: justify;
+    line-height: 1.5rem;
+    text-indent: 30px;
+    color: rgb(80, 80, 80);
+    white-space: pre-wrap;
+}
+.service-page_text p {
+    margin: 20px 0;
+}

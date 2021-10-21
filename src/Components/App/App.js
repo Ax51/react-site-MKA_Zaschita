@@ -7,7 +7,8 @@ import HeaderMenu from '../Header-menu/header-menu.js';
 
 import MainPage from '../Pages/Main-page/Main-page.js';
 import AboutPage from '../Pages/About-page/About-page.js';
-import ServicesPage from '../Pages/Services-page/Services-page.js';
+import ServicesMainPage from '../Pages/Services-page/Services-main-page.js';
+import ServicePage from '../Pages/Services-page/Service-page/Service-page.js';
 import TeamPage from '../Pages/Team-page/Team-page.js';
 import CareerPage from '../Pages/Career-page/Career-page.js';
 import ContactsPage from '../Pages/Contacts-page/Contacts-page.js';
@@ -18,30 +19,51 @@ import Footer from '../Footer/Footer.js';
 
 // data
 import teamDb from '../../Db/Team-Db/Team-Db.json';
+import privateServiceDb from '../../Db/Carousel-Db/Private-carousel_items.js';
+import buisnessServiceDb from '../../Db/Carousel-Db/Buisness-carousel_items.json';
 
 // styles
 import './App.css';
 
 function App() {
     const [menuItems] = useState([
-        {name:"О нас", site:"about", component:AboutPage},
-        {name:"Услуги", site:"services", component:ServicesPage},
-        {name:"Наш коллектив", site:"team", component:TeamPage},
-        {name:"Карьера", site:"career", component:CareerPage},
-        {name:"Контакты", site:"contacts", component:ContactsPage}
+        {name:"О нас", site:"about", Component:AboutPage},
+        {name:"Услуги", site:"services", Component:ServicesMainPage},
+        {name:"Наш коллектив", site:"team", Component:TeamPage},
+        {name:"Карьера", site:"career", Component:CareerPage},
+        {name:"Контакты", site:"contacts", Component:ContactsPage}
     ]);
 
     const [ buisnessActive, setBuisnessActive ] = useState(false);
     
-    const routes = menuItems.map((item) => {
+    const generalRoutes = menuItems.map((item) => {
+        const { name, site, Component } = item;
         return (
             <Route
-                key={item.name}
-                path={`/${item.site}`}>
-                <item.component/>
+                key={name}
+                exact path={`/${site}`}>
+                <Component/>
             </Route>
         )
     })
+
+    function servicesRoutes( array, parentRoute ) {
+        return array.map((item, num) => {
+            const { name, site, text, img } = item;
+            return (
+                <Route
+                    key={num}
+                    path={`/services/${parentRoute}/${site}`}>
+                    <ServicePage
+                        name={name}
+                        text={text}
+                        img={img}/>
+                </Route>
+            )
+        })
+    }
+    
+    
 
     const advRoutes = Object.keys(teamDb).map((item) => {
         const key = teamDb[item]["reestr_ID"];
@@ -66,8 +88,10 @@ function App() {
                             buisnessActive={buisnessActive}
                             setBuisnessActive={setBuisnessActive}/>
                 </Route>
-                {routes}
+                {generalRoutes}
                 {advRoutes}
+                {servicesRoutes(privateServiceDb)}
+                {servicesRoutes(buisnessServiceDb.posts, "buisness")}
                 <Route
                     path='*'>
                         <NotFoundPage/>

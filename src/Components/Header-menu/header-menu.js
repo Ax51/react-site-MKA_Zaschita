@@ -16,7 +16,7 @@ const HeaderMenu = ({ menuItems }) => {
 
     const menuList = menuItems.map((item) =>
         <li key={item.name}>
-            <NavLink to={item.site}>{item.name}</NavLink>
+            <NavLink to={`/${item.site}`}>{item.name}</NavLink>
         </li>)
 
     return (
