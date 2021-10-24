@@ -16,7 +16,7 @@ import './Greet.css';
 const Greet = () => {
     const companyAge = new Date().getFullYear() - 1995,
         numberOfBranches = Object.keys(branchesDb).length,
-        numberOfAdv = /* Object.keys(TeamDb).length */ 210;  // remove this plug after finishing work on the TeamDb
+        numberOfAdv = Object.keys(TeamDb).filter(i => i !== "_comment").length;
 
     function correctSpelling(word, number) {
         if (number >= 10 && number <= 20) {

@@ -34,6 +34,19 @@
     filter: drop-shadow(0 0 6px black);
 }
 
+@media screen and (min-width: 1001px) { /* its important to set 1000 + 1 value. otherwise it will be 1000px deadzone */
+    .header-menu__menu-burger {
+        display: none;
+    }
+}@media screen and (max-width: 1000px) {
+    .header-menu__menu-section {
+        display: none;
+    }
+    .header-menu__phones {
+        display: none;
+    }
+}
+
 .header-menu__menu-section > ul {
     display: flex;
     flex-direction: row;
@@ -110,7 +123,19 @@
     min-height: 20px;
 }
 .header-menu__menu-burger > a:first-child {
-    padding-right: 30px;
+    padding-right: 50px;
+}
+.header-menu__menu-burger > button {
+    border-radius: 10px;
+    background-color:transparent;
+    border: none;
+}
+.header-menu__menu-burger > button:hover {
+    cursor: pointer;
+    background-color:rgba(49, 49, 49, 0.2);
+}
+.header-menu__menu-burger > button:active {
+    background-color:rgba(0, 0, 0, 0.3);
 }
 .header-menu__menu-burger > a > button {
     border-radius: 10px;
@@ -143,4 +168,30 @@
 }
 .scroll-up-btn:hover {
     cursor: n-resize;
+}
+
+.header-menu_mobile-menu_wrapper {
+    display: none;
+}
+.header-menu_mobile-menu_wrapper_active {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1100;
+    background-color: rgba(42,160,188, 0.85);
+}
+.header-menu_mobile-menu {
+    padding: 130px 80px 130px 80px;
+}
+.header-menu_mobile-menu > ul {
+    text-align: center;
+    line-height: 4rem;
+    list-style: none;
+}
+.header-menu_mobile-menu > ul > li > a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    
 }

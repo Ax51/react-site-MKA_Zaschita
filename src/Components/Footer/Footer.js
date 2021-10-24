@@ -8,7 +8,7 @@ import './Footer.css';
 const Footer = (props) => {
     const menuList = props.menuItems.map((item) =>
         <li key={item.name}>
-            <NavLink to={item.site}>{item.name}</NavLink>
+            <NavLink to={`/${item.site}`}>{item.name}</NavLink>
         </li>)
 
     return (

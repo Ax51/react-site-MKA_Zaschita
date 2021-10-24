@@ -81,7 +81,7 @@ function App() {
     
     
 
-    const advRoutes = Object.keys(teamDb).map((item) => {
+    const advRoutes = Object.keys(teamDb).filter(i => i !== "_comment").map((item) => {
         const key = teamDb[item]["reestr_ID"];
         return (
             <Route

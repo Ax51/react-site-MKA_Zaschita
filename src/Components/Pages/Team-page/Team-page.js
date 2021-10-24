@@ -13,9 +13,10 @@ import Db from '../../../Db/Team-Db/Team-Db.json';
 import './Team-page.css';
 
 const TeamPage = () => {
+    
     const minLenghtSearch = 0, // this number affects the deadzone search. To instant search set this value to 0.
         DbArray = Object.keys(Db),
-        sortedDbArray = DbArray.sort((a, b) => Db[a].surname > Db[b].surname ? 1 : -1);
+        sortedDbArray = DbArray.sort((a, b) => Db[a].surname > Db[b].surname ? 1 : -1).filter(i => i !== "_comment");
 
     let [inputValue, setInputValue] = useState(""),
         [selectedAdv, setSelectedAdv] = useState(null),
