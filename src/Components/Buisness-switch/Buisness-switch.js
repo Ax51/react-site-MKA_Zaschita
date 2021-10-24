@@ -2,19 +2,19 @@ import React, { useState } from "react";
 
 import './Buisness-switch.css';
 
-const BuisnessSwitch = ({ styles, setBuisnessActive }) => {
-    const [ privateClassNames, setPrivateClassNames ] = useState(styles + " btn active");
-    const [ buisnessClassNames, setbuisnessClassNames ] = useState(styles + " btn");
+const BuisnessSwitch = ({ styles = "btn-dark", buisnessActive, setBuisnessActive }) => {
+    const [ privateClassNames, setPrivateClassNames ] = useState(styles + ` btn${buisnessActive ? "" : " active"}`);
+    const [ buisnessClassNames, setBuisnessClassNames ] = useState(styles + ` btn${buisnessActive ? " active" : ""}`);
 
 
     const activePrivate = () => {
         setPrivateClassNames(styles + " btn active");
-        setbuisnessClassNames(styles + " btn");
+        setBuisnessClassNames(styles + " btn");
         setBuisnessActive(false);
     };
     const activeBuisness = () => {
         setPrivateClassNames(styles + " btn");
-        setbuisnessClassNames(styles + " btn active");
+        setBuisnessClassNames(styles + " btn active");
         setBuisnessActive(true);
     };
 

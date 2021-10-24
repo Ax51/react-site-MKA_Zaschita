@@ -1,5 +1,7 @@
 .service-page_wrapper {
-    padding: 120px 130px 60px 130px;
+    margin: 0 auto;
+    padding: 120px 60px 60px 60px;
+    max-width: 1000px;
 }
 .service-page_header {
     display: flex;

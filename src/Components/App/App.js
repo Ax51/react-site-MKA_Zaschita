@@ -19,13 +19,16 @@ import Footer from '../Footer/Footer.js';
 
 // data
 import teamDb from '../../Db/Team-Db/Team-Db.json';
-import privateServiceDb from '../../Db/Carousel-Db/Private-carousel_items.js';
+import privateServiceDb from '../../Db/Carousel-Db/Private-carousel_items.json';
 import buisnessServiceDb from '../../Db/Carousel-Db/Buisness-carousel_items.json';
 
 // styles
 import './App.css';
 
 function App() {
+    
+    const [ buisnessActive, setBuisnessActive ] = useState(false);
+    
     const [menuItems] = useState([
         {name:"О нас", site:"about", Component:AboutPage},
         {name:"Услуги", site:"services", Component:ServicesMainPage},
@@ -33,23 +36,34 @@ function App() {
         {name:"Карьера", site:"career", Component:CareerPage},
         {name:"Контакты", site:"contacts", Component:ContactsPage}
     ]);
-
-    const [ buisnessActive, setBuisnessActive ] = useState(false);
     
     const generalRoutes = menuItems.map((item) => {
         const { name, site, Component } = item;
-        return (
-            <Route
-                key={name}
-                exact path={`/${site}`}>
-                <Component/>
-            </Route>
-        )
+        switch (item.site) {
+            case "services":
+                return (
+                    <Route
+                        key={name}
+                        exact path={`/${site}`}>
+                        <Component
+                        buisnessActive={buisnessActive}
+                        setBuisnessActive={setBuisnessActive}/>
+                    </Route>
+                );    
+            default:
+                return (
+                    <Route
+                        key={name}
+                        exact path={`/${site}`}>
+                        <Component/>
+                    </Route>
+                );
+        }
     })
 
     function servicesRoutes( array, parentRoute ) {
         return array.map((item, num) => {
-            const { name, site, text, img } = item;
+            const { name, site, text, shortText, img } = item;
             return (
                 <Route
                     key={num}
@@ -57,7 +71,9 @@ function App() {
                     <ServicePage
                         name={name}
                         text={text}
-                        img={img}/>
+                        shortText={shortText}
+                        img={img}
+                        parentRoute={parentRoute}/>
                 </Route>
             )
         })
@@ -90,8 +106,8 @@ function App() {
                 </Route>
                 {generalRoutes}
                 {advRoutes}
-                {servicesRoutes(privateServiceDb)}
-                {servicesRoutes(buisnessServiceDb.posts, "buisness")}
+                {servicesRoutes(privateServiceDb, "private")}
+                {servicesRoutes(buisnessServiceDb, "buisness")}
                 <Route
                     path='*'>
                         <NotFoundPage/>

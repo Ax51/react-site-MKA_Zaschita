@@ -10,6 +10,7 @@
     text-decoration: none;
     color: rgb(114, 114, 114);
     transition: 3s;
+    cursor: pointer;
 }
 .adv-name > span:hover {
     text-decoration: underline;
@@ -118,8 +119,8 @@
     color: gray;
     background-color: rgb(245,245,245);
     box-shadow: 0 0 0 3px rgb(42, 160, 188),
-        inset 0px 0px 5px 1px rgb(42,160,188),
-        10px 10px 20px 10px gray;
+        10px 10px 20px 10px gray,
+        0px 0px 5px 1px rgb(42,160,188) inset;
     border-radius: 25px;
     cursor: text;
     transition: 0.4s;

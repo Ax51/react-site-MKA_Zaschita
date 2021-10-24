@@ -9,7 +9,7 @@ import BuisnessSwitch from '../../../../Buisness-switch/Buisness-switch.js';
 
 // Data
 import buisnessArray from '../../../../../Db/Carousel-Db/Buisness-carousel_items.json';
-import privateArray from '../../../../../Db/Carousel-Db/Private-carousel_items';
+import privateArray from '../../../../../Db/Carousel-Db/Private-carousel_items.json';
 
 // pics
 import noLogo from '../../../../img/mz_ic-1.fcb9.png';
@@ -23,17 +23,20 @@ SwiperCore.use([ Autoplay ]);
 const Carousel = ({ buisnessActive, setBuisnessActive }) => {
     function slides(array) {
         return array.map((item) => {
-        let { name, img, shortText } = item;
+            const { name, img, shortText, site } = item;
+
         return (
             <SwiperSlide key={name}>
-                <div className="swiper-slide-title_flex">
-                    <p className="swiper-slide--title">{name}</p>
-                    <img
-                        className="swiper-slide--logo"
-                        src={img || noLogo}
-                        alt="logo" />
-                </div>
-                <p className="swiper-slide--text">{shortText}</p>
+                <NavLink to={`/services/${buisnessActive ? "buisness" : "private"}/${site}`}>
+                    <div className="swiper-slide-title_flex">
+                        <p className="swiper-slide--title">{name}</p>
+                        <img
+                            className="swiper-slide--logo"
+                            src={img || noLogo}
+                            alt="logo" />
+                    </div>
+                    <p className="swiper-slide--text">{shortText}</p>
+                </NavLink>
             </SwiperSlide>
         )
     })};
@@ -45,7 +48,7 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
                 <div className="header-block header-block_dark"/>
             </div>
             <BuisnessSwitch
-                styles="btn-dark"
+                buisnessActive={buisnessActive}
                 setBuisnessActive={setBuisnessActive}/>
             <div className="swiper">
                 <Swiper
@@ -74,7 +77,7 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
                           } 
                         }
                     }>
-                        {buisnessActive ? slides(buisnessArray.posts) : slides(privateArray)}
+                        {buisnessActive ? slides(buisnessArray) : slides(privateArray)}
                 </Swiper>
             </div>
             <NavLink to='/services'>

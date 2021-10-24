@@ -9,6 +9,9 @@ import arrowRight from "../img/arrow-right.png";
 import './Nav-line.css';
 
 const NavLine = ({ pathArray }) => {
+
+    // pathArray = [{name:"Имя вкладки", path:"путь до вкладки без '/'"}]
+
     const pathNesting = pathArray.map((item) => {
         return (
             <React.Fragment key={item.name}>

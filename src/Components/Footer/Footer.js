@@ -26,15 +26,20 @@ const Footer = (props) => {
                         {menuList}
                     </ul>
                 </div>
-                <div className="buisness-card">
-                    <h3>Наш головной офис:</h3>
-                    <a href="https://yandex.ru/maps/-/CCUqE8rpdC">
-                        <p>123056 г. Москва</p>
-                        <p>ул. Зоологическая, д. 30,<br/> стр. 2</p>
-                    </a>
-                    <a href="mailto:advokaty.zaschita@yandex.ru?subject=Вопрос адвокату">advokaty.zaschita@yandex.ru</a>
-                    <a href="tel:+74957696889">8 (495) 769-68-89</a>
-                    <a href="tel:+74992526522">8 (499) 252-65-22</a>
+                <div className="svp-list_shadow">
+                    <div className="svp-list_label">
+                        <div className="buisness-card">
+                            <h3>Наш головной офис:</h3>
+                            <a href="https://yandex.ru/maps/-/CCUqE8rpdC">
+                                <p>123056 г. Москва</p>
+                                <p>ул. Зоологическая, д. 30,<br/> стр. 2</p>
+                            </a>
+                            <a href="mailto:advokaty.zaschita@yandex.ru?subject=Вопрос адвокату">advokaty.zaschita<br/>@yandex.ru</a>
+                            <a href="tel:+74957696889">8 (495) 769-68-89</a>
+                            <a href="tel:+74992526522">8 (499) 252-65-22</a>
+                            <div className="svp-list_label_bottom"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

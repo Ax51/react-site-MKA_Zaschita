@@ -36,7 +36,7 @@
     font-style: italic;
     font-weight: 700;
     text-shadow: 0 0 5px gray,
-        0 0 10px rgb(100, 100, 100);
+        0 0 20px black;
     max-width: 300px;
     line-height: 30px;
 }
@@ -82,6 +82,7 @@
     position: absolute;
     top: 150px;
     right: 90px;
+    filter: drop-shadow(2px 4px 6px black);
 }
 
 .greet__info a {

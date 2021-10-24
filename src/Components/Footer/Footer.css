@@ -45,47 +45,83 @@
     color:black;
     transition: 0.2s;
 }
+
 .buisness-card {
     padding: 20px;
 
-    display: block;
-    box-sizing: border-box;
-
     text-align: center;
 
-    border: 1px solid rgb(0, 147, 180);
-    border-radius: 10px;
-
-    box-shadow: 0 0 5px gray,
-        0 0 10px gray,
-        0 0 15px gray;
     transition: 1s;
-
-    background-color: #fff;
 }
-.buisness-card:hover {
+/* .buisness-card:hover {
     box-shadow: 5px 5px 20px 5px gray;
 
     transition: 0.6s;
-}
+} */
 .buisness-card > * {
     padding: 14px 0;
 }
 .buisness-card > h3 {
+    margin: 0;
     text-decoration: underline;
-    color:black;
+    color:#fff;
+    text-shadow: 0 0 4px black,
+        0 0 20px black;
 }
 .buisness-card > a {
     text-decoration: none;
     display: block;
-    color:gray;
-    transition: 5s;
+    color: #fff;
+    text-shadow: 2px 2px 5px black;
+    transition: 2s;
 }
 .buisness-card > a:hover {
     text-decoration: underline;
     cursor: pointer;
+    text-shadow: 3px 3px 7px black;
+    transition: 0.2s;
 }
 .buisness-card > a:active {
-    color:black;
+    color:rgb(200,200,200);
     transition: none;
+}
+
+.svp-list_shadow {
+    filter: drop-shadow(0px 0px 16px rgb(0,108,134));    
+}
+.svp-list_label {
+    position: relative;
+    width: 240px;
+    height: 340px;
+    top: -52px;
+    background: linear-gradient(rgb(42,160,188), rgb(0, 108, 134));
+    z-index: 3;
+}
+.svp-list_label::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 13px;
+    top: -10px;
+    background-color: rgb(42,160,188);
+    border-top-left-radius: 20px;
+}
+.svp-list_label::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 13px;
+    top: -10px;
+    left: 240px;
+    background-color: rgb(0, 108, 134);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.svp-list_label_bottom {
+    position: absolute;
+    top: 340px;
+    left: 0px;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-top: 45px solid rgb(0, 108, 134);
 }
