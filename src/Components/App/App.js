@@ -80,8 +80,7 @@ function App() {
     }
     
     
-
-    const advRoutes = Object.keys(teamDb).filter(i => i !== "_comment").map((item) => {
+    const advRoutes = Object.keys(teamDb).filter(i => i !== "_comment" && teamDb[i]["shown"]).map((item) => {
         const key = teamDb[item]["reestr_ID"];
         return (
             <Route
@@ -92,6 +91,9 @@ function App() {
             </Route>
         )
     });
+
+    // console.log(Object.keys(teamDb).filter(i => !teamDb[i]["shown"])); 
+    // uncomment these line, if you want to see in console.log array of hidden adv
 
     return (
         <>

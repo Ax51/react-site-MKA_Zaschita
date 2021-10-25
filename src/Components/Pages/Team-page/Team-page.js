@@ -16,7 +16,7 @@ const TeamPage = () => {
     
     const minLenghtSearch = 0, // this number affects the deadzone search. To instant search set this value to 0.
         DbArray = Object.keys(Db),
-        sortedDbArray = DbArray.sort((a, b) => Db[a].surname > Db[b].surname ? 1 : -1).filter(i => i !== "_comment");
+        sortedDbArray = DbArray.sort((a, b) => Db[a].surname > Db[b].surname ? 1 : -1).filter(i => i !== "_comment" && Db[i]["shown"]);
 
     let [inputValue, setInputValue] = useState(""),
         [selectedAdv, setSelectedAdv] = useState(null),
@@ -76,7 +76,7 @@ const TeamPage = () => {
                             key = Db[item]["reestr_ID"];
                         return (
                             <li key={key} className="adv-name">
-                                {/* <NavLink to={`/${key}`}><span className="team-page_adv-index">{index + 1}.</span>{` ${surname ?? ""} ${name ?? ""} ${middlename ?? ""}`}</NavLink> */}
+                                {/* <NavLink to={`/${key}`}><span className="team-page_adv-index">{index + 1}.</span>{` ${surname ?? ""} ${name ?? ""} ${middlename ?? ""}`}</NavLink> */}  {/* if nedeed to open individual page instead of modal window, uncomment these lines, and comment that above */}
                                 <span onClick={() => setSelectedAdv(key)}><span className="team-page_adv-index">{index + 1}.</span>{` ${surname ?? ""} ${name ?? ""} ${middlename ?? ""}`}</span>
                             </li>
                         )

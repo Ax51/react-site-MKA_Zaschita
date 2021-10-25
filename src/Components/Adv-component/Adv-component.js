@@ -52,7 +52,7 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
                 <table>
                     <thead><tr><td colSpan="2"><b><h2>{fullName}</h2></b></td></tr></thead>
                     <tbody>
-                        <tr><td><b>Реестровый номер:</b></td><td className="adv-component_table_body_data">{reestrID}</td></tr>
+                        <tr><td><b>Реестровый номер в реестре Минюста:</b></td><td className="adv-component_table_body_data">{reestrID}</td></tr>
                         {adv.cert_ID ? <tr><td><b>Номер удостоверения:</b></td><td className="adv-component_table_body_data">{certID}</td></tr> : null}
                         {adv.branch ? <tr><td><b>Состоит в филиале:</b></td><td className="adv-component_table_body_data">{adv.branch}</td></tr> : null}
                         {adv.degree ? <tr><td><b>Образование:</b></td><td className="adv-component_table_body_data">{adv.degree}</td></tr> : null}

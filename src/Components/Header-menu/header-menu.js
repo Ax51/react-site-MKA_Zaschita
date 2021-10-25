@@ -15,7 +15,7 @@ const HeaderMenu = ({ menuItems }) => {
     const myRef = useRef(null);
     const scrollUpFunc = () => myRef.current.scrollIntoView()
 
-    const [ mobileMenuActive, setMobileMenuActive ] = useState("header-menu_mobile-menu_wrapper"); 
+    const [ mobileMenuActive, setMobileMenuActive ] = useState("header-menu_mobile-menu_wrapper");        
 
     function menuList() {
         return menuItems.map((item) =>
@@ -34,12 +34,17 @@ const HeaderMenu = ({ menuItems }) => {
         }
     }
 
+    function closeMobileMenu () {
+        setMobileMenuActive("header-menu_mobile-menu_wrapper");
+        document.body.style.overflow = "";
+    }
+
     return (
         <>
             <div ref={myRef} />  {/* div with zero position to scroll to */}
             <header className="header-menu">
                 <div className="header-menu__logo">
-                    <NavLink to="/">
+                    <NavLink to="/" onClick={() => closeMobileMenu()}>
                         <img
                             className="header-menu__logo-img"
                             src={logo}

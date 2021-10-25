@@ -38,6 +38,8 @@ const ContactsPage = () => {
                         {buttons}
                     </div>
                     <div className="contacts-page_contacts">
+                        <h2>{selectedBranch.iconCaption || selectedBranch.iconContent}</h2>
+                        <div className="header-block header-block_dark" style={{marginBottom:"15px"}}/>
                         {selectedBranch.comment}
                     </div>
                 </div>

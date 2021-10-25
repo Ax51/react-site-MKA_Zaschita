@@ -31,6 +31,9 @@ html {
 h1 {
     font-weight: 700;
 }
+a {
+    color: rgb(0, 147, 180);
+}
 .btn {
     height: 52px;
     width: 212px;

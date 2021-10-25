@@ -4,6 +4,7 @@
 }
 .contacts-page_wrapper {
     display: flex;
+    justify-content: center;
 }
 .contacts-page_buttons > .btn {
     margin: 10px;
@@ -14,11 +15,16 @@
 
 .contacts-page_contacts {
     margin: 20px 40px;
-    max-width: 700px;
+    padding: 40px;
+    box-shadow: 15px 15px 20px gray;
+    border: 1px solid rgba(240,240,240,0.5);
+    line-height: 2rem;
+    width: 700px;
+    overflow: auto;
 }
 
 .contacts-page_buttons {
-    width: 500px;
+    max-width: 300px;
 
     display: flex;
     flex-direction: row-reverse;
