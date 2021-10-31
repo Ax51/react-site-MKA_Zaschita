@@ -33,17 +33,60 @@
     max-height: 100%;
     filter: drop-shadow(0 0 6px black);
 }
+.header-menu__logo-img_mobile {
+    height: 65px;
+    filter: drop-shadow(0 0 5px black);
+}
 
 @media screen and (min-width: 1001px) { /* its important to set 1000 + 1 value. otherwise it will be 1000px deadzone */
     .header-menu__menu-burger {
         display: none;
     }
-}@media screen and (max-width: 1000px) {
+}
+@media screen and (max-width: 1000px) {
     .header-menu__menu-section {
         display: none;
     }
     .header-menu__phones {
         display: none;
+    }
+}
+@media screen and (min-width: 561px) {
+    .header-menu__logo_mobile {
+        display: none;
+    }
+    .header-menu__logo {
+        display: block;
+    }
+    
+}
+@media screen and (max-width:341px) {
+    .header-menu_mobile-menu > ul > li > a {
+        font-size: 1.33rem !important;
+    }
+    .header-menu_mobile-menu {
+        padding-right: 50px !important;
+    }    
+}
+@media screen and (max-width:290px) {
+    .header-menu_mobile-menu > ul > li > a {
+        font-size: 1rem !important;
+    }
+}
+@media screen and (max-width: 560px) {
+    .header-menu__logo {
+        display: none;
+    }
+    .header-menu__logo_mobile {
+        display: block;
+    }
+    .scroll-up-btn {
+        display: none;
+    }
+}
+@media screen and (min-width: 1920px) {
+    .scroll-up-btn {
+        right: calc(50vw - 920px) !important;
     }
 }
 
@@ -129,6 +172,7 @@
     border-radius: 10px;
     background-color:transparent;
     border: none;
+    overflow: visible;
 }
 .header-menu__menu-burger > button:hover {
     cursor: pointer;
@@ -179,7 +223,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 1100;
-    animation: shadow 0.3s ease 1 normal;
+    animation: shadow 0.8s ease 1 normal;
     background-color: rgba(74,160,171, 0.85);
 }
 .header-menu_mobile-menu {

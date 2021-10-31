@@ -3,6 +3,7 @@
 }
 
 .swiper-block {
+    margin: 0 auto;
     padding-bottom: 50px;
 
     background-color: rgb(240, 240, 240);
@@ -13,14 +14,11 @@
 }
 
 .swiper-slide {
-    margin: 15px 10px;
-    padding: 0 30px;
-
     height: 450px;
 
     overflow: hidden;
 
-    border: 1px solid gray;
+    outline: 1px solid gray;
     border-radius: 10px;
 
     box-shadow:
@@ -50,24 +48,27 @@
     justify-content: space-between;
 }
 .swiper-slide--title {
-    margin: 40px 0 30px 0;
+    margin: 40px 0 40px 30px;
     font-weight: 900;
     
     box-sizing: border-box;
     width: 130px;
 
     color: black;
+    z-index: 2;
 }
 .swiper-slide--logo {
     width: auto;
     height: 90px;
 
-    position: relative;
-    left: 20px;
+    position: absolute;
+    right: 0;
 
     padding-left: 25px;
+    z-index: 1;
 }
 .swiper-slide--text {
+    margin: 0 30px;
     color: gray;
     text-align: justify;
 
@@ -79,4 +80,42 @@
 
 .swiper-block_goto-btn {
     margin-left: 90px;
+}
+@media screen and (max-width:1000px) {
+    .swiper-block > .buisness-switch {
+        margin: 0 80px;
+    }
+    .swiper-title {
+        padding: 60px 0 0 80px;
+    }
+}
+@media screen and (max-width:600px) {
+    .swiper-block > .buisness-switch {
+        margin: 0 60px;
+    }
+    .swiper-title {
+        padding: 60px 0 0 60px;
+    }
+}
+@media screen and (max-width:560px) {
+    .swiper-title {
+        padding: 40px 0 0 20px;
+    }
+    .swiper-block > .buisness-switch {
+        margin: 0;
+    }
+    .swiper-block > .buisness-switch {
+        flex-direction: column;
+    }
+    .swiper-block > .buisness-switch > .btn:nth-child(2) {
+        margin-left: 0;
+    }
+    .swiper-container {
+        padding: 10px 0;
+    }
+    .swiper-block_goto-btn {
+        margin: 0;
+        position: relative;
+        left: calc(50vw - 106px);
+    }
 }

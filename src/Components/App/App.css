@@ -34,6 +34,22 @@ h1 {
 a {
     color: rgb(0, 147, 180);
 }
+@media screen and (max-width: 240px) {
+    * {
+        display: none !important;
+    }
+    html, body, #root, .low-width-alert-message, .low-width-alert-message h4 {
+        display: block !important;
+        text-align: center;
+        margin-top: 30px;
+        max-width: 100vw;
+    }
+}
+@media screen and (min-width: 240px) {
+    .low-width-alert-message {
+        display: none;
+    }
+}
 .btn {
     height: 52px;
     width: 212px;

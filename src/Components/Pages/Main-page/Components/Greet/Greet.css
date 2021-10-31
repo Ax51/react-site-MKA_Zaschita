@@ -41,6 +41,7 @@
     line-height: 30px;
 }
 .greet__info__years {
+    padding-left: 5px;
     padding-right: 25px;
     font-size: 9rem;
     font-weight: 700;
@@ -92,3 +93,57 @@
 
 @keyframes bouce {
     from { bottom: 4% } to { bottom: 6% } }
+
+@media screen and (max-width: 810px) {
+    .greet__info {
+        top: 150px;
+    }
+    .greet__logo {
+        right: 60px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .greet__logo {
+        display: none;
+    }
+}
+@media screen and (max-width: 520px) {
+    .greet__info {
+        top: 100px;
+        left: 25px;
+    }
+}
+@media screen and (max-width: 410px) {
+    .greet__info {
+        top: 120px;
+    }
+    .greet__info__big {
+        align-self: center;
+        font-size: 1.1rem;
+        font-weight: normal;
+    }
+    .greet__info__years {
+        font-size: 6rem;
+    }
+}
+@media screen and (max-width: 380px) {
+    .greet__info {
+        margin: 0 10px;
+        left: 0px;
+        align-items:center;
+    }
+    .greet__info__big {
+        margin-right: 42px;
+    }
+    .greet__info a {
+        margin-right: 0;
+    }
+    .greet__info__stat {
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 275px) {
+    .greet__info a {
+        align-self: flex-start;
+    }
+}

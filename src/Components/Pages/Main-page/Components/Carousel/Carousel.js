@@ -18,38 +18,39 @@ import noLogo from '../../../../img/mz_ic-1.fcb9.png';
 import 'swiper/swiper.min.css';
 import './Carousel.css';
 
-SwiperCore.use([ Autoplay ]);
+SwiperCore.use([Autoplay]);
 
 const Carousel = ({ buisnessActive, setBuisnessActive }) => {
     function slides(array) {
         return array.map((item) => {
             const { name, img, shortText, site } = item;
 
-        return (
-            <SwiperSlide key={name}>
-                <NavLink to={`/services/${buisnessActive ? "buisness" : "private"}/${site}`}>
-                    <div className="swiper-slide-title_flex">
-                        <p className="swiper-slide--title">{name}</p>
-                        <img
-                            className="swiper-slide--logo"
-                            src={img || noLogo}
-                            alt="logo" />
-                    </div>
-                    <p className="swiper-slide--text">{shortText}</p>
-                </NavLink>
-            </SwiperSlide>
-        )
-    })};
+            return (
+                <SwiperSlide key={name}>
+                    <NavLink to={`/services/${buisnessActive ? "buisness" : "private"}/${site}`}>
+                        <div className="swiper-slide-title_flex">
+                            <p className="swiper-slide--title">{name}</p>
+                            <img
+                                className="swiper-slide--logo"
+                                src={img || noLogo}
+                                alt="logo" />
+                        </div>
+                        <p className="swiper-slide--text">{shortText}</p>
+                    </NavLink>
+                </SwiperSlide>
+            )
+        })
+    };
 
     return (
         <div className="swiper-block">
             <div className="swiper-title">
                 <h1>Практики коллегии</h1>
-                <div className="header-block header-block_dark"/>
+                <div className="header-block header-block_dark" />
             </div>
             <BuisnessSwitch
                 buisnessActive={buisnessActive}
-                setBuisnessActive={setBuisnessActive}/>
+                setBuisnessActive={setBuisnessActive} />
             <div className="swiper">
                 <Swiper
                     modules={[Autoplay]}
@@ -57,27 +58,35 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
                     spaceBetween={15}
                     loop={true}
                     centeredSlides={true}
-                    autoplay={{delay: 3000}}
-                    breakpoints= {{
-                        "0": {
-                            "slidesPerView": 1,
-                            "spaceBetween": 8
-                          },
-                        "640": {
-                            "slidesPerView": 2,
-                            "spaceBetween": 10
-                          },
-                          "768": {
-                            "slidesPerView": 4,
-                            "spaceBetween": 12
-                          },
-                          "1024": {
-                            "slidesPerView": 5,
+                    autoplay={{ delay: 3000 }}
+                    breakpoints={{
+                        0: {
+                            "slidesPerView": 1.2,
+                            "spaceBetween": 15,
+                        },
+                        380: {
+                            "slidesPerView": 1.5,
                             "spaceBetween": 15
-                          } 
+                        },
+                        580: {
+                            "slidesPerView": 2.1,
+                            "spaceBetween": 20
+                        },
+                        768: {
+                            "slidesPerView": 3.1,
+                            "spaceBetween": 20
+                        },
+                        1024: {
+                            "slidesPerView": 4.1,
+                            "spaceBetween": 25
+                        },
+                        1450: {
+                            "slidesPerView": 5.1,
+                            "spaceBetween": 30
                         }
+                    }
                     }>
-                        {buisnessActive ? slides(buisnessArray) : slides(privateArray)}
+                    {buisnessActive ? slides(buisnessArray) : slides(privateArray)}
                 </Swiper>
             </div>
             <NavLink to='/services'>

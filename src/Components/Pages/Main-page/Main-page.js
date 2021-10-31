@@ -15,14 +15,14 @@ const MainPage = ({ buisnessActive, setBuisnessActive }) => {
     return (
         <div className="main-page">
             <main>
-                <Greet/>
-                <Speech/>
+                {/* <Greet/>
+                <Speech/> */}
                 <Carousel
                     buisnessActive={buisnessActive}
                     setBuisnessActive={setBuisnessActive}/>
-                <Infographics/>
-                <MapApi
-                    fromMainPage={true}/>
+                {/* <Infographics/> */}
+                {/* <MapApi
+                    fromMainPage={true}/> */}
             </main>
         </div>
     );

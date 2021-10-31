@@ -2,12 +2,16 @@
     margin: 0 150px;
 
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
 }
-.buisness-switch > .btn {
+.buisness-switch > .btn:nth-child(2) {
     margin-left: 15px;
+}
+.buisness-switch > .btn {
+    margin-top: 20px;
 }
 .buisness-switch > .active {
     box-shadow: 10px 10px 20px rgb(59, 59, 59);

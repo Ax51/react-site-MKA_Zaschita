@@ -47,3 +47,43 @@
     padding: 20px 10px 0 0;
     text-align: right;
 }
+
+@media screen and (max-width: 1200px) {
+    .speech {
+        padding: 90px;
+        padding-bottom: 60px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .speech-position {
+        flex-direction: column;
+    }
+    .speech-photo {
+        width: 400px;
+        margin: 20px 0 40px 0;
+    }
+    .speech-text {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    .speech {
+        padding: 30px;
+        padding-bottom: 60px;
+    }
+}
+@media screen and (max-width: 470px) {
+    .speech-photo {
+        width: 100%
+    }
+}
+/* @media screen and (max-width: 360px) {
+    .speech-photo {
+        width: 260px;
+    }
+}
+@media screen and (max-width: 319px) {
+    .speech-photo {
+        width: 180px;
+    }
+} */

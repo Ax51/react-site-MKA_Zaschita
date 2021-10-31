@@ -6,6 +6,7 @@ import CallbackForm from '../Callback-form/Callback-form.js';
 import './header-menu.css';
 
 import logo from '../img/mz_logo-name.2c83.png'
+import miniLogo from '../img/mobile_logo_min.png'
 import phone from '../img/telephone-fill__white.png'
 import menu from '../img/mz_menu-17.3a29.png'
 import arrowUp from '../img/arrow-up-circle.png'
@@ -48,6 +49,15 @@ const HeaderMenu = ({ menuItems }) => {
                         <img
                             className="header-menu__logo-img"
                             src={logo}
+                            alt='logo'
+                            title='На главную'/>
+                    </NavLink>
+                </div>
+                <div className="header-menu__logo_mobile">
+                    <NavLink to="/" onClick={() => closeMobileMenu()}>
+                        <img
+                            className="header-menu__logo-img_mobile"
+                            src={miniLogo}
                             alt='logo'
                             title='На главную'/>
                     </NavLink>

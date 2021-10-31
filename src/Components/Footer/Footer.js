@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import logo from '../img/mz_logo-blue.4cf7.png'
+import mobileLogo from '../img/mobile_logo_min.png'
 
 import './Footer.css';
 
@@ -17,6 +18,11 @@ const Footer = (props) => {
                 <img
                     className="logo-img"
                     src={logo}
+                    alt='logo'
+                    title='На главную'/>
+                <img
+                    className="mobile-logo-img"
+                    src={mobileLogo}
                     alt='logo'
                     title='На главную'/>
             </NavLink>

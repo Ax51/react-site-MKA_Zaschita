@@ -10,7 +10,8 @@ const CallbackForm = () => {
 
     const openModal = () => {
         setModalClassName("callback-form active-modal");
-        document.body.style.overflow = "hidden";
+        if (window.innerHeight > 727 || (window.innerHeight > 588 && window.innerWidth > 769))
+            {document.body.style.overflow = "hidden"}
     }
     const closeModal = () => {
         setModalClassName("callback-form");
@@ -65,6 +66,12 @@ const CallbackForm = () => {
                                 required
                                 maxLength="300"
                                 placeholder="Сообщение" />
+                            <input 
+                                type="checkbox"
+                                required/>
+                                <label className="callback-form__form__input agreement">
+                                    Нажимая "Отправить" я соглашаюсь на обработку моих персональных данных
+                                </label>
                             <button className="btn btn-white callback-form__btn">Отправить</button>
                         </div>
                     </form>

@@ -1,6 +1,6 @@
 // modules
 import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 
 // componens
@@ -19,7 +19,7 @@ const ScrollToTop = () => {
     return null
 }
 
-ReactDOM.render(
+render(
     <React.StrictMode>
         <BrowserRouter>
             <ScrollToTop/>

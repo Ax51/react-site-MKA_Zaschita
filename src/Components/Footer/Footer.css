@@ -14,13 +14,16 @@
 .logo-img {
     width: 315px;
 }
+.mobile-logo-img {
+    display: none;
+}
 
 .flex-container {
     padding-left: 150px;
 
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-around;
 
     width: 100%;
 }
@@ -93,7 +96,7 @@
     position: relative;
     width: 240px;
     height: 340px;
-    top: -52px;
+    top: -53px;
     background: linear-gradient(rgb(42,160,188), rgb(0, 108, 134));
     z-index: 3;
 }
@@ -124,4 +127,80 @@
     border-left: 120px solid transparent;
     border-right: 120px solid transparent;
     border-top: 45px solid rgb(0, 108, 134);
+}
+
+@media screen and (max-width:1200px) {
+    .flex-container {
+        padding-left: 90px;
+    }
+}
+@media screen and (max-width:1100px) {
+    .footer {
+        margin: 0 auto;
+        padding: 50px 40px;
+    }
+}
+@media screen and (max-width:880px) {
+    .flex-container {
+        padding-left: 20px;
+    }
+}
+@media screen and (max-width:740px) {
+    .logo-img {
+        width: 250px;
+    }
+    .footer a {
+        align-self: flex-start;
+    }
+}
+@media screen and (max-width:740px) {
+    .logo-img {
+        display: none;
+    }
+    .mobile-logo-img {
+        display: block;
+        filter: drop-shadow(2px 4px 6px rgb(6, 80, 97));
+    }
+}
+@media screen and (max-width:680px) {
+    .flex-container {
+        padding-left: 0;
+    }
+}
+@media screen and (max-width:650px) {
+    .footer {
+        padding-left: 0;
+    }
+}
+@media screen and (max-width:570px) {
+    .mobile-logo-img {
+        display: none;
+    }
+    .footer {
+        padding-left: 40px;
+    }
+}
+@media screen and (max-width:420px) {
+    .footer-menu {
+        display: none;
+    }
+    .flex-container {
+        justify-content: center;
+    }
+}
+@media screen and (max-width:330px) {
+    .footer {
+        padding-left: 0;
+    }
+}
+@media screen and (max-width:285px) {
+    .svp-list_label {
+        top: -50px;
+    }
+    .svp-list_label::before {
+        display: none;
+    }
+    .svp-list_label::after {
+        display: none;
+    }
 }
