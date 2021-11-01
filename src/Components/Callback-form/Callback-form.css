@@ -1,5 +1,5 @@
 .callback-form {
-    position: absolute;
+    position: fixed;
     left: 0;
     display: none;
 
@@ -8,7 +8,7 @@
 
     background-color: rgb(0, 0, 0, .5);
 
-    min-height: 600px;
+    overflow: auto;
     color:#fff;
 }
 .active-modal {
@@ -16,18 +16,11 @@
     z-index: 3300;
 }
 
-.callback-form_flex {
-    margin: 90px 150px 60px 150px;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    
-}
 .callback-form__form {
+    margin: auto;
+    margin-top: calc((100vh - 499px) / 2);
     padding: 30px;
-
-    position: relative;
+    max-width: 650px;
 
     display: flex;
 
@@ -44,19 +37,7 @@
 
     text-shadow: 1px 2px 2px black;
 }
-@media screen and (max-width: 768px) {
-    .callback-form__form {
-        flex-direction: column;
-    }
-    .callback-form {
-        min-height: 820px;
-    }
-}
-@media screen and (max-width:768px) and (max-height: 820px) {
-    .callback-form_flex {
-        margin: 0;
-    }
-}
+
 .shadow {
     background-color: rgba(0, 0, 0, .4);
 }
@@ -85,11 +66,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-@media screen and (max-width: 768px) {
-    .callback-form__form > .block-1 {
-        margin-right: 0;
-    }
 }
 
 .callback-form__form > .block-2 {
@@ -169,8 +145,10 @@
     margin-bottom: 20px;
     padding:10px;
 
-    width: 278px;
-    height: 240px;
+    box-sizing: border-box;
+
+    width: 300px;
+    height: 262px;
 
     border: 1px solid #fff;
     border-radius: 10px;
@@ -215,8 +193,41 @@
         right: calc(50vw - 1020px);
     }
 }
-@media screen and (max-width:360px) {
+
+/* @media screen and (max-width:768px) and (max-height: 820px) {
     .callback-form__form {
-        overflow-x: hidden;
+        margin: 0 auto;
+    }
+} */
+@media screen and (max-width:362px) {
+    .callback-form__form {
+        padding: 30px calc((100vw - 302px) / 2);
+    }
+}
+@media screen and (max-width:302px) {
+    .block-1, .callback-form__form > .block-1 > *, .block-2 > * {
+        max-width: 235px;
+    }
+    .callback-form__form > button {
+        left: 20px;
+    }
+}
+@media screen and (max-height:499px) {
+    .callback-form__form {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 715px) {
+    .callback-form__form {
+        margin: 0 auto;
+    }
+    .callback-form__form {
+        flex-direction: column;
+    }
+    .callback-form__form {
+        max-width: 300px;
+    }
+    .callback-form__form > .block-1 {
+        margin-right: 0;
     }
 }

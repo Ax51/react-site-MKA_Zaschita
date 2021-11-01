@@ -65,11 +65,11 @@
 }
 
 .infographics-header {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
 }
 
 .infographics-header_mirror {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     text-align: end;
 }
 
@@ -126,7 +126,8 @@
     border-top: 90px solid transparent;
     border-right: 90px solid rgb(0, 147, 180);
     transform: rotate(30deg);
-    top: 70px;
+    /* top: 70px; */
+    bottom: 10px;
     left: 800px;
 }
 
@@ -220,13 +221,6 @@
         border: 1px solid rgb(0, 108, 133);
         background-color: rgb(164, 205, 214);
         z-index: -1;
-    }
-
-    .infographics-component_wrapper {
-        max-height: 250px;
-    }
-    .infographics-main-body {
-        max-height: 205px;
     }
 }
 @media screen and (max-width: 390px) {
