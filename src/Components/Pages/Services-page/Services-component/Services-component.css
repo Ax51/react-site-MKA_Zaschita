@@ -8,7 +8,7 @@
     height: 180px;
     background-color: rgb(240,240,240);
     overflow: hidden;
-    transition: 1s;
+    transition: 0.25s;
 }
 .services-card_wrapper a {
     text-decoration: none;

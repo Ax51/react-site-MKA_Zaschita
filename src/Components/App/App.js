@@ -115,8 +115,8 @@ function App() {
                         <NotFoundPage/>
                 </Route>
             </Switch>
-            {/* <Footer
-                menuItems={menuItems}/> */}
+            <Footer
+                menuItems={menuItems}/>
             <div className="low-width-alert-message"><h4>Сайт не может быть отображен на Вашем устройстве!</h4></div>
         </>
     );
