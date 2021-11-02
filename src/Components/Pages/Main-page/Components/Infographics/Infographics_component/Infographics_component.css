@@ -126,7 +126,6 @@
     border-top: 90px solid transparent;
     border-right: 90px solid rgb(0, 147, 180);
     transform: rotate(30deg);
-    /* top: 70px; */
     bottom: 10px;
     left: 800px;
 }
@@ -197,8 +196,8 @@
         content: '';
         position: absolute;
         top: 73px;
-        left: -42px;
-        width: 2px;
+        left: -43px;
+        width: 4px;
         height: 65%;
         background-color: rgb(235, 246,249);
         z-index: 2;

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import CallbackForm from '../Callback-form/Callback-form.js';
@@ -8,15 +8,20 @@ import './header-menu.css';
 import logo from '../img/mz_logo-name.2c83.png'
 import miniLogo from '../img/mobile_logo_min.png'
 import phone from '../img/telephone-fill__white.png'
-import menu from '../img/mz_menu-17.3a29.png'
 import arrowUp from '../img/arrow-up-circle.png'
 
 const HeaderMenu = ({ menuItems }) => {
 
     const myRef = useRef(null);
-    const scrollUpFunc = () => myRef.current.scrollIntoView()
+    const scrollUpFunc = () => myRef.current.scrollIntoView();
 
-    const [ mobileMenuActive, setMobileMenuActive ] = useState("header-menu_mobile-menu_wrapper");        
+    const [mobileMenuActive, setMobileMenuActive] = useState(false);
+
+    useEffect(() => {  // block scrolling while mobile menu opened
+        mobileMenuActive
+            ? document.body.style.overflow = "hidden"
+            : document.body.style.overflow = ""
+    })
 
     function menuList() {
         return menuItems.map((item) =>
@@ -25,44 +30,47 @@ const HeaderMenu = ({ menuItems }) => {
             </li>)
     }
 
-    function toggleMobileMenu () {
-        if (mobileMenuActive === "header-menu_mobile-menu_wrapper") {
-            setMobileMenuActive("header-menu_mobile-menu_wrapper_active");
-            document.body.style.overflow = "hidden";
-        } else {
-            setMobileMenuActive("header-menu_mobile-menu_wrapper");
-            document.body.style.overflow = "";
-        }
+    function closeMobileMenu() {
+        setMobileMenuActive(false)
     }
 
-    function closeMobileMenu () {
-        setMobileMenuActive("header-menu_mobile-menu_wrapper");
-        document.body.style.overflow = "";
+    function toggleMobileMenu() {
+        setMobileMenuActive(!mobileMenuActive)
     }
 
     return (
         <>
             <div ref={myRef} />  {/* div with zero position to scroll to */}
+            <input /* don't move this element! */
+                id="header-menu_mobile-menu-checkbox"
+                type="checkbox"
+                onChange={toggleMobileMenu}
+                checked={mobileMenuActive} />
+            <label
+                htmlFor="header-menu_mobile-menu-checkbox"
+                className="header-menu_mobile-menu-label">
+                <div className="header-menu_mobile-menu-icon" />
+            </label>
             <header className="header-menu">
-                <div className="header-menu__logo">
-                    <NavLink to="/" onClick={() => closeMobileMenu()}>
-                        <img
-                            className="header-menu__logo-img"
-                            src={logo}
-                            alt='logo'
-                            title='На главную'/>
-                    </NavLink>
-                </div>
-                <div className="header-menu__logo_mobile">
-                    <NavLink to="/" onClick={() => closeMobileMenu()}>
-                        <img
-                            className="header-menu__logo-img_mobile"
-                            src={miniLogo}
-                            alt='logo'
-                            title='На главную'/>
-                    </NavLink>
-                </div>
-                <>
+                <div className="header-menu_wrapper">
+                    <div className="header-menu__logo">
+                        <NavLink to="/" onClick={() => closeMobileMenu()}>
+                            <img
+                                className="header-menu__logo-img"
+                                src={logo}
+                                alt='logo'
+                                title='На главную' />
+                        </NavLink>
+                    </div>
+                    <div className="header-menu__logo_mobile">
+                        <NavLink to="/" onClick={() => closeMobileMenu()}>
+                            <img
+                                className="header-menu__logo-img_mobile"
+                                src={miniLogo}
+                                alt='logo'
+                                title='На главную' />
+                        </NavLink>
+                    </div>
                     <div className="header-menu__menu-section">
                         <ul>
                             {menuList()}
@@ -74,31 +82,20 @@ const HeaderMenu = ({ menuItems }) => {
                             <li><a href="tel:+74992526522">8(499)252-65-22</a></li>
                         </ul>
                     </div>
-                </> 
-                <div className="header-menu__menu-burger">
-                    <a href="tel:+74957696889">
-                        <button>
-                            <img
-                                src={phone}
-                                alt="call us" />
-                        </button>
-                    </a>
-                    <button
-                        onClick={toggleMobileMenu}>
-                        <img
-                            src={menu}
-                            alt='menu' />
-                    </button>
                 </div>
-            </header>
-            <div className={mobileMenuActive} /* "header-menu_mobile-menu_wrapper" */
-                onClick={toggleMobileMenu}>
-                <div className="header-menu_mobile-menu">
+                <a href="tel:+74957696889" className="header-menu_mobile_phone">
+                    <img
+                        src={phone}
+                        alt="call us" />
+                </a>
+                <div 
+                    className="header-menu_mobile-menu"
+                    onClick={closeMobileMenu}>
                     <ul>
                         {menuList()}
                     </ul>
                 </div>
-            </div>
+            </header>
             <button className="scroll-up-btn"
                 onClick={scrollUpFunc}>
                 <img
