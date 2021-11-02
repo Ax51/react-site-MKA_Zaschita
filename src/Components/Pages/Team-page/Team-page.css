@@ -146,3 +146,6 @@
 .team-page_personal-file {
     margin-top: 50px;
 }
+.team-page_personal-file_wrapper::-webkit-scrollbar {
+    display: block;
+}

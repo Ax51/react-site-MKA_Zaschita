@@ -285,6 +285,9 @@
     .header-menu_mobile_phone {
         display: none;
     }
+    .header-menu_mobile-menu-label {
+        display: none;
+    }
     .header-menu_mobile-menu-icon {
         display: none;
     }
