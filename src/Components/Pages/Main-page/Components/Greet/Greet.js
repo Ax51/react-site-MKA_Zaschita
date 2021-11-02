@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 // pics
 import mouseImg from "../../../../img/mz_mouse.7e7e.png";
+// import animatedMouse from "../../../../img/animated_scroll_mouse_transparent.gif";
 import logo from "../../../../img/mz_logo-wh.a5b7.png";
 
 // data
@@ -81,14 +82,18 @@ const Greet = () => {
                     </button>
                 </NavLink>
             </div>
-            <img
+            <div>
+                <img
                 className="greet__scroll"
                 src={mouseImg}
                 alt="scroll" />
-            <img
+            </div>
+            <div>
+                <img
                 className="greet__logo"
                 src={logo}
                 alt="logo" />
+            </div>
         </div>
     );
 };

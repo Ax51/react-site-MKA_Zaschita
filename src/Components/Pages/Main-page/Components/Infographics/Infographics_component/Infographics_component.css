@@ -12,7 +12,7 @@
 }
 
 .infographics-component_wrapper:hover {
-    max-height: 400px;
+    max-height: 800px;
     transition: 0.3s;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .infographics-main-body:hover {
-    max-height: 400px;
+    max-height: 800px;
     transition: 0.3s;
 }
 
@@ -199,7 +199,7 @@
         top: 73px;
         left: -42px;
         width: 2px;
-        height: 60%;
+        height: 65%;
         background-color: rgb(235, 246,249);
         z-index: 2;
     }
@@ -254,10 +254,4 @@
         font-size: 1.4rem;
     }
 
-    .infographics-component_wrapper:hover {
-        max-height: 800px;
-    }
-    .infographics-main-body:hover {
-        max-height: 800px;
-    }
 }
