@@ -62,7 +62,6 @@ const TeamPage = () => {
         }
     }
 
-
     function advList() {
         onFilterDbArray()
         if (filteredDbArray.length >= 1) {
@@ -103,7 +102,7 @@ const TeamPage = () => {
 
     }
 
-    function openAdvComponent() {
+    function openAdvComponent() {  // modal advComponent
         if (selectedAdv) {
             document.body.style.overflow = "hidden";
             return (

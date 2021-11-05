@@ -4,7 +4,7 @@
 }
 
 .adv-name {
-    padding: 5px 0;
+    padding: 10px 0;
 }
 .adv-name > span {
     text-decoration: none;
@@ -22,8 +22,7 @@
 }
 .team-page_body > ul {
     list-style: none;
-    columns: 3;
-    line-height: 2rem;
+    columns: auto 300px;
 }
 .team-page_adv-index {
     font-family: 'IBM Plex Mono', monospace;
@@ -38,6 +37,7 @@
 
 }
 .team-page_empty-search > ul {
+    margin-left: 20px;
     list-style: none;
 }
 .team-page_empty-search > ul > li {
@@ -148,4 +148,67 @@
 }
 .team-page_personal-file_wrapper::-webkit-scrollbar {
     display: block;
+}
+
+@media screen and (max-width: 1220px) {
+    .team-page {
+        padding: 120px 80px 60px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .team-page {
+        padding: 110px 60px 60px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .team-page {
+        padding: 100px 10px 60px 60px;
+    }
+    .team-page_search {
+        margin-right: 50px;
+    }
+    .team-page_search > input:focus {
+        width: calc(100vw - 200px);
+        min-width: 170px;
+    }
+    .team-page_empty-search > h1 {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 684px) {
+    .team-page_body > ul {
+        margin-left: calc(50vw - 200px);
+    }
+    .team-page_search > input {
+        height: 7vh;
+        min-height: 30px;
+        max-height: 55px;
+    }
+    .team-page_search > input:focus {
+        height: 6vh;
+        min-height: 30px;
+        max-height: 55px;
+    }
+}
+@media screen and (max-width: 470px) {
+    .team-page {
+        padding: 100px 40px 40px;
+    }
+    .team-page_search {
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 400px) {
+    .team-page {
+        padding: 100px 20px 40px;
+    }
+    .team-page_header > *, .team-page_empty-search > h1 {
+        font-size: 1.7rem;
+    }
+    .team-page_body > ul {
+        margin-left: 0;
+    }
+    .team-page_search-input:focus::placeholder {
+        font-size: 1rem;
+    }
 }
