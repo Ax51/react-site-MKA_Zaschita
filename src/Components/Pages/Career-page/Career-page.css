@@ -11,6 +11,29 @@
     text-indent: 25px;
     line-height: 1.4rem;
 }
+.career-page_text > ul {
+    margin-left: 20px;
+}
 .career-page_text > ul > li {
     margin-bottom: 15px;
+}
+@media screen and (max-width: 1000px) {
+    .career-page {
+        padding: 100px 80px 40px 80px;
+    }
+}
+@media screen and (max-width: 560px) {
+    .career-page {
+        padding: 100px 40px 40px 40px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .career-page_header > * {
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width: 380px) {
+    .career-page_header > * {
+        font-size: 1.5rem;
+    }
 }
