@@ -328,6 +328,11 @@
         display: none;
     }
 }
+@media screen and (max-width: 768px) {
+    .scroll-up-btn {
+        display: none;
+    }
+}
 @media screen and (max-width: 560px) {
     .header-menu__logo {
         display: none;
