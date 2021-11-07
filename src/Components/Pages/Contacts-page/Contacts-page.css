@@ -1,26 +1,37 @@
 .contacts-page {
-    padding: 120px 130px 0 130px;
+    padding: 120px 100px 0;
     margin-bottom: 20px;
 }
 .contacts-page_wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .contacts-page_buttons > .btn {
     margin: 10px;
     width: 130px;
     height: 40px;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
+}
+.contacts-page_header {
+    margin-bottom: 20px;
 }
 
 .contacts-page_contacts {
     margin: 20px 40px;
     padding: 40px;
     box-shadow: 15px 15px 20px gray;
-    border: 1px solid rgba(240,240,240,0.5);
+    border: 1px solid rgb(240, 240, 240);
     line-height: 2rem;
-    width: 700px;
+    max-width: 700px;
     overflow: auto;
+}
+.contacts-page_contacts_anchor {
+    position: relative;
+    top: -135px;
+}
+.contacts-page_contacts > .header-block {
+    margin-bottom: 15px;
 }
 
 .contacts-page_buttons {
@@ -41,4 +52,52 @@
     box-shadow: 10px 10px 20px rgb(59, 59, 59);
     background-color: rgb(0, 108, 133);
     color: #fff;
+}
+@media screen and (max-width:1000px) {
+    .contacts-page {
+        padding: 100px 45px 0;
+    }
+    .contacts-page_contacts {
+        margin: 0;
+        padding: 30px;
+    }
+    .contacts-page_contacts_anchor {
+        top: -115px;
+    }
+}
+@media screen and (max-width:650px) {
+    .contacts-page {
+        padding: 100px 35px 0;
+    }
+    .contacts-page_wrapper {
+        flex-direction: column;
+    }
+    .contacts-page_contacts {
+        margin-top: 20px;
+        padding: 20px;
+    }
+    .contacts-page_buttons {
+        max-width: unset;
+    }
+    .contacts-page_buttons > .btn {
+        width: 110px;
+        margin: 5px;
+    }
+    .contacts-page_contacts_anchor {
+        top: -110px;
+    }
+}
+@media screen and (max-width:460px) {
+    .contacts-page_header > h1 {
+        font-size: 1.6rem;
+    }
+    .contacts-page {
+        padding: 100px 20px 0;
+    }
+    .contacts-page_contacts {
+        padding: 15px;
+    }
+    .contacts-page_contacts_anchor {
+        top: -95px;
+    }
 }
