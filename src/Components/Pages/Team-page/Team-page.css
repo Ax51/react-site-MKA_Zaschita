@@ -134,17 +134,19 @@
 /* modal personal file */
 .team-page_personal-file_wrapper {
     position: fixed;
+    left: 0;
     z-index: 5;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
     
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 .team-page_personal-file {
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .team-page_personal-file_wrapper::-webkit-scrollbar {
     display: block;

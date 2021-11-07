@@ -13,6 +13,10 @@
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
+    flex-wrap: wrap;
+}
+.adv-component_wrapper > * {
+    margin: 10px;
 }
 .adv-component_wrapper_modal {
     align-items: center;
@@ -24,11 +28,11 @@
     top: 100px;
 }
 .adv-component_adv-pic_modal {
-    margin-right: 20px;
     width: 350px;
 }
 .adv-component_table_modal {
     max-height: 70vh;
+    min-height: 350px;
     overflow-y: auto;
 }
 .adv-component_table {
@@ -37,7 +41,7 @@
     border-radius: 25px;
     padding:40px 50px 20px 50px;
     max-width: 500px;
-
+    box-sizing: border-box;
 }
 .adv-component_table > table {
     border-collapse: collapse;
