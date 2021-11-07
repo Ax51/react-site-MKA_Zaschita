@@ -195,9 +195,11 @@
 }
 #header-menu_mobile-menu-checkbox:checked ~ header > .header-menu_mobile-menu > ul > li:nth-child(3) {
     transition: left ease-out 0.3s .2s;
-}#header-menu_mobile-menu-checkbox:checked ~ header > .header-menu_mobile-menu > ul > li:nth-child(4) {
+}
+#header-menu_mobile-menu-checkbox:checked ~ header > .header-menu_mobile-menu > ul > li:nth-child(4) {
     transition: left ease-out 0.3s .3s;
-}#header-menu_mobile-menu-checkbox:checked ~ header > .header-menu_mobile-menu > ul > li:nth-child(5) {
+}
+#header-menu_mobile-menu-checkbox:checked ~ header > .header-menu_mobile-menu > ul > li:nth-child(5) {
     transition: left ease-out 0.3s .4s;
 }
 
@@ -319,6 +321,11 @@
 @media screen and (max-width:290px) {
     .header-menu_mobile-menu > ul > li > a {
         font-size: 1rem;
+    }
+}
+@media screen and (orientation:portrait) {
+    .scroll-up-btn {
+        display: none;
     }
 }
 @media screen and (max-width: 560px) {
