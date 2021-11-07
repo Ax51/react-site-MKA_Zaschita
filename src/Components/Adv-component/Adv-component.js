@@ -46,11 +46,11 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
                 className={!modal ? "adv-component_adv-pic" : "adv-component_adv-pic_modal"}
                 src={adv.photo ?? noPhoto}
                 alt="Фотография адвоката"
-                onClick={(event) => {if (modal) event.stopPropagation()}} />
+                onClick={(event) => {if (modal && document.body.clientWidth > 529) event.stopPropagation()}} />  {/* if width > 529px, user can't close modal window via tapping on picture or table */}
             <div className={`adv-component_table ${modal ? "adv-component_table_modal" : ""}`}
-                onClick={(event) => {if (modal) event.stopPropagation()}} >
+                onClick={(event) => {if (modal && document.body.clientWidth > 529) event.stopPropagation()}} >  {/* if width > 529px, user can't close modal window via tapping on picture or table */}
                 <table>
-                    <thead><tr><td colSpan="2"><b><h2>{fullName}</h2></b></td></tr></thead>
+                    <thead><tr><td colSpan="2"><b><h2 className="adv-component_adv-name">{fullName}</h2></b></td></tr></thead>
                     <tbody>
                         <tr><td><b>Реестровый номер в реестре Минюста:</b></td><td className="adv-component_table_body_data">{reestrID}</td></tr>
                         {adv.cert_ID ? <tr><td><b>Номер удостоверения:</b></td><td className="adv-component_table_body_data">{certID}</td></tr> : null}

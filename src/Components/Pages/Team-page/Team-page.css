@@ -139,7 +139,8 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     
     display: flex;
     justify-content: center;
