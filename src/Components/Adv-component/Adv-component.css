@@ -23,7 +23,7 @@
 }
 .adv-component_adv-pic {
     width: 400px;
-    align-self: center;
+    align-self: start;
     position: sticky;
     top: 100px;
 }
@@ -113,6 +113,7 @@
     }
     .adv-component_adv-pic {
         position: static;
+        align-self: center;
         max-width: 450px;
         width: 90%;
     }
@@ -126,7 +127,7 @@
         padding: 30px 20px 10px;
     }
 }
-@media screen and (max-width:360px) {
+@media screen and (max-width:530px) {
     .adv-component_table > table tbody > tr > td {
         display: block;
     }
