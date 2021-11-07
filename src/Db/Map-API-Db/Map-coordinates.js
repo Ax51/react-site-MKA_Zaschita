@@ -2,7 +2,7 @@ const coordinates = {
     branch_femida:{
         geometry:[55.787973, 37.511266],
         iconContent:'',
-        iconCaption:"Филиал Фемида",
+        iconCaption:'Филиал "Фемида"',
         preset:"islands#blueCircleDotIconWithCaption",
         balloonText:"Заведующий филиалом «Фемида»:<br><b>Романенков Андрей Федорович</b>",
         link:"",
@@ -12,7 +12,7 @@ const coordinates = {
     branch_interlawer:{
         geometry:[55.720672, 37.417643],
         iconContent:'',
-        iconCaption:"Филиал Интерлоер",
+        iconCaption:'Филиал "Интерлоер"',
         preset:"islands#blueCircleDotIconWithCaption",
         balloonText:"Заведующий филиалом «Интерлоер»:<br><b>Охраменко Владимир Владимирович</b>",
         link:"http://www.interlawyer.info",
