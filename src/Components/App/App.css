@@ -28,6 +28,12 @@ html {
     max-width: 1920px;
     margin: 0 auto;
 }
+body {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
 h1 {
     font-weight: 700;
 }
