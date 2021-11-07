@@ -1,6 +1,7 @@
 // modules
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom'
+import smoothscroll from 'smoothscroll-polyfill'
 
 // Components
 import HeaderMenu from '../Header-menu/header-menu.js';
@@ -92,6 +93,7 @@ function App() {
         )
     });
 
+    smoothscroll.polyfill()
     // console.log(Object.keys(teamDb).filter(i => !teamDb[i]["shown"])); 
     // uncomment these line, if you want to see in console.log array of hidden adv
 

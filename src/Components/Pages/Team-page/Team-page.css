@@ -23,7 +23,7 @@
 .team-page_body > ul {
     list-style: none;
     columns: auto 300px;
-    column-width: 300px;
+    column-width: 300px; /* prevent apple iPad bug, where it automatically rewrites columns width */
 }
 .team-page_adv-index {
     font-family: 'IBM Plex Mono', monospace;

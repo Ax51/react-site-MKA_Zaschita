@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import CallbackForm from '../Callback-form/Callback-form.js';
@@ -12,8 +12,9 @@ import arrowUp from '../img/arrow-up-circle.png'
 
 const HeaderMenu = ({ menuItems }) => {
 
-    const myRef = useRef(null);
-    const scrollUpFunc = () => myRef.current.scrollIntoView();
+    const scrollUpFunc = e => {
+        window.scroll({top:0, left:0, behavior:'smooth'})
+    };
 
     const [mobileMenuActive, setMobileMenuActive] = useState(false);
 
@@ -40,7 +41,6 @@ const HeaderMenu = ({ menuItems }) => {
 
     return (
         <>
-            <div ref={myRef} />  {/* div with zero position to scroll to */}
             <input /* don't move this element! */
                 id="header-menu_mobile-menu-checkbox"
                 type="checkbox"
