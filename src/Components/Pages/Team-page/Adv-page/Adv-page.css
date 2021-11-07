@@ -5,44 +5,25 @@
 .adv-page_wrapper {
     padding-top: 50px;
 }
-    /* display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+@media screen and (max-width:1385px) {
+    .adv-page {
+        padding: 110px 80px 60px;
+    }
 }
-.adv-page_wrapper > img {
-    width: 450px;
-
+@media screen and (max-width:1100px) {
+    .adv-page {
+        padding: 110px 40px 40px;
+    }
+    .adv-page_wrapper {
+        padding-top: 0;
+    }
 }
-.adv-page_table {
-    border:13px solid rgb(235,246,249);
-    border-radius: 25px;
-    padding:40px 50px 20px 50px;
-    max-width: 500px;
-
+@media screen and (max-width:1100px) {
+    .adv-page {
+        padding: 100px 0px 30px;
+    }
+    .adv-page > ._nav-line {
+        margin-left: 40px;
+        margin-right: 45px;
+    }
 }
-.adv-page_table > table {
-    border-collapse: collapse;
-}
-.adv-page_table > table > thead > tr > td {
-    padding-bottom: 40px;
-    text-align: center;
-    font-size: 1.3rem;
-}
-.adv-page_table > table tbody > tr > td {
-    padding: 7px 0;
-    
-}
-.adv-page_table > table tbody > tr > td > a {
-    color:black;
-    text-decoration: none;
-    transition: 1s;
-}
-.adv-page_table > table tbody > tr > td > a:hover {
-    color: gray;
-    text-decoration: underline;
-    transition: 0.3s;
-}
-.adv-page_table_body_data {
-    text-align: end;
-    line-height: 1.4rem;
-} */
