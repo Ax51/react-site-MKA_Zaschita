@@ -95,8 +95,11 @@
 
     border: 1px solid #000;
     border-radius: 10px;
+    -webkit-appearance: none;
+    appearance: none;
 
-    box-shadow: 0 15px 15px -10px gray;
+    -webkit-box-shadow: 0px 15px 15px -10px gray;
+    box-shadow: 0px 15px 15px -10px gray;
     transition: 0.7s;
     z-index: 3;
     cursor: pointer;
@@ -119,7 +122,10 @@
     text-align: start;
     color: gray;
     background-color: rgb(245,245,245);
-    box-shadow: 0 0 0 3px rgb(42, 160, 188),
+    -webkit-box-shadow: 0px 0px 0px 3px rgb(42, 160, 188),
+        10px 10px 20px 10px gray,
+        0px 0px 5px 1px rgb(42,160,188) inset;
+    box-shadow: 0px 0px 0px 3px rgb(42, 160, 188),
         10px 10px 20px 10px gray,
         0px 0px 5px 1px rgb(42,160,188) inset;
     border-radius: 25px;
