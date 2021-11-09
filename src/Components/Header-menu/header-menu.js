@@ -13,7 +13,7 @@ import arrowUp from '../img/arrow-up-circle.png'
 const HeaderMenu = ({ menuItems }) => {
 
     const scrollUpFunc = e => {
-        window.scroll({top:0, left:0, behavior:'smooth'})
+        window.scroll({ top: 0, left: 0, behavior: 'smooth' })
     };
 
     const [mobileMenuActive, setMobileMenuActive] = useState(false);
@@ -25,10 +25,21 @@ const HeaderMenu = ({ menuItems }) => {
     })
 
     function menuList() {
-        return menuItems.map((item) =>
-            <li key={item.name}>
-                <NavLink to={`/${item.site}`}>{item.name}</NavLink>
-            </li>)
+        return menuItems.map(item => {
+            if (item.name === 'Наш коллектив') {
+                return (
+                    <li key={item.name}>
+                        <NavLink to={`/${item.site}`}>{item.name}</NavLink>
+                    </li>
+                )
+            } else {
+                return (
+                    <li key={item.name}>
+                        <NavLink to={`/${item.site}`} onClick={() => document.body.style = { overflow: '' }}>{item.name}</NavLink>
+                    </li>
+                )
+            }
+        })
     }
 
     function closeMobileMenu() {
@@ -88,7 +99,7 @@ const HeaderMenu = ({ menuItems }) => {
                         src={phone}
                         alt="call us" />
                 </a>
-                <div 
+                <div
                     className="header-menu_mobile-menu"
                     onClick={closeMobileMenu}>
                     <ul>
