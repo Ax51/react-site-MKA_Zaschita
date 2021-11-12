@@ -4,7 +4,7 @@
 
 .services-card {
     padding: 30px;
-    width: 240px;
+    width: 210px;
     height: 180px;
     background-color: rgb(240,240,240);
     overflow: hidden;
@@ -30,4 +30,45 @@
     font-size: 1.3rem;
     font-weight: 500;
     color: black;
+}
+@media screen and (max-width:1050px) {
+    .services-card {
+        padding: 15px 25px;
+        width: 150px;
+        height: 130px;
+    }
+    .services-card img {
+        width: 50px;
+    }
+    .services-card p {
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:490px) {
+    .services-card {
+        padding: 5px 65px 5px 15px;
+        width: calc(100vw - 135px);
+        height: 60px;
+        display: flex;
+    }
+    .services-card img {
+        width: 50px;
+        position: absolute;
+        right: 35px;
+    }
+    .services-card p {
+        margin-top: 0;
+        margin: auto 0;
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:290px) {
+    .services-card {
+        padding: 5px 15px 5px 15px;
+        width: calc(100vw - 85px);
+    }
+    .services-card img {
+        display: none;
+    }
 }
