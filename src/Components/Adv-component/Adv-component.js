@@ -11,27 +11,27 @@ import noPhoto from '../../img/empty-person.png'
 import './Adv-component.css'
 
 export default function AdvComponent({ advocate, modal = false }) {  //  Pay attention on modal modifier in this component! Nevertheless, it mainly changes styles
-    const adv = Db[advocate],
+    const adv = Db[ advocate ],
         fullName = `${adv.surname ?? ""} ${adv.name ?? ""} ${adv.middlename ?? ""}`,
         thisYear = new Date().getFullYear(),
         totalYears = thisYear - adv.gen_exp,
-        advYears = (thisYear - adv.adv_exp) > 0 ? (thisYear - adv.adv_exp) : (thisYear - adv.adv_exp + 1);
-        
-    const telLink = adv.contacts?.tel?.map((i) => <React.Fragment key={i}><a className="adv-component_tel" href={`tel:${i}`}>{`${i}`}</a><br /></React.Fragment>),
-        rewards = adv.rewards?.map((i) => <div className="adv-component_rewards" key={i}>{i}<div className="header-sub-block header-block_dark"/></div>),
-        reestrID = <a id="adv-component_href" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0,2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
-            {adv.reestr_ID}</a>,
-        certID = <a id="adv-component_href" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0,2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
-        {adv.cert_ID}</a>;
+        advYears = ( thisYear - adv.adv_exp ) > 0 ? ( thisYear - adv.adv_exp ) : ( thisYear - adv.adv_exp + 1 );
 
-    function correctSpelling(years) {
+    const telLink = adv.contacts?.tel?.map(i => <React.Fragment key={i}><a className="adv-component_tel" href={`tel:${i}`}>{`${i}`}</a><br /></React.Fragment>),
+        rewards = adv.rewards?.map(i => <div className="adv-component_rewards" key={i}>{i}<div className="header-sub-block header-block_dark" /></div>),
+        reestrID = <a id="adv-component_href" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
+            {adv.reestr_ID}</a>,
+        certID = <a id="adv-component_href" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
+            {adv.cert_ID}</a>;
+
+    function correctSpelling( years ) {
         let correctSpell;
         if ( years >= 10 && years <= 20 ) {
             correctSpell = "лет"
         } else {
             if (( years % 10 ) === 1 ) {
                 correctSpell = "год"
-            } else if ( ( years % 10 ) > 1 && ( years % 10 ) < 5 ) {
+            } else if (( years % 10 ) > 1 && ( years % 10 ) < 5 ) {
                 correctSpell = "года"
             } else {
                 correctSpell = "лет"
@@ -46,9 +46,9 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
                 className={!modal ? "adv-component_adv-pic" : "adv-component_adv-pic_modal"}
                 src={adv.photo ?? noPhoto}
                 alt="Фотография адвоката"
-                onClick={(event) => {if (modal && document.body.clientWidth > 529) event.stopPropagation()}} />  {/* if width > 529px, user can't close modal window via tapping on picture or table */}
+                onClick={event => { if (modal && document.body.clientWidth > 529) event.stopPropagation() }} />  {/* if width > 529px, user can't close modal window via tapping on picture or table */}
             <div className={`adv-component_table ${modal ? "adv-component_table_modal" : ""}`}
-                onClick={(event) => {if (modal && document.body.clientWidth > 529) event.stopPropagation()}} >  {/* if width > 529px, user can't close modal window via tapping on picture or table */}
+                onClick={event => { if (modal && document.body.clientWidth > 529) event.stopPropagation() }} >  {/* if width > 529px, user can't close modal window via tapping on picture or table */}
                 <table>
                     <thead><tr><td colSpan="2"><b><h2 className="adv-component_adv-name">{fullName}</h2></b></td></tr></thead>
                     <tbody>
