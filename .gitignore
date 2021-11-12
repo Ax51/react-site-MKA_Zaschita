@@ -8,6 +8,13 @@
 # testing
 /coverage
 
+# pics
+/img
+.png
+.jpg
+.gif
+.svg
+
 # production
 /build
 
