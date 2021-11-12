@@ -44,6 +44,7 @@ const HeaderMenu = ({ menuItems }) => {
 
     function closeMobileMenu() {
         setMobileMenuActive(false)
+        document.body.style = { overflow: '' }
     }
 
     function toggleMobileMenu() {
