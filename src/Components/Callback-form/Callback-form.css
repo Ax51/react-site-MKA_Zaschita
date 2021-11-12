@@ -42,15 +42,34 @@
     background-color: rgba(0, 0, 0, .4);
 }
 .callback-form__form > button {
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 30px;
     background-color: transparent;
     border: none;
     position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform .3s;
+}
+.callback-form__form_close-btn, .callback-form__form_close-btn::before {
+    display: block;
+    width: 30px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #fff;
+}
+.callback-form__form_close-btn {
+    transform: rotate(45deg);
+}
+.callback-form__form_close-btn::before {
+    content: '';
+    transform: rotate(90deg);
 }
 .callback-form__form > button:hover {
-    cursor: pointer;
+    transform: rotate(180deg);
+    transition: transform .3s;
 }
+
 .callback-form__form > div > h1 {
     max-width: 300px;
 

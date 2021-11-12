@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import './Callback-form.css';
 
-import close from '../img/close_big.png'
-
 const CallbackForm = () => {
     const [modalClassName, setModalClassName] = useState("callback-form");
 
@@ -31,9 +29,7 @@ const CallbackForm = () => {
                     onSubmit={closeModal}>
                     <button
                         onClick={closeModal}>
-                        <img
-                            src={close}
-                            alt='close' />
+                        <div className="callback-form__form_close-btn" />
                     </button>
                     <div className="block-1">
                         <h1>Заказать консультацию</h1>
