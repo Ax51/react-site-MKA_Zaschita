@@ -2,9 +2,9 @@
 import React, { useState, useRef } from "react";
 
 // Components
-import MapApi from "../../Map-API/Map-API.js";
-import Db from '../../../Db/Map-API-Db/Map-coordinates.js';
-import NavLine from "../../Nav-line/Nav-line.js";
+import MapApi from "../../Components/Map-API/Map-API.js";
+import Db from '../../Db/Map-API-Db/Map-coordinates.js';
+import NavLine from "../../Components/Nav-line/Nav-line.js";
 
 // styles
 import './Contacts-page.css';

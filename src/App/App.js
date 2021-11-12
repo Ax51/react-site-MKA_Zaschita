@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import smoothscroll from 'smoothscroll-polyfill'
 
 // Components
-import HeaderMenu from '../Header-menu/header-menu.js';
+import HeaderMenu from '../Components/Header-menu/header-menu.js';
 
 import MainPage from '../Pages/Main-page/Main-page.js';
 import AboutPage from '../Pages/About-page/About-page.js';
@@ -16,12 +16,12 @@ import ContactsPage from '../Pages/Contacts-page/Contacts-page.js';
 import AdvPage from '../Pages/Team-page/Adv-page/Adv-page.js';
 import NotFoundPage from '../Pages/Not-found-page/Not-found-page.js';
 
-import Footer from '../Footer/Footer.js';
+import Footer from '../Components/Footer/Footer.js';
 
 // data
-import teamDb from '../../Db/Team-Db/Team-Db.json';
-import privateServiceDb from '../../Db/Carousel-Db/Private-carousel_items.json';
-import buisnessServiceDb from '../../Db/Carousel-Db/Buisness-carousel_items.json';
+import teamDb from '../Db/Team-Db/Team-Db.json';
+import privateServiceDb from '../Db/Carousel-Db/Private-carousel_items.json';
+import buisnessServiceDb from '../Db/Carousel-Db/Buisness-carousel_items.json';
 
 // styles
 import './App.css';

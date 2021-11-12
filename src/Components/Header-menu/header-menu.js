@@ -5,10 +5,10 @@ import CallbackForm from '../Callback-form/Callback-form.js';
 
 import './header-menu.css';
 
-import logo from '../img/mz_logo-name.2c83.png'
-import miniLogo from '../img/mobile_logo_min.png'
-import phone from '../img/telephone-fill__white.png'
-import arrowUp from '../img/arrow-up-circle.png'
+import logo from '../../img/mz_logo-name.2c83.png'
+import miniLogo from '../../img/mobile_logo_min.png'
+import phone from '../../img/telephone-fill__white.png'
+import arrowUp from '../../img/arrow-up-circle.png'
 
 const HeaderMenu = ({ menuItems }) => {
 

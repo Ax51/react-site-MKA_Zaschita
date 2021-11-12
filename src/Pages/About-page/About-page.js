@@ -2,7 +2,7 @@
 import React from "react";
 
 // components
-import NavLine from "../../Nav-line/Nav-line";
+import NavLine from "../../Components/Nav-line/Nav-line";
 
 // styles
 import './About-page.css';

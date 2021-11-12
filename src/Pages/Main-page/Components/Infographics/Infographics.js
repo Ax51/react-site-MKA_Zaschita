@@ -6,7 +6,7 @@ import InfographicsComponent from './Infographics_component/Infographics_compone
 // pics
 
 // data
-import Db from '../../../../../Db/Infographics-Db/InfographicsDb.json';
+import Db from '../../../../Db/Infographics-Db/InfographicsDb.json';
 
 // styles
 import './Infographics.css';

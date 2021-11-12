@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 //pics
-import arrowRight from "../img/arrow-right.png";
+import arrowRight from "../../img/arrow-right.png";
 
 //styles
 import './Nav-line.css';

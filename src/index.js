@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 
 // componens
-import App from './Components/App/App.js';
+import App from './App/App.js';
 
 // styles
 import './index.css';

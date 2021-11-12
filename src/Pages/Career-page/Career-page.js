@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 // components
-import NavLine from "../../Nav-line/Nav-line";
+import NavLine from "../../Components/Nav-line/Nav-line";
 
 // styles
 import './Career-page.css';

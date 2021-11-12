@@ -2,13 +2,13 @@
 import React from "react";
 
 // components
-import NavLine from "../../Nav-line/Nav-line";
-import ServicesComponent from "./Services-component/Services-component";
-import BuisnessSwitch from "../../Buisness-switch/Buisness-switch";
+import NavLine from "../../Components/Nav-line/Nav-line.js";
+import ServicesComponent from "./Services-component/Services-component.js";
+import BuisnessSwitch from "../../Components/Buisness-switch/Buisness-switch.js";
 
 // data
-import buisnessDb from '../../../Db/Carousel-Db/Buisness-carousel_items.json'
-import privateDb from '../../../Db/Carousel-Db/Private-carousel_items.json'
+import buisnessDb from '../../Db/Carousel-Db/Buisness-carousel_items.json'
+import privateDb from '../../Db/Carousel-Db/Private-carousel_items.json'
 
 // pics
 import noLogo from '../../img/mz_ic-1.fcb9.png'

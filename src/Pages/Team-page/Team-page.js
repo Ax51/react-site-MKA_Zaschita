@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 
 // components
-import NavLine from "../../Nav-line/Nav-line";
-import AdvComponent from "../../Adv-component/Adv-component";
+import NavLine from "../../Components/Nav-line/Nav-line.js";
+import AdvComponent from "../../Components/Adv-component/Adv-component.js";
 // import AdvPage from "./Adv-page/Adv-page.js";
 
 // Data
-import Db from '../../../Db/Team-Db/Team-Db.json';
+import Db from '../../Db/Team-Db/Team-Db.json';
 
 // styles
 import './Team-page.css';

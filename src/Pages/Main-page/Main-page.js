@@ -6,7 +6,7 @@ import Greet from "./Components/Greet/Greet";
 import Speech from "./Components/Speech/Speech";
 import Carousel from "./Components/Carousel/Carousel";
 import Infographics from "./Components/Infographics/Infographics";
-import MapApi from "../../Map-API/Map-API.js";
+import MapApi from "../../Components/Map-API/Map-API.js";
 
 // styles
 import './Main-page.css';

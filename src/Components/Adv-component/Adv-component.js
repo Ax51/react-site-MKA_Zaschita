@@ -5,7 +5,7 @@ import React from "react";
 import Db from '../../Db/Team-Db/Team-Db.json'
 
 // Pics
-import noPhoto from '../img/empty-person.png'
+import noPhoto from '../../img/empty-person.png'
 
 // styles
 import './Adv-component.css'

@@ -8,8 +8,8 @@ import mouseImg from "../../../../img/mz_mouse.7e7e.png";
 import logo from "../../../../img/mz_logo-wh.a5b7.png";
 
 // data
-import branchesDb from '../../../../../Db/Map-API-Db/Map-coordinates.js';
-import teamDb from '../../../../../Db/Team-Db/Team-Db.json';
+import branchesDb from '../../../../Db/Map-API-Db/Map-coordinates.js';
+import teamDb from '../../../../Db/Team-Db/Team-Db.json';
 
 // styles
 import './Greet.css';

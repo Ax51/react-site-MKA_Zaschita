@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import logo from '../img/mz_logo-blue.4cf7.png'
-import mobileLogo from '../img/mobile_logo_min.png'
+import logo from '../../img/mz_logo-blue.4cf7.png'
+import mobileLogo from '../../img/mobile_logo_min.png'
 
 import './Footer.css';
 

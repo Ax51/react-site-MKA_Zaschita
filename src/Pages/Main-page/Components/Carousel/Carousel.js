@@ -5,11 +5,11 @@ import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Components
-import BuisnessSwitch from '../../../../Buisness-switch/Buisness-switch.js';
+import BuisnessSwitch from '../../../../Components/Buisness-switch/Buisness-switch.js';
 
 // Data
-import buisnessArray from '../../../../../Db/Carousel-Db/Buisness-carousel_items.json';
-import privateArray from '../../../../../Db/Carousel-Db/Private-carousel_items.json';
+import buisnessArray from '../../../../Db/Carousel-Db/Buisness-carousel_items.json';
+import privateArray from '../../../../Db/Carousel-Db/Private-carousel_items.json';
 
 // pics
 import noLogo from '../../../../img/mz_ic-1.fcb9.png';
