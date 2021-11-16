@@ -60,7 +60,7 @@ const Greet = () => {
                         <div className="greet__info__stat__num">
                             1995
                         </div>
-                        {correctAgeSpelling("лет",companyAge)} основания
+                        год основания
                     </div>
                     <div>
                         <div className="greet__info__stat__num">
