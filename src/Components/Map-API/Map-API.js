@@ -28,7 +28,7 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
                 properties={{
                     iconContent: Db[i].iconContent,
                     iconCaption: Db[i].iconCaption,
-                    balloonContentHeader:`<a href=${Db[i].link || "http://мказащита.рф"}>${Db[i].iconCaption || Db[i].iconContent}</a>`,
+                    balloonContentHeader:`<a href=${Db[i].link || "http://мказащита.рф"} target="_blank" rel="noreferrer">${Db[i].iconCaption || Db[i].iconContent}</a>`,
                     balloonContentBody:`${Db[i].balloonText}${balloonImg}`
                 }}
                 options={{
@@ -47,7 +47,7 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
             properties={{
                 iconContent: someBranch.iconContent,
                 iconCaption: someBranch.iconCaption,
-                balloonContentHeader:`<a href=${someBranch.link || "http://мказащита.рф"}>${someBranch.iconCaption || someBranch.iconContent}</a>`,
+                balloonContentHeader:`<a href=${someBranch.link || "http://мказащита.рф"} target="_blank" rel="noreferrer">${someBranch.iconCaption || someBranch.iconContent}</a>`,
                 balloonContentBody:`${someBranch.balloonText}
                 ${someBranch.balloonImg ? `<br><img src=${someBranch.balloonImg} height="200" width="250">` : ""}`
             }}

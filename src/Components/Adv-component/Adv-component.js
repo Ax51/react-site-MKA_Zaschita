@@ -19,9 +19,9 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
 
     const telLink = adv.contacts?.tel?.map(i => <React.Fragment key={i}><a className="adv-component_tel" href={`tel:${i}`}>{`${i}`}</a><br /></React.Fragment>),
         rewards = adv.rewards?.map(i => <div className="adv-component_rewards" key={i}>{i}<div className="header-sub-block header-block_dark" /></div>),
-        reestrID = <a id="adv-component_href" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
+        reestrID = <a id="adv-component_href" target="_blank" rel="noreferrer" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
             {adv.reestr_ID}</a>,
-        certID = <a id="adv-component_href" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
+        certID = <a id="adv-component_href" target="_blank" rel="noreferrer" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
             {adv.cert_ID}</a>;
 
     function correctSpelling( years ) {
