@@ -22,13 +22,17 @@
     margin: 10px;
 }
 .adv-component_adv-pic {
-    width: 400px;
+    max-width: 400px;
+    max-height: 550px;
+    border-radius: 20px;
     align-self: start;
     position: sticky;
     top: 100px;
 }
 .adv-component_adv-pic_modal {
-    width: 350px;
+    border-radius: 20px;
+    max-width: 350px;
+    max-height: 520px;
     align-self: center;
 }
 .adv-component_table {
