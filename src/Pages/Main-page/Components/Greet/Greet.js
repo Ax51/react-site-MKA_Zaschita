@@ -55,22 +55,22 @@ const Greet = () => {
                     <span className="greet__info__years">{companyAge}</span>
                     {correctAgeSpelling("год", companyAge)} защищаем Ваши интересы
                 </p>
-                <div className="greet__info__stat">
+                <div className="greet__info__stat">   
                     <div>
                         <div className="greet__info__stat__num">
-                            1995
+                            <NavLink to="/about">1995</NavLink>
                         </div>
                         год основания
                     </div>
                     <div>
                         <div className="greet__info__stat__num">
-                            {numberOfAdv}
+                        <NavLink to="/team">{numberOfAdv}</NavLink>
                         </div>
                         {correctSpelling('Адвокат', numberOfAdv)} в реестре
                     </div>
                     <div>
                         <div className="greet__info__stat__num">
-                            {numberOfBranches}
+                        <NavLink to="/contacts">{numberOfBranches}</NavLink>
                         </div>
                         {correctSpelling('Филиал', numberOfBranches)} в Москве и МО
                     </div>

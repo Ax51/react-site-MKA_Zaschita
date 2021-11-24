@@ -63,9 +63,11 @@
         0 0 10px rgb(100, 100, 100),
         0 0 15px rgb(70, 70, 70);
 }
-.greet__info__stat__num {
+.greet__info__stat__num * {
     font-size: 1.8rem;
     font-weight: 500;
+    color:#fff;
+    text-decoration-line: none;
     font-style: italic;
 }
 
