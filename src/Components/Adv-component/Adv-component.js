@@ -19,9 +19,15 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
 
     const telLink = adv.contacts?.tel?.map(i => <React.Fragment key={i}><a className="adv-component_tel" href={`tel:${i}`}>{`${i}`}</a><br /></React.Fragment>),
         rewards = adv.rewards?.map(i => <div className="adv-component_rewards" key={i}>{i}<div className="header-sub-block header-block_dark" /></div>),
-        reestrID = <a id="adv-component_href" target="_blank" rel="noreferrer" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
+        reestrID = adv.reestr_ID?.slice(0, 2) === "77"
+            ? <a id="adv-component_href" target="_blank" rel="noreferrer" href={`https://www.advokatymoscow.ru/reestr/members/?q%5Bnum%5D=${adv.reestr_ID}&q%5Bname%5D=`}>
+            {adv.reestr_ID}</a>
+            : <a id="adv-component_href" target="_blank" rel="noreferrer" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
             {adv.reestr_ID}</a>,
-        certID = <a id="adv-component_href" target="_blank" rel="noreferrer" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
+        certID = adv.reestr_ID?.slice(0, 2) === "77"
+            ? <a id="adv-component_href" target="_blank" rel="noreferrer" href={`https://www.advokatymoscow.ru/reestr/members/?q%5Bnum%5D=${adv.reestr_ID}&q%5Bname%5D=`}>
+            {adv.cert_ID}</a>
+            : <a id="adv-component_href" target="_blank" rel="noreferrer" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
             {adv.cert_ID}</a>;
 
     function correctSpelling( years ) {
