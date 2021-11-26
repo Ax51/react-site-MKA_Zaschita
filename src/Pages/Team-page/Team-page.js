@@ -13,7 +13,7 @@ import Db from '../../Db/Team-Db/Team-Db.json';
 import './Team-page.css';
 
 const TeamPage = () => {
-    
+
     const minLenghtSearch = 0, // this number affects the deadzone search. To instant search set this value to 0.
         DbArray = Object.keys(Db),
         sortedDbArray = DbArray.sort((a, b) => Db[a].surname > Db[b].surname ? 1 : -1).filter(i => i !== "_comment" && Db[i]["shown"]);
@@ -36,20 +36,21 @@ const TeamPage = () => {
                 const adv = Db[item]
                 return (adv["surname"] + adv["name"] + adv["middlename"] + adv["reestr_ID"] + adv["cert_ID"]).toLowerCase().indexOf(inputValue.slice(1).toLowerCase()) > -1
             })
-        } else if (inputValue.slice(0, 1) === "№") {
+        } else if (inputValue.slice(0, 1) === "№" || inputValue.slice(0, 1) === "#") {
             // search by branch
-            if (inputValue.length > 1) {
-                filteredDbArray = sortedDbArray.filter((item) => {
-                    const adv = Db[item]
-                    return adv["branch"]?.toLowerCase().indexOf(inputValue.slice(1).toLowerCase()) > -1
-                })
-            } else {
-                // If only "№" entered, shows no branch lawyers
-                filteredDbArray = sortedDbArray.filter((item) => {
-                    const adv = Db[item]
-                    return adv["branch"] === null
-                })
-            }
+            filteredDbArray = sortedDbArray.filter(item => {
+                const adv = Db[item]["branch"]
+                if (inputValue.length > 1) {
+                    if (typeof adv === "number") {
+                        return adv.toString().length === (inputValue.length - 1) ? adv.toString().indexOf(inputValue.slice(1, inputValue.length)) > -1 : false
+                    } else if (typeof adv === "string") {
+                        return adv?.slice(0, inputValue.length).toLowerCase().indexOf(inputValue.slice(1).toLowerCase()) > -1
+                    } else return false;
+                } else {
+                    // If only "№" entered, shows no branch lawyers
+                    return adv === null
+                }
+            })
         } else if (inputValue.length <= minLenghtSearch && inputValue.slice(0, 1) !== "!") {
             // plug for search without required minimum letters lenght entered
             filteredDbArray = sortedDbArray
@@ -108,7 +109,7 @@ const TeamPage = () => {
             return (
                 <div className="team-page_personal-file_wrapper"
                     onClick={() => setSelectedAdv(null)}>
-                    <div className="team-page_personal-file">    
+                    <div className="team-page_personal-file">
                         <AdvComponent
                             advocate={selectedAdv}
                             modal={true}
@@ -128,7 +129,7 @@ const TeamPage = () => {
                 <NavLine
                     pathArray={[
                         { name: "Наш коллектив", path: "team" }
-                    ]}/>
+                    ]} />
                 <div className="team-page_header">
                     <h1>Наши Адвокаты</h1>
                     <div className="header-block header-block_dark" />
