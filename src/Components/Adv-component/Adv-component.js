@@ -15,7 +15,8 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
         fullName = `${adv.surname ?? ""} ${adv.name ?? ""} ${adv.middlename ?? ""}`,
         thisYear = new Date().getFullYear(),
         totalYears = thisYear - adv.gen_exp,
-        advYears = ( thisYear - adv.adv_exp ) > 0 ? ( thisYear - adv.adv_exp ) : ( thisYear - adv.adv_exp + 1 );
+        advYears = ( thisYear - adv.adv_exp ) > 0 ? ( thisYear - adv.adv_exp ) : ( thisYear - adv.adv_exp + 1 ),
+        branch = typeof adv.branch === "number" ? `Филиал № ${adv.branch}` : `Филиал "${adv.branch}"` ;
 
     const telLink = adv.contacts?.tel?.map(i => <React.Fragment key={i}><a className="adv-component_tel" href={`tel:${i}`}>{`${i}`}</a><br /></React.Fragment>),
         rewards = adv.rewards?.map(i => <div className="adv-component_rewards" key={i}>{i}<div className="header-sub-block header-block_dark" /></div>),
@@ -60,7 +61,7 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
                     <tbody>
                         <tr><td><b>Реестровый номер в реестре Минюста:</b></td><td className="adv-component_table_body_data">{reestrID}</td></tr>
                         {adv.cert_ID ? <tr><td><b>Номер удостоверения:</b></td><td className="adv-component_table_body_data">{certID}</td></tr> : null}
-                        {adv.branch ? <tr><td><b>Состоит в филиале:</b></td><td className="adv-component_table_body_data">{adv.branch}</td></tr> : null}
+                        {adv.branch ? <tr><td><b>Состоит в филиале:</b></td><td className="adv-component_table_body_data">{branch}</td></tr> : null}
                         {adv.degree ? <tr><td><b>Образование:</b></td><td className="adv-component_table_body_data">{adv.degree}</td></tr> : null}
                         {adv.gen_exp ? <tr><td><b>Общий стаж по юриспруденции:</b></td><td className="adv-component_table_body_data">{`${totalYears} ${correctSpelling(totalYears)}`}</td></tr> : null}
                         {adv.adv_exp ? <tr><td><b>Стаж адвокатской деятельности:</b></td><td className="adv-component_table_body_data">{`${advYears > 0 ? advYears : "<1"} ${correctSpelling(advYears)}`}</td></tr> : null}
