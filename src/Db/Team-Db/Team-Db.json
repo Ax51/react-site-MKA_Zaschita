@@ -1796,7 +1796,7 @@
         "share":true,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2019/12/YAkushko-Natalya-YUrevna-2-scaled-e1619539940599-400x530.jpg"
     },
     "77/13931":{
         "name":"Александр",
@@ -1813,7 +1813,7 @@
         "share":true,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2019/12/Bakurskij-Aleksandr-Aleksandrovich-2-scaled-e1619548003815-400x530.jpg"
     },
     "50/5412":{
         "name":"Александр",
@@ -2595,7 +2595,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2021/02/Aleksandrov-Andrej-Vitalevich-3-scaled-e1619529241879-400x530.jpg"
     },
     "77/12410":{
         "name":"Юлия",
@@ -2612,7 +2612,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2021/02/Aleksandrova-YUliya-Andreevna-3-scaled-e1619530136588-400x530.jpg"
     },
     "77/14172":{
         "name":"Наиль",
@@ -2646,7 +2646,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2021/02/Anikina-Natalya-Anatolevna-Advokat-MKA-Zashhita-Filial-2-scaled-e1619529720533-400x530.jpg"
     },
     "77/12104":{
         "name":"Сергей",
@@ -2663,7 +2663,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2019/12/Burlachenko-Sergej-2-400x530.jpg"
     },
     "77/14450":{
         "name":"Диана",
@@ -2698,7 +2698,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2019/12/Dobrosmyslova-Nina-Aleksandrovna-1-scaled-e1619533193446-400x530.jpg"
     },
     "77/12186":{
         "name":"Полина",
@@ -2715,7 +2715,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2021/02/Zajtseva-Polina-Konstantinovna-1-1-scaled-e1619539625712-400x530.jpg"
     },
     "77/15471":{
         "name":"Борис",
@@ -2749,7 +2749,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2019/12/Krasavin-Stanislav-Konstantinovich-2-scaled-e1619544996552-400x530.jpg"
     },
     "77/15627":{
         "name":"Андрей",
@@ -2817,7 +2817,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2019/12/Morozov-Roman-Dmitrievich-2-scaled-e1619540118550-400x530.jpg"
     },
     "77/15500":{
         "name":"Павел",
@@ -2851,7 +2851,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2019/12/Podlipskaya-Tatyana-Albertovna-400x530.jpg"
     },
     "77/12363":{
         "name":"Антон",
@@ -2919,7 +2919,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2019/12/Irina-Ryabinina-1-400x530.jpg"
     },
     "77/1420":{
         "name":"Евгений",
@@ -2970,7 +2970,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2019/12/Tarabarov-Evgenij-2-scaled-e1619533964629-400x530.jpg"
     },
     "77/11635":{
         "name":"Ольга",
@@ -2981,13 +2981,13 @@
         "cert_ID":"12980",
         "branch":[2, true],
         "degree":null,
-        "gen_exp":null,
-        "adv_exp":null,
-        "specialization":null,
+        "gen_exp":2000,
+        "adv_exp":2001,
+        "specialization":["Уголовное право","Преступления в сфере экономики","Правовое сопровождение бизнеса","Арбитражные споры","Гражданское право"],
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2019/12/Tregub-Olga-Anatolevna-1-1-scaled-e1619544716628-400x530.jpg"
     },
     "77/12129":{
         "name":"Роман",
@@ -3055,7 +3055,7 @@
         "share":false,
         "rewards":null,
         "contacts":null,
-        "photo":null
+        "photo":"https://xn---2-6kcab2bica3ac1f2a9d.xn--p1ai/wp-content/uploads/2021/02/SHipunova-Olga-Vdadislavovna-1-scaled-e1619534301102-400x530.jpg"
     },
     "77/319":{
         "name":"Оксана",
@@ -3207,7 +3207,9 @@
         "specialization":["Уголовное право","Гражданское право","Арбитражные споры","Защита чести"],
         "share":false,
         "rewards":["Золотая медаль имени Ф.Н. Плевако", "Золотая медаль «За заслуги в защите прав и свобод граждан» I степени", "Серебряная медаль «За заслуги в защите прав и свобод граждан» II степени", "Орден «За верность адвокатскому долгу»", "Золотая медаль «Международный адвокат»", "Орден французской адвокатуры", "Международный орден «Золотой Орел»", "Почетная грамота ФПА РФ", "Почетная грамота Министерства юстиции РФ", "Почетная грамота Московской городской Думы", "Медаль Министерства юстиции РФ «За усердие» II степени", "Медаль Министерства юстиции РФ «За содействие»", "Орден «М.Ю. Лермонтов»", "Золотая медаль «Святой Георгий»", "Медаль «За вклад в сплочение Российского мира»", "Почетный знак «Союз писателей России»", "Медаль имени Г.Р. Державина."],
-        "contacts":null,
+        "contacts":{
+            "site":""
+        },
         "photo":"http://мказащита.рф/bitrix/templates/colegia_zashita_4/i/polyakov.jpg"
     },
     "77/11828":{
