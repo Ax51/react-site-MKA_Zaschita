@@ -39,7 +39,7 @@ const TeamPage = () => {
         } else if (inputValue.slice(0, 1) === "№" || inputValue.slice(0, 1) === "#") {
             // search by branch
             filteredDbArray = sortedDbArray.filter(item => {
-                const adv = Db[item]["branch"]
+                const adv = Db[item]["branch"]?.[0] ?? null
                 if (inputValue.length > 1) {
                     if (typeof adv === "number") {
                         return adv.toString().length === (inputValue.length - 1) ? adv.toString().indexOf(inputValue.slice(1, inputValue.length)) > -1 : false

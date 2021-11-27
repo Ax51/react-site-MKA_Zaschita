@@ -16,7 +16,15 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
         thisYear = new Date().getFullYear(),
         totalYears = thisYear - adv.gen_exp,
         advYears = ( thisYear - adv.adv_exp ) > 0 ? ( thisYear - adv.adv_exp ) : ( thisYear - adv.adv_exp + 1 ),
-        branch = typeof adv.branch === "number" ? `Филиал № ${adv.branch}` : `Филиал "${adv.branch}"` ;
+        branch = adv.branch
+            ? adv.branch[1]
+                ? typeof adv.branch[0] === "number"
+                    ? `Заведующий филиалом № ${adv.branch[0]}`
+                    : `Заведующий филиалом "${adv.branch[0]}"`
+                : typeof adv.branch[0] === "number"
+                    ? `Филиал № ${adv.branch[0]}`
+                    : `Филиал "${adv.branch[0]}"`
+            : null ;
 
     const telLink = adv.contacts?.tel?.map(i => <React.Fragment key={i}><a className="adv-component_tel" href={`tel:${i}`}>{`${i}`}</a><br /></React.Fragment>),
         rewards = adv.rewards?.map(i => <div className="adv-component_rewards" key={i}>{i}<div className="header-sub-block header-block_dark" /></div>),
@@ -59,7 +67,7 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
                 <table>
                     <thead><tr><td colSpan="2"><b><h2 className="adv-component_adv-name">{fullName}</h2></b></td></tr></thead>
                     <tbody>
-                        <tr><td><b>Реестровый номер в реестре Минюста:</b></td><td className="adv-component_table_body_data">{reestrID}</td></tr>
+                        <tr><td><b>Реестровый номер в реестре Минюста РФ:</b></td><td className="adv-component_table_body_data">{reestrID}</td></tr>
                         {adv.cert_ID ? <tr><td><b>Номер удостоверения:</b></td><td className="adv-component_table_body_data">{certID}</td></tr> : null}
                         {adv.branch ? <tr><td><b>Состоит в филиале:</b></td><td className="adv-component_table_body_data">{branch}</td></tr> : null}
                         {adv.degree ? <tr><td><b>Образование:</b></td><td className="adv-component_table_body_data">{adv.degree}</td></tr> : null}
