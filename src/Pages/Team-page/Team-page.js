@@ -13,10 +13,14 @@ import Db from '../../Db/Team-Db/Team-Db.json';
 import './Team-page.css';
 
 const TeamPage = () => {
+    const collator = new Intl.Collator();
 
     const minLenghtSearch = 0, // this number affects the deadzone search. To instant search set this value to 0.
         DbArray = Object.keys(Db),
-        sortedDbArray = DbArray.sort((a, b) => Db[a].surname > Db[b].surname ? 1 : -1).filter(i => i !== "_comment" && Db[i]["shown"]);
+        sortedDbArray = DbArray
+            .filter(i => i !== "_comment" && Db[i]["shown"])
+            // .sort((a, b) => collator.compare(Db[a].surname,Db[b].surname) === 0 ? collator.compare(Db[a].name,Db[b].name) : collator.compare(Db[a].surname,Db[b].surname));
+            .sort((a, b) => collator.compare(Db[a].surname + Db[a].name,Db[b].surname + Db[b].name));
 
     let [inputValue, setInputValue] = useState(""),
         [selectedAdv, setSelectedAdv] = useState(null),
