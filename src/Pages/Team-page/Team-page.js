@@ -13,7 +13,7 @@ import Db from '../../Db/Team-Db/Team-Db.json';
 import './Team-page.css';
 
 const TeamPage = () => {
-    const collator = new Intl.Collator();
+    const collator = new Intl.Collator("ru",{ sensitivity: "base" });
 
     const minLenghtSearch = 0, // this number affects the deadzone search. To instant search set this value to 0.
         DbArray = Object.keys(Db),
