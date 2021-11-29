@@ -7,12 +7,7 @@
     justify-content: center;
     align-items: center;
 }
-.contacts-page_buttons > .btn {
-    margin: 10px;
-    width: 130px;
-    height: 40px;
-    font-size: 0.9rem;
-}
+
 .contacts-page_header {
     margin-bottom: 20px;
 }
@@ -20,12 +15,40 @@
 .contacts-page_contacts {
     margin: 20px 40px;
     padding: 40px;
+    padding-left: 60px;
+    background-color: rgb(245, 253, 255);
     box-shadow: 15px 15px 20px gray;
-    border: 1px solid rgb(240, 240, 240);
     line-height: 2rem;
-    max-width: 700px;
     overflow: auto;
 }
+
+.contacts-page_contacts > h3 {
+    margin-bottom: 0;
+    position: relative;
+}
+.contacts-page_contacts > h3 .bi {
+    position: absolute;
+    left: -37px;
+    font-size: 1.5rem;
+    color:rgb(0, 147, 180);
+}
+.contacts-page_contacts > p {
+    margin-left: 10px;
+}
+._contacts_show-payment {
+    width: 6rem;
+    height: 1.5rem;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 0.6rem;
+    box-shadow: 2px 2px 5px gray;
+}
+._contacts_show-payment-active {
+    color:#fff;
+    background-color: rgb(0, 108, 133);
+}
+
 .contacts-page_contacts_anchor {
     position: relative;
     top: -135px;
@@ -38,11 +61,16 @@
     max-width: 300px;
 
     display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
     justify-content: center;
 }
-
+.contacts-page_buttons > .btn {
+    margin: 10px;
+    width: 130px;
+    height: 40px;
+    font-size: 0.9rem;
+}
 .contacts-page_buttons > .active {
     box-shadow: 10px 10px 20px rgb(59, 59, 59);
     background-color: rgb(0, 108, 133);
@@ -60,6 +88,7 @@
     .contacts-page_contacts {
         margin: 0;
         padding: 30px;
+        padding-left: 60px;
     }
     .contacts-page_contacts_anchor {
         top: -115px;
@@ -75,8 +104,11 @@
     .contacts-page_contacts {
         margin-top: 20px;
         padding: 20px;
+        padding-left: 60px;
     }
     .contacts-page_buttons {
+        flex-direction: row-reverse;
+        flex-wrap: wrap-reverse;
         max-width: unset;
     }
     .contacts-page_buttons > .btn {
@@ -96,6 +128,16 @@
     }
     .contacts-page_contacts {
         padding: 15px;
+    }
+    .contacts-page_contacts > h3 {
+        text-indent: 30px;
+    }
+    .contacts-page_contacts > p {
+        margin-left: 0;
+        text-align: center;
+    }
+    .contacts-page_contacts > h3 .bi {
+        left: -65px;
     }
     .contacts-page_contacts_anchor {
         top: -95px;

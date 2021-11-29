@@ -1,3 +1,10 @@
+import TeamDb from '../Team-Db/Team-Db.json'
+function showBranchHead(branch) {
+    const branchArray = Object.keys(TeamDb).filter(i => TeamDb[i]?.branch?.[0] === branch),
+        managerID = branchArray.filter(i => TeamDb[i].branch[1])[0],
+        managerName = `${TeamDb[managerID].surname} ${TeamDb[managerID].name} ${TeamDb[managerID].middlename}`;
+    return [ managerName, managerID ]
+}
 const coordinates = {
     branch_femida:{
         geometry:[55.787973, 37.511266],
@@ -7,7 +14,14 @@ const coordinates = {
         balloonText:"Заведующий филиалом «Фемида»:<br><b>Романенков Андрей Федорович</b>",
         link:"",
         balloonImg:"",
-        comment:"гор. Москва, ул. Куусинена д.19А каб. 303; Основная связь по телефонам: +79051629660 и +79152962929; эл. почта: andrrom@mail.ru; Понедельник-пятница с 09.00 до 18.00 (без обеда)"
+        comment:{
+            head:showBranchHead("Фемида"),
+            adress:["г. Москва, ул. Куусинена д.19А каб. 303",""],
+            workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
+            phones:["+7(905)162-96-60", "+7(915)296-29-29"],
+            email:["andrrom@mail.ru"],
+            payment:null
+        }
     },
     branch_interlawer:{
         geometry:[55.720672, 37.417643],
@@ -17,7 +31,14 @@ const coordinates = {
         balloonText:"Заведующий филиалом «Интерлоер»:<br><b>Охраменко Владимир Владимирович</b>",
         link:"http://www.interlawyer.info",
         balloonImg:"",
-        comment:"Филиал Интерлоер, гор. Москва,  ул. Кутузова, д. 2,/111"
+        comment:{
+            head:showBranchHead("Интерлоер"),
+            adress:["г. Москва,  ул. Кутузова, д. 2,/111",""],
+            workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
+            phones:["+7(495)226-09-54","+7(495)760-65-53"],
+            email:null,
+            payment:['Филиал "Адвокатская консультация "ИНТЕРЛОЕР""','Московская коллегия адвокатов "ЗАЩИТА"','ПАО "ПРОМСВЯЗЬБАНК',"БИК: 044525555","ИНН: 7744000812","КПП: 772201001","Корреспондентский счёт: 30101810400000000555","SWIFT: PRMSRUMM","Расчетный счет RUR: 40703810000000003520","Текущий расчетный счет: 40703840200000000393", "Валютный счет  USD$: 40703840800001000394"]
+        }
     },
     branch_18:{
         geometry:[55.859802, 37.664860],
@@ -27,7 +48,14 @@ const coordinates = {
         balloonText:"Заведующий филиалом № 18:<br><b>Охрименко Дмитрий Александрович</b>",
         link:"",
         balloonImg:"",
-        comment:"Филиал № 18, гор. Москва, ул. Радужная, д.11 кв.61"
+        comment:{
+            head:showBranchHead(18),
+            adress:["г. Москва, ул. Радужная, д.11 кв.61"],
+            workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
+            phones:null,
+            email:null,
+            payment:null
+        }
     },
     branch_8:{
         geometry:[55.976398, 37.178700],
@@ -37,7 +65,14 @@ const coordinates = {
         balloonText:"Заведующий филиалом № 8<br><b>Ряховский Олег Александрович</b>",
         link:"",
         balloonImg:"",
-        comment:"Филиал № 8, гор. Зеленоград, Заводская 16 а, офис 3"
+        comment:{
+            head:showBranchHead(8),
+            adress:["г. Зеленоград, Заводская 16 а, офис 3"],
+            workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
+            phones:null,
+            email:null,
+            payment:null
+        }
     },
     branch_5:{
         geometry:[56.185873, 36.977101],
@@ -47,7 +82,14 @@ const coordinates = {
         balloonText:"Заведующий филиалом № 5:<br><b>Миронов Анатолий Николаевич</b>",
         link:"http://mkasol.ru",
         balloonImg:"",
-        comment:"Филиал № 5, Московская обл., г. Солнечногорск, ул. Советская, д.9, кв.7"
+        comment:{
+            head:showBranchHead(5),
+            adress:["Московская обл., г. Солнечногорск, ул. Советская, д.9, кв.7"],
+            workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
+            phones:null,
+            email:null,
+            payment:null
+        }
     },
     branch_4:{
         geometry:[55.742448, 37.546390],
@@ -57,7 +99,14 @@ const coordinates = {
         balloonText:"Заведующий филиалом № 4:<br><b>Денисов Сергей Иванович</b>",
         link:"",
         balloonImg:"",
-        comment:"Филиал № 4, г. Москва, ул.  Студенческая, 26/3 стр.1"
+        comment:{
+            head:showBranchHead(4),
+            adress:["г. Москва, ул.  Студенческая, 26/3 стр.1"],
+            workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
+            phones:null,
+            email:null,
+            payment:null
+        }
     },
     branch_3:{
         geometry:null,
@@ -67,7 +116,14 @@ const coordinates = {
         balloonText:"Заведующий филиалом № 3:<br><b>Жидков Сергей Георгиевич</b>",
         link:"",
         balloonImg:"",
-        comment:"Филиал № 3, г. Москва, ?????"
+        comment:{
+            head:showBranchHead(3),
+            adress:["г. Москва, ул. Поклонная, д.11, стр. 1"],
+            workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
+            phones:null,
+            email:null,
+            payment:null
+        }
     },
     branch_2:{
         geometry:[55.775819, 37.698538],
@@ -77,7 +133,14 @@ const coordinates = {
         balloonText:"Заведующая филиалом № 2:<br><b>Трегуб Ольга Анатольевна</b>",
         link:"",
         balloonImg:"https://avatars.mds.yandex.net/get-altay/859900/2a0000015f57ecdcf9997bcd4ad7e1420b57/XXXL",
-        comment:"Филиал № 2, г. Москва, Рубцовская набережная, д. 4, корп. 3"
+        comment:{
+            head:showBranchHead(2),
+            adress:["г. Москва, Рубцовская набережная, д. 4, корп. 3"],
+            workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
+            phones:null,
+            email:null,
+            payment:null
+        }
     },
     branch_1:{
         geometry:[55.767379, 37.584293],
@@ -87,7 +150,14 @@ const coordinates = {
         balloonText:"Здесь располагается Головой Офис",
         link:"http://мказащита.рф",
         balloonImg:"https://avatars.mds.yandex.net/get-altay/2838749/2a000001734cd3aca10546fd4c4c22f8e8dd/XXXL",
-        comment:"Центральный офис + филиал № 1, г. Москва, ул. Зоологическая, д.30 стр. 2, пом /офис III"
+        comment:{
+            head:showBranchHead(1),
+            adress:["123056 г. Москва, ул. Зоологическая, д. 30, стр. 2, офис III","https://yandex.ru/maps/-/CCUqE8rpdC"],
+            workingTime:["Пн-Пт: 10:00-17:00", "Сб-Вс: Выходной"],
+            phones:["8(495)769-68-89","8(499)252-65-22"],
+            eMail:["advokaty.zaschita@yandex.ru"],
+            payment:['Московская коллегия адвокатов "Защита"','ПАО "КРОСНАБАНК"',"БИК:","ОГРН","ИНН","КПП","Корр.счёт","SWIFT","расчетный счет"]
+        }
     }
 }
 
