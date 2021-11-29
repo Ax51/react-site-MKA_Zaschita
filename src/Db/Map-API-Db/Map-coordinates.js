@@ -19,7 +19,7 @@ const coordinates = {
             adress:["г. Москва, ул. Куусинена д.19А каб. 303",""],
             workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
             phones:["+7(905)162-96-60", "+7(915)296-29-29"],
-            email:["andrrom@mail.ru"],
+            eMail:["andrrom@mail.ru"],
             payment:null
         }
     },
@@ -36,7 +36,7 @@ const coordinates = {
             adress:["г. Москва,  ул. Кутузова, д. 2,/111",""],
             workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
             phones:["+7(495)226-09-54","+7(495)760-65-53"],
-            email:null,
+            eMail:["advocat@interlawyer.info"],
             payment:['Филиал "Адвокатская консультация "ИНТЕРЛОЕР""','Московская коллегия адвокатов "ЗАЩИТА"','ПАО "ПРОМСВЯЗЬБАНК',"БИК: 044525555","ИНН: 7744000812","КПП: 772201001","Корреспондентский счёт: 30101810400000000555","SWIFT: PRMSRUMM","Расчетный счет RUR: 40703810000000003520","Текущий расчетный счет: 40703840200000000393", "Валютный счет  USD$: 40703840800001000394"]
         }
     },
@@ -53,7 +53,7 @@ const coordinates = {
             adress:["г. Москва, ул. Радужная, д.11 кв.61"],
             workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
             phones:null,
-            email:null,
+            eMail:null,
             payment:null
         }
     },
@@ -70,7 +70,7 @@ const coordinates = {
             adress:["г. Зеленоград, Заводская 16 а, офис 3"],
             workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
             phones:null,
-            email:null,
+            eMail:null,
             payment:null
         }
     },
@@ -87,7 +87,7 @@ const coordinates = {
             adress:["Московская обл., г. Солнечногорск, ул. Советская, д.9, кв.7"],
             workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
             phones:null,
-            email:null,
+            eMail:null,
             payment:null
         }
     },
@@ -104,7 +104,7 @@ const coordinates = {
             adress:["г. Москва, ул.  Студенческая, 26/3 стр.1"],
             workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
             phones:null,
-            email:null,
+            eMail:null,
             payment:null
         }
     },
@@ -121,7 +121,7 @@ const coordinates = {
             adress:["г. Москва, ул. Поклонная, д.11, стр. 1"],
             workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
             phones:null,
-            email:null,
+            eMail:null,
             payment:null
         }
     },
@@ -137,8 +137,8 @@ const coordinates = {
             head:showBranchHead(2),
             adress:["г. Москва, Рубцовская набережная, д. 4, корп. 3"],
             workingTime:["Пн-Пт: 9:00-18:00", "Сб-Вс: Выходной"],
-            phones:null,
-            email:null,
+            phones:["8(495)632-26-97"],
+            eMail:null,
             payment:null
         }
     },
