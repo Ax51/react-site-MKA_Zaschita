@@ -18,9 +18,13 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
         advYears = ( thisYear - adv.adv_exp ) > 0 ? ( thisYear - adv.adv_exp ) : ( thisYear - adv.adv_exp + 1 ),
         branch = adv.branch
             ? adv.branch[1]
-                ? typeof adv.branch[0] === "number"
-                    ? `Заведующий филиалом № ${adv.branch[0]}`
-                    : `Заведующий филиалом "${adv.branch[0]}"`
+                ? adv.gender === "female"
+                    ? typeof adv.branch[0] === "number"
+                        ? `Заведующая филиалом № ${adv.branch[0]}`
+                        : `Заведующая филиалом "${adv.branch[0]}"`
+                    : typeof adv.branch[0] === "number"
+                        ? `Заведующий филиалом № ${adv.branch[0]}`
+                        : `Заведующий филиалом "${adv.branch[0]}"`
                 : typeof adv.branch[0] === "number"
                     ? `Филиал № ${adv.branch[0]}`
                     : `Филиал "${adv.branch[0]}"`

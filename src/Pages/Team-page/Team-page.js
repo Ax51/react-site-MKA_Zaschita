@@ -56,6 +56,15 @@ const TeamPage = () => {
         } else if (inputValue.length <= minLenghtSearch && inputValue.slice(0, 1) !== "!") {
             // plug for search without required minimum letters lenght entered
             filteredDbArray = sortedDbArray
+        } else if (inputValue.slice(0, 7).toLowerCase() === "gender:") {
+            filteredDbArray = sortedDbArray.filter(item => {
+                const adv = Db[item];
+                if (inputValue.slice(7, 9) === "fe") {
+                    return (adv.gender === "female")
+                } else if (inputValue.slice(7, 9) === "ma") {
+                    return (adv.gender === "male")
+                } else return false;
+            })
         } else {
             // default search
             filteredDbArray = sortedDbArray.filter((item) => {
