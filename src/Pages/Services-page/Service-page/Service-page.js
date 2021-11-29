@@ -6,6 +6,8 @@ import NavLine from "../../../Components/Nav-line/Nav-line.js";
 
 // pics
 import noLogo from '../../../img/mz_ic-1.fcb9.png';
+import bankruptLogo from '../../../img/bankrupt_2.svg'
+
 
 //styles
 import './Service-page.css';
@@ -27,6 +29,15 @@ export default function ServicePage ({ name, text, shortText, img, parentRoute }
         }
     }
 
+    function showCorrectLogo() {
+        switch (name) {
+            case "Помощь адвоката при банкротстве":
+                return bankruptLogo;
+            default:
+                return noLogo;
+        }
+    }
+
     return (
         <div className="service-page_wrapper">
             <NavLine 
@@ -38,7 +49,7 @@ export default function ServicePage ({ name, text, shortText, img, parentRoute }
             <div className="service-page_header">
                 <h1>{name}</h1>
                 <img
-                    src={img ?? noLogo}
+                    src={showCorrectLogo()}
                     alt={name}/>
             </div>
             <div className="service-page_text">{textWithParagraphs()}</div>

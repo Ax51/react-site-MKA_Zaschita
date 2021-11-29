@@ -13,6 +13,7 @@ import privateArray from '../../../../Db/Carousel-Db/Private-carousel_items.json
 
 // pics
 import noLogo from '../../../../img/mz_ic-1.fcb9.png';
+// import bankruptLogo from '../../../../img/bankrupt.svg'
 
 // styles
 import 'swiper/swiper.min.css';
