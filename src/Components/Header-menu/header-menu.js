@@ -7,7 +7,6 @@ import './header-menu.css';
 
 import logo from '../../img/mz_logo-name.2c83.png'
 import miniLogo from '../../img/mobile_logo_min.png'
-import phone from '../../img/telephone-fill__white.png'
 import arrowUp from '../../img/arrow-up-circle.png'
 
 const HeaderMenu = ({ menuItems }) => {
@@ -96,9 +95,7 @@ const HeaderMenu = ({ menuItems }) => {
                     </div>
                 </div>
                 <a href="tel:+74957696889" className="header-menu_mobile_phone">
-                    <img
-                        src={phone}
-                        alt="call us" />
+                <i className="bi bi-telephone-fill"/>
                 </a>
                 <div
                     className="header-menu_mobile-menu"

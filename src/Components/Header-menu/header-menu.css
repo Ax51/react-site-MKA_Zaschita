@@ -121,11 +121,12 @@
 
 .header-menu_mobile_phone {
     position: absolute;
-    top: 26px;
+    top: 24px;
     right: 100px;
 }
-.header-menu_mobile_phone > img {
-    width: 22px;
+.header-menu_mobile_phone > .bi {
+    color: #fff;
+    font-size: 1.4rem;
 }
 #header-menu_mobile-menu-checkbox {
     display: none;
