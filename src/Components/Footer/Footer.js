@@ -1,16 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import MapDb from '../../Db/Map-API-Db/Map-coordinates.js'
+
 import logo from '../../img/mz_logo-blue.4cf7.png'
 import mobileLogo from '../../img/mobile_logo_min.png'
 
 import './Footer.css';
 
-const Footer = (props) => {
-    const menuList = props.menuItems.map((item) =>
+const Footer = ({menuItems}) => {
+    const menuList = menuItems.map((item) =>
         <li key={item.name}>
             <NavLink to={`/${item.site}`}>{item.name}</NavLink>
         </li>)
+    const {adress, eMail, phones} = MapDb.branch_1.comment;
 
     return (
         <div className="footer">
@@ -36,13 +39,14 @@ const Footer = (props) => {
                     <div className="svp-list_label">
                         <div className="buisness-card">
                             <h3>Наш головной офис:</h3>
-                            <a href="https://yandex.ru/maps/-/CCUqE8rpdC">
-                                <p>123056 г. Москва</p>
-                                <p>ул. Зоологическая, д. 30,<br/> стр. 2</p>
+                            <a href={adress[1]}>
+                                <p>{adress[0].slice(0, 17)}</p>
+                                <p>{adress[0].slice(17, 43)}</p>
+                                <p>{adress[0].slice(43)}</p>
                             </a>
-                            <a href="mailto:advokaty.zaschita@yandex.ru?subject=Вопрос адвокату">advokaty.zaschita<br/>@yandex.ru</a>
-                            <a href="tel:+74957696889">8 (495) 769-68-89</a>
-                            <a href="tel:+74992526522">8 (499) 252-65-22</a>
+                            <a href={`mailto:${eMail[0]}?subject=Вопрос адвокату`}>{eMail[0].slice(0, 17)}<br/>{eMail[0].slice(17)}</a>
+                            <a href={`tel:${phones[0]}`}>{phones[0]}</a>
+                            <a href={`tel:${phones[1]}`}>{phones[1]}</a>
                             <div className="svp-list_label_bottom"/>
                         </div>
                     </div>

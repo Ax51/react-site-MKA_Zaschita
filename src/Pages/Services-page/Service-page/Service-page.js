@@ -19,7 +19,7 @@ export default function ServicePage ({ name, text, shortText, img, parentRoute }
             return text.map(( item, num ) => {
                 console.log();
                 if (Array.isArray(item)) {
-                    const list = item.map(( item, key ) => <li key={key}>{item}</li>)
+                    const list = item.map(( item, key ) => <li key={key} className="ul_li">{item}</li>)
                     return <ul key={num}>{list}</ul>
                 }
                 return <p key={num}>{item}</p>

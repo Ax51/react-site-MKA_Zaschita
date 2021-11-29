@@ -138,6 +138,24 @@ a {
 
     transition: 0.3s;
 }
+.ul_pencil::before {
+        content: "\270e";
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        font-size: 30px;
+        color: rgb(0, 147, 180);
+        display: block;
+        position: absolute;
+        left: -40px;
+}
+.ul_li::before {
+    content: "\2022";
+    color: rgb(0, 147, 180);
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 1.5rem;
+    margin-left: -1.5rem;
+}
 
 @media screen and (max-width: 240px), (max-height:240px) {
     * {
