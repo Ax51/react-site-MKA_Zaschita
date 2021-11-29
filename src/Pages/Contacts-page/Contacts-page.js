@@ -40,6 +40,8 @@ const ContactsPage = () => {
     function paragraphFromArray(array,modifier) {
         if (Array.isArray(array)) {
             switch (modifier) {
+                case "workingTime":
+                    return array.map((i, b) => <p key={b} className="ul_pencil">{i}</p>)
                 case "phones":
                     return array.map((i, b) => <p key={b}><a href={`tel:${i}`}>{i}</a></p>)
                 case "eMail":
@@ -86,7 +88,7 @@ const ContactsPage = () => {
                             : null}
                         {workingTime
                             ? <><h3><i className="bi bi-clock" /> Режим работы:</h3>
-                            {paragraphFromArray(workingTime)}</>
+                            {paragraphFromArray(workingTime, "workingTime")}</>
                             : null}
                         {phones
                             ? <><h3><i className="bi bi-telephone-outbound" /> Телефон:</h3>

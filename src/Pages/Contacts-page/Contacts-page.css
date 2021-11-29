@@ -20,6 +20,7 @@
     box-shadow: 15px 15px 20px gray;
     line-height: 2rem;
     overflow: auto;
+    min-width: 500px;
 }
 
 .contacts-page_contacts > h3 {
@@ -35,6 +36,14 @@
 .contacts-page_contacts > p {
     margin-left: 10px;
 }
+.contacts-page_contacts > .ul_pencil {
+    position: relative;
+}
+.contacts-page_contacts > .ul_pencil::before {
+    font-size: 1.2rem;
+    left: -1.2rem;
+}
+
 ._contacts_show-payment {
     width: 6rem;
     height: 1.5rem;
@@ -89,6 +98,7 @@
         margin: 0;
         padding: 30px;
         padding-left: 60px;
+        min-width: unset;
     }
     .contacts-page_contacts_anchor {
         top: -115px;
@@ -135,6 +145,9 @@
     .contacts-page_contacts > p {
         margin-left: 0;
         text-align: center;
+    }
+    .contacts-page_contacts > .ul_pencil::before {
+        left: calc(25% - 30px);
     }
     .contacts-page_contacts > h3 .bi {
         left: -65px;
