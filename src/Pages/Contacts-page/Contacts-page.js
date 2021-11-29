@@ -23,7 +23,7 @@ const ContactsPage = () => {
 
     function chooseBranch(num) {
         setBranchCode(num);
-        contactsRef.current.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        setTimeout(() => contactsRef.current.scrollIntoView({ block: 'start', behavior: 'smooth' }), 100);
     }
 
     let buttons = Object.keys(MapDb).map((item, num) => {
