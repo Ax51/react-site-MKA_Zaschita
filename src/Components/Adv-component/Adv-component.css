@@ -74,6 +74,9 @@
     text-align: end;
     line-height: 1.4rem;
 }
+.adv-component_site {
+    word-break: break-all;
+}
 .adv-component_table_body_rewards {
     vertical-align: baseline !important;
 }
@@ -119,6 +122,7 @@
         position: static;
         align-self: center;
         /* max-width: 450px; */
+        max-height: unset;
         width: 90%;
     }
     .adv-component_table {

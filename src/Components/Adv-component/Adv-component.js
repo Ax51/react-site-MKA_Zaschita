@@ -80,7 +80,7 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
                         {adv.rewards ? <tr><td className="adv-component_table_body_rewards"><b className={modal ? "adv-component_table_body_rewards_text_modal" : "adv-component_table_body_rewards_text"}>Присвоенные награды:</b></td><td className={"adv-component_table_body_data"}>{rewards}</td></tr> : null}
                         {adv.contacts?.email ? <tr><td><b>E-mail:</b></td><td className="adv-component_table_body_data"><a href={`mailto:${adv.contacts.email}`}>{adv.contacts.email}</a></td></tr> : null}
                         {adv.contacts?.tel ? <tr><td><b>Телефон для связи:</b></td><td className="adv-component_table_body_data">{telLink}</td></tr> : null}
-                        {adv.contacts?.site ? <tr><td><b>Веб-сайт:</b></td><td className="adv-component_table_body_data"><a href={adv.contacts.site}>{adv.contacts.site}</a></td></tr> : null}
+                        {adv.contacts?.site ? <tr><td><b>Веб-сайт:</b></td><td className="adv-component_table_body_data adv-component_site"><a href={adv.contacts.site}>{adv.contacts.site}</a></td></tr> : null}
                     </tbody>
                 </table>
             </div>
