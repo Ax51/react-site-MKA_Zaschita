@@ -18,7 +18,7 @@ const ContactsPage = () => {
 
     let selectedBranch = MapDb[Object.keys(MapDb)[branchCode]];
 
-    const {head, adress, workingTime, phones, eMail, payment} = selectedBranch.comment,
+    const {head, adress, workingTime, phones, site, eMail, payment} = selectedBranch.comment,
         [managerName, managerID] = head;
 
     function chooseBranch(num) {
@@ -44,6 +44,8 @@ const ContactsPage = () => {
                     return array.map((i, b) => <p key={b} className="ul_pencil">{i}</p>)
                 case "phones":
                     return array.map((i, b) => <p key={b}><a href={`tel:${i}`}>{i}</a></p>)
+                case "site":
+                    return array.map((i, b) => <p key={b}><a href={i[0]} target="_blank" rel="noreferrer">{i[1]}</a></p>)
                 case "eMail":
                     return array.map((i, b) => <p key={b}><a href={`mailto:${i}`}>{i}</a></p>)
                 default:
@@ -83,7 +85,7 @@ const ContactsPage = () => {
                             ? <><h3><i className="bi bi-geo-alt" /> Наш офис расположен по адресу:</h3>
                             <p>
                                 {adress[1]
-                                ? <a href={adress[1]}>{adress[0]}</a>
+                                ? <a href={adress[1]} target="_blank" rel="noreferrer">{adress[0]}</a>
                                 : <>{adress[0]}</>}</p></>
                             : null}
                         {workingTime
@@ -94,6 +96,11 @@ const ContactsPage = () => {
                             ? <><h3><i className="bi bi-telephone-outbound" /> Телефон:</h3>
                             {paragraphFromArray(phones,"phones")}</>
                             : null}
+                        {site
+                            ? <><h3><i className="bi bi-display" /> Web-сайт:</h3>
+                            {paragraphFromArray(site,"site")}</>
+                            : null
+                        }
                         {eMail
                             ? <><h3><i className="bi bi-envelope-open" /> E-Mail:</h3>
                             {paragraphFromArray(eMail,"eMail")}</>
