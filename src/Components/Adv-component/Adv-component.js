@@ -1,5 +1,5 @@
 // modules
-import React from "react";
+import React, { useState } from "react";
 
 // Data
 import Db from '../../Db/Team-Db/Team-Db.json'
@@ -11,6 +11,7 @@ import noPhoto from '../../img/empty-person.png'
 import './Adv-component.css'
 
 export default function AdvComponent({ advocate, modal = false }) {  //  Pay attention on modal modifier in this component! Nevertheless, it mainly changes styles
+    const [ imageLoading, setImageLoading ] = useState(true);
     const adv = Db[ advocate ],
         fullName = `${adv.surname ?? ""} ${adv.name ?? ""} ${adv.middlename ?? ""}`,
         thisYear = new Date().getFullYear(),
@@ -60,11 +61,18 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
 
     return (
         <div className={!modal ? "adv-component_wrapper" : "adv-component_wrapper adv-component_wrapper_modal"}>
-            <img
-                className={!modal ? "adv-component_adv-pic" : "adv-component_adv-pic_modal"}
-                src={adv.photo ?? noPhoto}
-                alt="Фотография адвоката"
-                onClick={event => { if (modal && document.body.clientWidth > 529) event.stopPropagation() }} />  {/* if width > 529px, user can't close modal window via tapping on picture or table */}
+            <div className="adv-component_pic-loader" style={imageLoading ? {display:"flex"} : {display:"none"}}>
+                <i className="bi bi-arrow-clockwise"/>
+            </div>
+            <div style={imageLoading ? {display:"none"} : {display:"block", alignSelf:"center"}}>
+                <img
+                    className={!modal ? "adv-component_adv-pic" : "adv-component_adv-pic_modal"}
+                    src={adv.photo ?? noPhoto}
+                    alt="Фотография адвоката"
+                    onClick={event => { if (modal && document.body.clientWidth > 529) event.stopPropagation() }} // if width > 529px, user can't close modal window via tapping on picture or table
+                    onLoad={() => setImageLoading(false)} />
+            </div>
+
             <div className={`adv-component_table ${modal ? "adv-component_table_modal" : ""}`}
                 onClick={event => { if (modal && document.body.clientWidth > 529) event.stopPropagation() }} >  {/* if width > 529px, user can't close modal window via tapping on picture or table */}
                 <table>
