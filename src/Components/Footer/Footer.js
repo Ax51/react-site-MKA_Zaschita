@@ -13,7 +13,11 @@ const Footer = ({menuItems}) => {
         <li key={item.name}>
             <NavLink to={`/${item.site}`}>{item.name}</NavLink>
         </li>)
-    const {adress, eMail, phones} = MapDb.branch_1.comment;
+    const { adress, eMail, phones, workingTime } = MapDb.branch_1.comment;
+
+    function getWorkingTime() {
+        return workingTime.map((i, b) => <p key={b} className="buisness-card_working-time">{i}</p>)
+    }
 
     return (
         <div className="footer">
@@ -45,8 +49,10 @@ const Footer = ({menuItems}) => {
                                 <p>{adress[0].slice(43)}</p>
                             </a>
                             <a href={`mailto:${eMail[0]}?subject=Вопрос адвокату`}>{eMail[0].slice(0, 17)}<br/>{eMail[0].slice(17)}</a>
-                            <a href={`tel:${phones[0]}`}>{phones[0]}</a>
-                            <a href={`tel:${phones[1]}`}>{phones[1]}</a>
+                            <a href={`tel:${phones[0]}`} style={{paddingBottom:0}}>{phones[0]}</a>
+                            <a href={`tel:${phones[1]}`} style={{paddingTop:0}}>{phones[1]}</a>
+                            {/* <p>Время работы:</p> */}
+                            {getWorkingTime()}
                             <div className="svp-list_label_bottom"/>
                         </div>
                     </div>

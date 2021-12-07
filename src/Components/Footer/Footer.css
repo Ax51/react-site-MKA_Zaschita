@@ -88,6 +88,16 @@
     color:rgb(200,200,200);
     transition: none;
 }
+.buisness-card > p {
+    color: #fff;
+    text-shadow: 2px 2px 5px black;
+}
+.buisness-card_working-time {
+    padding: 0;
+}
+.buisness-card_working-time:first-of-type {
+    padding-top: 14px;
+}
 
 .svp-list_shadow {
     filter: drop-shadow(0px 0px 16px rgb(0,108,134));    
@@ -95,7 +105,7 @@
 .svp-list_label {
     position: relative;
     width: 240px;
-    height: 340px;
+    height: 380px;
     top: -53px;
     background: linear-gradient(rgb(42,160,188), rgb(0, 108, 134));
     z-index: 3;
@@ -122,7 +132,7 @@
 }
 .svp-list_label_bottom {
     position: absolute;
-    top: 340px;
+    top: 380px;
     left: 0px;
     border-left: 120px solid transparent;
     border-right: 120px solid transparent;
