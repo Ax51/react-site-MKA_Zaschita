@@ -101,16 +101,15 @@
     text-decoration: none;
     color: #fff;
 }
-.header-menu__phones > ul > li::before {
-    content:'';
+.header-menu__phones > ul > .ul_pencil::before {
+    font-size: 1.3rem;
+    top: -4px;
+    left: -25px;
+    color:#fff;
+}
+.header-menu__phones_phone > a > .bi {
     position: absolute;
-    left: -22px;
-    top: 2px;
-    display: block;
-    width: 15px;
-    height: 15px;
-    background: url(../../img/mz_ic-phone.1f66.png) center no-repeat;
-    background-size: 100%;
+    left: -20px;
 }
 
 .header-menu_mobile-menu > ul > li {
@@ -127,6 +126,10 @@
 .header-menu_mobile_phone > .bi {
     color: #fff;
     font-size: 1.4rem;
+}
+.header-menu_mobile_phone_unavaliable {
+    background-color: transparent;
+    border: none;
 }
 #header-menu_mobile-menu-checkbox {
     display: none;

@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 
 import CallbackForm from '../Callback-form/Callback-form.js';
 
+import MapDb from '../../Db/Map-API-Db/Map-coordinates.js';
+
 import './header-menu.css';
 
 import logo from '../../img/mz_logo-name.2c83.png'
@@ -10,19 +12,26 @@ import miniLogo from '../../img/mobile_logo_min.png'
 import arrowUp from '../../img/arrow-up-circle.png'
 
 const HeaderMenu = ({ menuItems }) => {
+    
+    const [mobileMenuActive, setMobileMenuActive] = useState(false),
+        [ workTimeNow, setWorkTimeNow ] = useState(false);
 
-    const scrollUpFunc = e => {
+    const { phones, workingTime } = MapDb.branch_1.comment;
+
+    const scrollUpFunc = () => {
         window.scroll({ top: 0, left: 0, behavior: 'smooth' })
     };
 
-    const [mobileMenuActive, setMobileMenuActive] = useState(false);
-
     useEffect(() => {  // block scrolling while mobile menu opened
         mobileMenuActive
-            ? document.body.style.overflow = "hidden"
-            : document.body.style.overflow = ""
+        ? document.body.style.overflow = "hidden"
+        : document.body.style.overflow = ""
     })
 
+    useEffect(() => {
+        isWorkingTime()
+    })
+    
     function menuList() {
         return menuItems.map(item => {
             if (item.name === 'Наш коллектив') {
@@ -48,6 +57,22 @@ const HeaderMenu = ({ menuItems }) => {
 
     function toggleMobileMenu() {
         setMobileMenuActive(!mobileMenuActive)
+    }
+
+    function showPhones() {
+        return phones.map((phone, index) => <li key={index} className="header-menu__phones_phone"><a href={`tel:${phone}`}><i className="bi bi-telephone-fill"/>{phone.replace(/\s/g,"")}</a></li>)  //.replace removes spaces in phone number
+    }
+    function showWorkingTime() {
+        return workingTime.map((i, b) => <li key={b} className="ul_pencil"><p>{i}</p></li>)
+    }
+
+    function isWorkingTime() {
+        const now = new Date(),
+            startWorkHour = +workingTime[0].slice(7, 9),
+            stopWorkHour = +workingTime[0].slice(13, 15);
+        (now.getHours() > startWorkHour && now.getHours() < stopWorkHour && now.getDay() > 0 && now.getDay() < 6)
+            ? setWorkTimeNow(true)
+            : setWorkTimeNow(false)
     }
 
     return (
@@ -89,14 +114,19 @@ const HeaderMenu = ({ menuItems }) => {
                     </div>
                     <div className="header-menu__phones">
                         <ul>
-                            <li><a href="tel:+74957696889">8(495)769-68-89</a></li>
-                            <li><a href="tel:+74992526522">8(499)252-65-22</a></li>
+                            {workTimeNow ? showPhones() : showWorkingTime()}
                         </ul>
                     </div>
                 </div>
-                <a href="tel:+74957696889" className="header-menu_mobile_phone">
-                <i className="bi bi-telephone-fill"/>
-                </a>
+                {workTimeNow
+                    ? <a href={`tel:${phones[0]}`} className="header-menu_mobile_phone">
+                        <i className="bi bi-telephone-fill"/>
+                    </a>
+                    : <button 
+                        className="header-menu_mobile_phone header-menu_mobile_phone_unavaliable"
+                        onClick={() => alert(`К сожалению, сейчас мы не работаем. Пожалуйста, позвоните нам в рабочее время! Режим работы: ${workingTime}`)}>
+                        <i className="bi bi-telephone-x-fill"/>
+                    </button>}
                 <div
                     className="header-menu_mobile-menu"
                     onClick={closeMobileMenu}>
