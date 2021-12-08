@@ -3464,13 +3464,13 @@
         "cert_ID":"11454",
         "branch":[1],
         "degree":null,
-        "gen_exp":null,
-        "adv_exp":null,
-        "specialization":null,
-        "share":false,
-        "rewards":null,
+        "gen_exp":1999,
+        "adv_exp":2010,
+        "specialization":["Гражданское право","Уголовное право","Арбитражные споры"],
+        "share":true,
+        "rewards":["Почетные грамоты Адвокатской Палаты города Москвы","Благодарности Адвокатской палаты города Москвы","Серебряная медаль им. Ф.Н. Плевако"],
         "contacts":null,
-        "photo":null
+        "photo":"http://new.mkazashita.ru/static/media/lawyers/77:10486.jpg"
     },
     "77/6":{
         "name":"Михаил",
