@@ -42,6 +42,10 @@
     position: sticky;
     top: 100px;
 }
+.adv-component_adv-no-pic {
+    font-size: 17rem;
+    color:var(--blue-color);
+}
 .adv-component_adv-pic_modal {
     border-radius: 20px;
     max-width: 350px;

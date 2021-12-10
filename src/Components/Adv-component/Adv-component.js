@@ -4,31 +4,27 @@ import React, { useState } from "react";
 // Data
 import Db from '../../Db/Team-Db/Team-Db.json'
 
-// Pics
-import noPhoto from '../../img/empty-person.png'
-
 // styles
 import './Adv-component.css'
 
 export default function AdvComponent({ advocate, modal = false }) {  //  Pay attention on modal modifier in this component! Nevertheless, it mainly changes styles
-    const [ imageLoading, setImageLoading ] = useState(true);
     const adv = Db[ advocate ],
-        fullName = `${adv.surname ?? ""} ${adv.name ?? ""} ${adv.middlename ?? ""}`,
-        thisYear = new Date().getFullYear(),
+    fullName = `${adv.surname ?? ""} ${adv.name ?? ""} ${adv.middlename ?? ""}`,
+    thisYear = new Date().getFullYear(),
         totalYears = thisYear - adv.gen_exp,
         advYears = ( thisYear - adv.adv_exp ) > 0 ? ( thisYear - adv.adv_exp ) : ( thisYear - adv.adv_exp + 1 ),
         branch = adv.branch
-            ? adv.branch[1]
-                ? adv.gender === "female"
-                    ? typeof adv.branch[0] === "number"
-                        ? `Заведующая филиалом № ${adv.branch[0]}`
-                        : `Заведующая филиалом "${adv.branch[0]}"`
-                    : typeof adv.branch[0] === "number"
+        ? adv.branch[1]
+        ? adv.gender === "female"
+        ? typeof adv.branch[0] === "number"
+        ? `Заведующая филиалом № ${adv.branch[0]}`
+        : `Заведующая филиалом "${adv.branch[0]}"`
+        : typeof adv.branch[0] === "number"
                         ? `Заведующий филиалом № ${adv.branch[0]}`
                         : `Заведующий филиалом "${adv.branch[0]}"`
                 : typeof adv.branch[0] === "number"
-                    ? `Филиал № ${adv.branch[0]}`
-                    : `Филиал "${adv.branch[0]}"`
+                ? `Филиал № ${adv.branch[0]}`
+                : `Филиал "${adv.branch[0]}"`
             : null,
         telLink = adv.contacts?.tel?.map(i => <React.Fragment key={i}><a className="adv-component_tel" href={`tel:${i}`}>{`${i}`}</a><br /></React.Fragment>),
         rewards = adv.rewards?.map(i => <div className="adv-component_rewards" key={i}>{i}<div className="header-sub-block header-block_dark" /></div>),
@@ -43,6 +39,8 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
             : <a id="adv-component_href" target="_blank" rel="noreferrer" href={`http://lawyers.minjust.ru/lawyers?fullName=&registerNumber=${adv.reestr_ID?.slice(0, 2)}%2F${adv.reestr_ID?.slice(3)}&identityCard=&status=&orgForm=&regCode=`}>
             {adv.cert_ID}</a>;
 
+    const [ imageLoading, setImageLoading ] = useState(adv.photo ? true : false);
+    
     function correctSpelling( years ) {
         let correctSpell;
         if ( years >= 10 && years <= 20 ) {
@@ -65,12 +63,14 @@ export default function AdvComponent({ advocate, modal = false }) {  //  Pay att
                 <i className="bi bi-arrow-clockwise"/>
             </div>
             <div style={imageLoading ? {display:"none"} : {display:"block", alignSelf:"center"}}>
-                <img
+                {adv.photo
+                ? <img
                     className={!modal ? "adv-component_adv-pic" : "adv-component_adv-pic_modal"}
-                    src={adv.photo ?? noPhoto}
+                    src={adv.photo}
                     alt="Фотография адвоката"
                     onClick={event => { if (modal && document.body.clientWidth > 529) event.stopPropagation() }} // if width > 529px, user can't close modal window via tapping on picture or table
                     onLoad={() => setImageLoading(false)} />
+                : <i className="adv-component_adv-no-pic bi bi-person-bounding-box"/>}
             </div>
 
             <div className={`adv-component_table ${modal ? "adv-component_table_modal" : ""}`}
