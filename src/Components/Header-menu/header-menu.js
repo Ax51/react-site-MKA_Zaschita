@@ -12,9 +12,9 @@ import miniLogo from '../../img/mobile_logo_min.png'
 import arrowUp from '../../img/arrow-up-circle.png'
 
 const HeaderMenu = ({ menuItems }) => {
-    
+
     const [mobileMenuActive, setMobileMenuActive] = useState(false),
-        [ workTimeNow, setWorkTimeNow ] = useState(false);
+        [workTimeNow, setWorkTimeNow] = useState(false);
 
     const { phones, workingTime } = MapDb.branch_1.comment;
 
@@ -24,14 +24,14 @@ const HeaderMenu = ({ menuItems }) => {
 
     useEffect(() => {  // block scrolling while mobile menu opened
         mobileMenuActive
-        ? document.body.style.overflow = "hidden"
-        : document.body.style.overflow = ""
+            ? document.body.style.overflow = "hidden"
+            : document.body.style.overflow = ""
     })
 
     useEffect(() => {
         isWorkingTime()
     })
-    
+
     function menuList() {
         return menuItems.map(item => {
             if (item.name === 'Наш коллектив') {
@@ -60,7 +60,7 @@ const HeaderMenu = ({ menuItems }) => {
     }
 
     function showPhones() {
-        return phones.map((phone, index) => <li key={index} className="header-menu__phones_phone"><a href={`tel:${phone}`}><i className="bi bi-telephone-fill"/>{phone.replace(/\s/g,"")}</a></li>)  //.replace removes spaces in phone number
+        return phones.map((phone, index) => <li key={index} className="header-menu__phones_phone"><a href={`tel:${phone}`}><i className="bi bi-telephone-fill" />{phone.replace(/\s/g, "")}</a></li>)  //.replace removes spaces in phone number
     }
     function showWorkingTime() {
         return workingTime.map((i, b) => <li key={b} className="ul_pencil"><p>{i}</p></li>)
@@ -70,9 +70,27 @@ const HeaderMenu = ({ menuItems }) => {
         const now = new Date(),
             startWorkHour = +workingTime[0].slice(7, 9),
             stopWorkHour = +workingTime[0].slice(13, 15);
-        (now.getHours() > startWorkHour && now.getHours() < stopWorkHour && now.getDay() > 0 && now.getDay() < 6)
-            ? setWorkTimeNow(true)
-            : setWorkTimeNow(false)
+        if (now.getHours() >= startWorkHour && now.getHours() < stopWorkHour && now.getDay() > 0 && now.getDay() < 6) {
+            setWorkTimeNow(true)
+            let remainTimeToWork = (stopWorkHour - 1 - now.getHours()) * 3600000 /* 1 hour in ms */ + (60 - now.getMinutes()) * 60000 /* 1 min in ms */
+            setTimeout(isWorkingTime, remainTimeToWork)
+            console.log(`${remainTimeToWork/60000} minutes to work left`);
+        } else {
+            setWorkTimeNow(false)
+            let remainTimeToWork = 600000; // initial value. 10 mins in ms
+            if (now.getHours() < startWorkHour) { // too early
+                remainTimeToWork = (startWorkHour - 1 - now.getHours()) * 3600000 /* 1 hour in ms */ + (60 - now.getMinutes()) * 60000 /* 1 min in ms */
+            } else {  // too late
+                remainTimeToWork = (23 - now.getHours() + startWorkHour) * 3600000 /* 1 hour in ms */ + (60 - now.getMinutes()) * 60000 /* 1 min in ms */
+            }
+            if (now.getDay() === 5 && now.getHours() >= stopWorkHour) { // if friday and late
+                remainTimeToWork += 172800000;  // 48 hours in ms
+            } else if (now.getDay() === 6) {  // if saturday
+                remainTimeToWork += 86400000;  // 24 hours in ms
+            }
+            // console.log(`Remain ${Math.floor(remainTimeToWork/86400000)} days, ${Math.floor((remainTimeToWork % 86400000)/3600000)} hours, ${Math.floor((remainTimeToWork % 3600000)/60000)} minutes`);
+            setTimeout(isWorkingTime, remainTimeToWork)
+        }
     }
 
     return (
@@ -120,12 +138,12 @@ const HeaderMenu = ({ menuItems }) => {
                 </div>
                 {workTimeNow
                     ? <a href={`tel:${phones[0]}`} className="header-menu_mobile_phone">
-                        <i className="bi bi-telephone-fill"/>
+                        <i className="bi bi-telephone-fill" />
                     </a>
-                    : <button 
+                    : <button
                         className="header-menu_mobile_phone header-menu_mobile_phone_unavaliable"
                         onClick={() => alert(`К сожалению, сейчас мы не работаем. Пожалуйста, позвоните нам в рабочее время! Режим работы: ${workingTime}`)}>
-                        <i className="bi bi-telephone-x-fill"/>
+                        <i className="bi bi-telephone-x-fill" />
                     </button>}
                 <div
                     className="header-menu_mobile-menu"
