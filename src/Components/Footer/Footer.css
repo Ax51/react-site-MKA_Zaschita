@@ -1,7 +1,8 @@
 .footer {
     padding: 50px 150px;
+    position: relative;
 
-    background-color: rgb(235, 246, 249);
+    background-color: var(--super-light-blue-color);
     font-size: 0.85rem;
     font-weight: 500;
     color: grey;
@@ -138,7 +139,37 @@
     border-right: 120px solid transparent;
     border-top: 45px solid rgb(0, 108, 134);
 }
-
+.authors, .authors-cover, .authors-cover-active {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: 2s cubic-bezier(0.79, 0.02, 1, 1) 5s;
+}
+.authors {
+    display: flex;
+    justify-content: center;
+    max-height: 2rem;
+}
+.authors-names {
+    color: transparent;
+    transition: 2s cubic-bezier(0.79, 0.02, 1, 1) 5s;
+}
+.authors-names-active {
+    color: gray;
+    transition: 2s cubic-bezier(0.79, 0.02, 1, 1) 5s;
+}
+.authors-cover {
+    display: block;
+    height: 2rem;
+    background-color:var(--super-light-blue-color);
+    z-index: 100;
+}
+.authors-cover-active {
+    display: block;
+    height: 2rem;
+    background-color: transparent;
+    z-index: 100;
+}
 @media screen and (max-width:1200px) {
     .flex-container {
         padding-left: 90px;

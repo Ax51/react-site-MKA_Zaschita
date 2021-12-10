@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import MapDb from '../../Db/Map-API-Db/Map-coordinates.js'
@@ -9,6 +9,7 @@ import mobileLogo from '../../img/mobile_logo_min.png'
 import './Footer.css';
 
 const Footer = ({menuItems}) => {
+    const [ showAuthors, setShowAuthors ] = useState(false);
     const menuList = menuItems.map((item) =>
         <li key={item.name}>
             <NavLink to={`/${item.site}`}>{item.name}</NavLink>
@@ -21,6 +22,7 @@ const Footer = ({menuItems}) => {
 
     return (
         <div className="footer">
+            {console.log(showAuthors)}
             <NavLink to='/' className="logo">
                 <img
                     className="logo-img"
@@ -57,6 +59,11 @@ const Footer = ({menuItems}) => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className={showAuthors % 7 === 6 ? "authors-cover-active" : "authors-cover"}
+                onClick={() => setShowAuthors(showAuthors => showAuthors + 1)}/>
+            <div className="authors">
+                <p className={showAuthors % 7 === 6 ? "authors-names-active" : "authors-names"}>Сайт создан исключительными силами двух человек: Александром Поляковым и Максимом Устинюком</p>
             </div>
         </div>
     );
