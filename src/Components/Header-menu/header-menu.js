@@ -74,7 +74,6 @@ const HeaderMenu = ({ menuItems }) => {
             setWorkTimeNow(true)
             let remainTimeToWork = (stopWorkHour - 1 - now.getHours()) * 3600000 /* 1 hour in ms */ + (60 - now.getMinutes()) * 60000 /* 1 min in ms */
             setTimeout(isWorkingTime, remainTimeToWork)
-            console.log(`${remainTimeToWork/60000} minutes to work left`);
         } else {
             setWorkTimeNow(false)
             let remainTimeToWork = 600000; // initial value. 10 mins in ms
