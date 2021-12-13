@@ -148,6 +148,7 @@
 .authors {
     display: flex;
     justify-content: center;
+    align-items:flex-end;
     max-height: 2rem;
 }
 .authors-names {
@@ -157,6 +158,7 @@
 .authors-names-active {
     color: gray;
     transition: 2s cubic-bezier(0.79, 0.02, 1, 1) 5s;
+    text-align: end;
 }
 .authors-cover {
     display: block;

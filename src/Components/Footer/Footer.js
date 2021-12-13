@@ -22,7 +22,6 @@ const Footer = ({menuItems}) => {
 
     return (
         <div className="footer">
-            {console.log(showAuthors)}
             <NavLink to='/' className="logo">
                 <img
                     className="logo-img"
@@ -60,10 +59,10 @@ const Footer = ({menuItems}) => {
                     </div>
                 </div>
             </div>
-            <div className={showAuthors % 7 === 6 ? "authors-cover-active" : "authors-cover"}
-                onClick={() => setShowAuthors(showAuthors => showAuthors + 1)}/>
+            <div className={showAuthors === 6 ? "authors-cover-active" : "authors-cover"}
+                onClick={() => setShowAuthors(showAuthors => (showAuthors === 6) ? showAuthors = 1 : showAuthors + 1)}/>
             <div className="authors">
-                <p className={showAuthors % 7 === 6 ? "authors-names-active" : "authors-names"}>Сайт создан исключительными силами двух человек: Александром Поляковым и Максимом Устинюком</p>
+                <p className={showAuthors === 6 ? "authors-names-active" : "authors-names"}>Сайт создан исключительными силами двух человек:<br/>Александром Поляковым и Максимом Устинюком</p>
             </div>
         </div>
     );
