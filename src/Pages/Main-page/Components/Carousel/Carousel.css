@@ -46,10 +46,11 @@
 }
 .swiper-slide-title_flex {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: space-between;
 }
 .swiper-slide--title {
-    margin: 40px 0 40px 30px;
+    margin: 20px 0 40px 30px;
     font-weight: 900;
     
     box-sizing: border-box;
@@ -59,14 +60,17 @@
     z-index: 2;
 }
 .swiper-slide--logo {
-    width: auto;
-    height: 70px;
+    margin: auto;
+    margin-top: 30px;
 
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    max-width: 120px;
+    max-height: 90px;
 
-    padding-left: 25px;
+    /* position: absolute; */
+    /* right: 20px; */
+    /* top: 20px; */
+    /* padding-left: 25px; */
+
     z-index: 1;
 }
 .swiper-slide--text {
@@ -75,7 +79,7 @@
     text-align: justify;
 
     display: -webkit-box;
-    -webkit-line-clamp: 16;
+    -webkit-line-clamp: 12;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
