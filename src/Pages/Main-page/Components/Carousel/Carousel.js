@@ -34,7 +34,8 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
                             <img
                                 className="swiper-slide--logo"
                                 src={img || noLogo}
-                                alt="logo" />
+                                alt="logo"
+                                onError={e => e.target.src = noLogo} />
                         </div>
                         <p className="swiper-slide--text">{shortText}</p>
                     </NavLink>

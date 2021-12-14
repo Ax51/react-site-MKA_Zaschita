@@ -39,7 +39,8 @@ export default function ServicePage ({ name, text, shortText, img, parentRoute }
                 <h1>{name}</h1>
                 <img
                     src={img ?? noLogo}
-                    alt={name}/>
+                    alt={name}
+                    onError={e => e.target.src = noLogo}/>
             </div>
             <div className="service-page_text">{textWithParagraphs()}</div>
         </div>
