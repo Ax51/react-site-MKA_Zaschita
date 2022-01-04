@@ -5,6 +5,9 @@ import MapDb from '../../Db/Map-API-Db/Map-coordinates.js'
 
 import logo from '../../img/mz_logo-blue.4cf7.png'
 import mobileLogo from '../../img/mobile_logo_min.png'
+import apMoscowLogo from '../../img/logos/ap_moscow_logo.png';
+import fpaLogo from '../../img/logos/fpa_logo.svg';
+import minjustLogo from '../../img/logos/minjust_logo.png';
 
 import './Footer.css';
 
@@ -22,18 +25,31 @@ const Footer = ({menuItems}) => {
 
     return (
         <div className="footer">
-            <NavLink to='/' className="logo">
-                <img
-                    className="logo-img"
-                    src={logo}
-                    alt='logo'
-                    title='На главную'/>
-                <img
-                    className="mobile-logo-img"
-                    src={mobileLogo}
-                    alt='logo'
-                    title='На главную'/>
-            </NavLink>
+            <div className="logos-flex-container">
+                <NavLink to='/' className="logo">
+                    <img
+                        className="logo-img"
+                        src={logo}
+                        alt='logo'
+                        title='На главную'/>
+                    <img
+                        className="mobile-logo-img"
+                        src={mobileLogo}
+                        alt='logo'
+                        title='На главную'/>
+                </NavLink>
+                <div className="logos-emblems">
+                    <a href="https://www.advokatymoscow.ru/">
+                        <img src={apMoscowLogo} alt="Адвокатская палата города Москвы" title="Адвокатская палата города Москвы"/>
+                    </a>
+                    <a href="https://fparf.ru/">
+                        <img src={fpaLogo} alt="Федеральная палата адвокатов" title="Федеральная палата адвокатов"/>
+                    </a>
+                    <a href="https://minjust.gov.ru/ru/">
+                        <img src={minjustLogo} alt="Минюст" title="Министерство Юстиции РФ"/>
+                    </a>
+                </div>
+            </div>
             <div className="flex-container">
                 <div className="footer-menu">
                     <ul>
