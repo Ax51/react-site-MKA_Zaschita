@@ -21,6 +21,24 @@
                 "site":"yandex.ru"
             },
             "photo":"URL фотографии"
+        },
+        "empty":{
+            "name":"",
+            "surname":"",
+            "middlename":"",
+            "gender":"male",
+            "shown":true,
+            "reestr_ID":"",
+            "cert_ID":0,
+            "branch":[1],
+            "degree":null,
+            "gen_exp":1990,
+            "adv_exp":2021,
+            "specialization":["",""],
+            "share":false,
+            "rewards":null,
+            "contacts":null,
+            "photo":null
         }
     },
     "77/15032":{
@@ -886,9 +904,9 @@
         "degree":null,
         "gen_exp":2004,
         "adv_exp":2006,
-        "specialization":["Уголовное право","Арбитражные споры"],
+        "specialization":["Уголовное право","Преступления в сфере экономики","Помощь при ДТП","Арбитражные споры"],
         "share":true,
-        "rewards":["Почетная грамота Адвокатской палаты города Москвы","Почетная грамота Федеральной палаты адвокатов РФ"],
+        "rewards":["Почетная грамота Адвокатской палаты города Москвы","Почетная грамота Федеральной палаты адвокатов РФ","Медаль «За заслуги в защите прав и свобод граждан» II степени"],
         "contacts":null,
         "photo":null
     },
@@ -1300,11 +1318,15 @@
         "degree":"Доктор юридических наук",
         "gen_exp":1989,
         "adv_exp":1989,
-        "specialization":["Уголовное право","Преступления в сфере экономики","Налоговое право","Бракоразводный процесс"],
+        "specialization":["Уголовное право","Преступления в сфере экономики","Арбитражные споры","Правовое сопровождение бизнеса","Налоговое право","Бракоразводный процесс"],
         "share":true,
         "rewards":null,
-        "contacts":null,
-        "photo":null
+        "contacts":{
+            "email":"advocat.proshin.v.m@gmail.com",
+            "tel":["+7(903)963-71-71"],
+            "site":null
+        },
+        "photo":"http://new.mkazashita.ru/static/media/lawyers/771178.jpg"
     },
     "50/2349":{
         "name":"Александр",
@@ -1480,7 +1502,7 @@
         "degree":null,
         "gen_exp":2009,
         "adv_exp":2012,
-        "specialization":["Уголовное право","Семейное право","Оспаривание заключений экспертов","Наследственные споры"],
+        "specialization":["Уголовное право","Семейное право","Наследственные споры"],
         "share":false,
         "rewards":null,
         "contacts":null,
@@ -3421,7 +3443,7 @@
     "77/3121":{
         "name":"Константин",
         "surname":"Соколовский",
-        "middlename":"Владимирович",
+        "middlename":"Владиславович",
         "gender":"male",
         "shown":true,
         "reestr_ID":"77/3121",
@@ -3470,7 +3492,7 @@
         "share":true,
         "rewards":["Почетные грамоты Адвокатской Палаты города Москвы","Благодарности Адвокатской палаты города Москвы","Серебряная медаль им. Ф.Н. Плевако"],
         "contacts":null,
-        "photo":"http://new.mkazashita.ru/static/media/lawyers/77:10486.jpg"
+        "photo":"http://new.mkazashita.ru/static/media/lawyers/7710486.jpg"
     },
     "77/6":{
         "name":"Михаил",
@@ -3698,12 +3720,16 @@
         "cert_ID":"10002",
         "branch":[5],
         "degree":null,
-        "gen_exp":null,
-        "adv_exp":null,
-        "specialization":null,
-        "share":false,
+        "gen_exp":2008,
+        "adv_exp":2017,
+        "specialization":["Уголовное право","Преступления в сфере экономики"],
+        "share":true,
         "rewards":null,
-        "contacts":null,
+        "contacts":{
+            "email":null,
+            "tel":null,
+            "site":"https://www.asivach.ru"
+        },
         "photo":"https://mkasol.ru/cache/thumbs/images/foto_advokat/320x390/CAM_4541.jpg"
     },
     "50/6034":{
