@@ -17,6 +17,20 @@ const HeaderMenu = ({ menuItems }) => {
         [workTimeNow, setWorkTimeNow] = useState(false);
 
     const { phones, workingTime } = MapDb.branch_1.comment;
+    const holidays = [
+        [1,2,3,4,5,6,7,8,9], // January
+        [23], // February
+        [7,8], // March
+        [], // April
+        [2,3,9,10], // May
+        [13], // June
+        [], // July
+        [], // August
+        [], // September
+        [], // October
+        [4], // November
+        [] // December
+    ];
 
     const scrollUpFunc = () => {
         window.scroll({ top: 0, left: 0, behavior: 'smooth' })
@@ -70,10 +84,14 @@ const HeaderMenu = ({ menuItems }) => {
         const now = new Date(),
             startWorkHour = +workingTime[0].slice(7, 9),
             stopWorkHour = +workingTime[0].slice(13, 15);
-        if (now.getHours() >= startWorkHour && now.getHours() < stopWorkHour && now.getDay() > 0 && now.getDay() < 6) {
-            setWorkTimeNow(true)
-            let remainTimeToWork = (stopWorkHour - 1 - now.getHours()) * 3600000 /* 1 hour in ms */ + (60 - now.getMinutes()) * 60000 /* 1 min in ms */
-            setTimeout(isWorkingTime, remainTimeToWork)
+        if (now.getHours() >= startWorkHour
+            && now.getHours() < stopWorkHour
+            && now.getDay() > 0 
+            && now.getDay() < 6
+            && !holidays[now.getMonth()].includes(now.getDate())) {
+                setWorkTimeNow(true)
+                let remainTimeToWork = (stopWorkHour - 1 - now.getHours()) * 3600000 /* 1 hour in ms */ + (60 - now.getMinutes()) * 60000 /* 1 min in ms */
+                setTimeout(isWorkingTime, remainTimeToWork)
         } else {
             setWorkTimeNow(false)
             let remainTimeToWork = 600000; // initial value. 10 mins in ms
@@ -84,7 +102,7 @@ const HeaderMenu = ({ menuItems }) => {
             }
             if (now.getDay() === 5 && now.getHours() >= stopWorkHour) { // if friday and late
                 remainTimeToWork += 172800000;  // 48 hours in ms
-            } else if (now.getDay() === 6) {  // if saturday
+            } else if (now.getDay() === 6 || holidays[now.getMonth()].includes(now.getDate())) {  // if saturday or holiday
                 remainTimeToWork += 86400000;  // 24 hours in ms
             }
             // console.log(`Remain ${Math.floor(remainTimeToWork/86400000)} days, ${Math.floor((remainTimeToWork % 86400000)/3600000)} hours, ${Math.floor((remainTimeToWork % 3600000)/60000)} minutes`);
