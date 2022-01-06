@@ -34,7 +34,7 @@ const Greet = () => {
         return word
     }
     function correctAgeSpelling(word, number) {
-        if (number >= 10 && number <= 20) {
+        if ((number % 100) >= 10 && (number % 100) <= 20) {
             word = "лет"
         } else {
             if ((number % 10) === 1) {
