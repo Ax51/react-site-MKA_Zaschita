@@ -20,7 +20,7 @@ const Greet = () => {
         numberOfAdv = Object.keys(teamDb).filter(i => i !== "_comment" && teamDb[i]["shown"]).length;
 
     function correctSpelling(word, number) {
-        if (number >= 10 && number <= 20) {
+        if ((number % 100) >= 10 && (number % 100) <= 20) {
             word = `${word}ов`
         } else {
             if ((number % 10) === 1) {
