@@ -2499,11 +2499,14 @@
         "degree":null,
         "gen_exp":2000,
         "adv_exp":2006,
-        "specialization":["Уголовное право","Гражданское право","Арбитражные споры"],
+        "specialization":["Уголовное право","Административное право","Гражданское право","Арбитражные споры","Правовое сопровождение бизнеса"],
         "share":true,
         "rewards":null,
-        "contacts":null,
-        "photo":null
+        "contacts":{
+            "tel":["+7(977)817-55-59"],
+            "email":"7advocat@gmail.com"
+        },
+        "photo":"http://new.mkazashita.ru/static/media/lawyers/777957.jpg"
     },
     "77/13267":{
         "name":"Люк",
