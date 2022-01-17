@@ -3355,23 +3355,26 @@
         "contacts":null,
         "photo":null
     },
-    "77/4808":{
+    "77/4804":{
         "name":"Ваха",
         "surname":"Гишкаев",
         "middlename":"Исмаилович",
         "gender":"male",
         "shown":true,
-        "reestr_ID":"77/4808",
-        "cert_ID":"9435",
-        "branch":[1],
-        "degree":null,
-        "gen_exp":null,
-        "adv_exp":null,
-        "specialization":null,
+        "reestr_ID":"77/4804",
+        "cert_ID":9435,
+        "branch":null,
+        "degree":"Кандидат юридических наук",
+        "gen_exp":1987,
+        "adv_exp":1999,
+        "specialization":["Уголовное право","Гражданское право","Арбитражные споры","Наследственные споры"],
         "share":false,
-        "rewards":null,
-        "contacts":null,
-        "photo":null
+        "rewards":["Почетный адвокат России","Медаль «За заслуги в защите прав и свобод граждан» II степени","Почетная грамота Федаральной палаты адвокатов РФ","Почетная грамота Адвокатской Палаты города Москвы","Юбилейный нагрудный знак «150 лет Российской Адвокатуре»"],
+        "contacts":{
+            "tel":["+7(985)784-53-31"],
+            "email":"gvi77@mail.ru"
+        },
+        "photo":"http://new.mkazashita.ru/static/media/lawyers/774804.jpg"
     },
     "77/4907":{
         "name":"Андарбек",
@@ -3855,7 +3858,7 @@
         "shown":true,
         "reestr_ID":"77/16177",
         "cert_ID":null,
-        "branch":[1],
+        "branch":null,
         "degree":null,
         "gen_exp":1998,
         "adv_exp":2014,
