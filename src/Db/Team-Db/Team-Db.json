@@ -3846,5 +3846,23 @@
         "rewards":null,
         "contacts":null,
         "photo":null
+    },
+    "77/16177":{
+        "name":"Александр",
+        "surname":"Изосимов",
+        "middlename":"Михайлович",
+        "gender":"male",
+        "shown":true,
+        "reestr_ID":"77/16177",
+        "cert_ID":null,
+        "branch":[1],
+        "degree":null,
+        "gen_exp":1998,
+        "adv_exp":2014,
+        "specialization":["Уголовное право","Арбитражные споры","Гражданское право","Административное право"],
+        "share":true,
+        "rewards":["Грамота адвокатской Палаты Самарской области","Почетная грамота президента Федаральной палаты адвокатов РФ"],
+        "contacts":null,
+        "photo":null
     }
 }
