@@ -690,7 +690,11 @@
         "specialization":["Банкротство","Арбитражные споры","Уголовное право","Преступления в сфере экономики"],
         "share":true,
         "rewards":["Награда «Уверенность и решимость» "],
-        "contacts":null,
+        "contacts":{
+            "email":"evteev.konstantin@gmail.com",
+            "tel":["+7(967)077-13-13"],
+            "site":"https://www.evteev-advocate.com/"
+        },
         "photo":null
     },
     "77/4844":{
