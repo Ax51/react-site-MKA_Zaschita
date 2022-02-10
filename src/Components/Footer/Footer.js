@@ -78,6 +78,7 @@ const Footer = ({menuItems}) => {
             <div className={showAuthors === 6 ? "authors-cover-active" : "authors-cover"}
                 onClick={() => setShowAuthors(showAuthors => (showAuthors === 6) ? showAuthors = 1 : showAuthors + 1)}/>
             <div className="authors">
+                {/* <p>Автор дизайна сайта: <a href="https://www.instagram.com/uliawd/">Рыболовлева Ю.О.</a></p> */}
                 <p className={showAuthors === 6 ? "authors-names-active" : "authors-names"}>Сайт создан исключительными силами двух человек:<br/>Александром Поляковым и Максимом Устинюком</p>
             </div>
         </div>

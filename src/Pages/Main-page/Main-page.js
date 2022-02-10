@@ -3,6 +3,7 @@ import React from "react";
 
 // Components
 import Greet from "./Components/Greet/Greet";
+import WhyWe from "./Components/why-we/why-we";
 import Speech from "./Components/Speech/Speech";
 import Carousel from "./Components/Carousel/Carousel";
 import Infographics from "./Components/Infographics/Infographics";
@@ -16,7 +17,8 @@ const MainPage = ({ buisnessActive, setBuisnessActive }) => {
         <div className="main-page">
             <main>
                 <Greet/>
-                <Speech/>
+                {/* <Speech/> */}
+                <WhyWe/>
                 <Carousel
                     buisnessActive={buisnessActive}
                     setBuisnessActive={setBuisnessActive}/>
