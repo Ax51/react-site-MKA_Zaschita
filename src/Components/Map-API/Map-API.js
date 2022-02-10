@@ -1,5 +1,5 @@
 // modules
-import React from "react";
+import React, { useState } from "react";
 import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 
 //Db
@@ -14,6 +14,8 @@ import './Map-API.css';
 // 3) 3Aa5ef8364e7502fbfcf8ea8ab9e7fada5c2752129afd88ddbd71a807f2dfe1378
 
 const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
+
+    const [ zoomActive, setZoomActive ] = useState(false);
 
     const branches = Object.keys(Db);
     const someBranch = Db[Object.keys(Db)[branchCode]];
@@ -58,14 +60,16 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
             }} />;
 
     return (
-        <div className="map-api">
+        <div className="map-api"
+            onClick={() => setZoomActive(true)}>
             <YMaps
                 lang={'ru_RU'}>
                 <div className="map-container">
                     <Map
                         state={{
                             center: fromMainPage ? [55.767379, 37.584293] : (Db[Object.keys(Db)[branchCode]].geometry || [55.767379, 37.584293]),
-                            zoom: 18
+                            zoom: 18,
+                            behaviors: zoomActive ? ['drag','scrollZoom','multiTouch'] : ['drag','multiTouch'] 
                         }}
                         width={'100%'}
                         height={500}>
