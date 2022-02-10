@@ -1,5 +1,5 @@
 //modules
-import react from "react";
+import React from "react";
 
 // pics
 import foots from '../../../../img/logos_v2/foots.svg';
@@ -13,7 +13,7 @@ import './Benefits.css';
 export default function Benefits() {
     return (
         <div className="benefits">
-            <h2>Преимущества нашей коллегии</h2>
+            <h2>Преимущества {document.body.clientWidth < 500 ? <br/> : null}нашей коллегии</h2>
             <img src={time} alt="time" />
             <p>
                 Наша коллегия уже 27 лет на рышке юридических услуг

@@ -5,7 +5,7 @@ import React from "react";
 import Greet from "./Components/Greet/Greet";
 import WhyWe from "./Components/why-we/why-we";
 import Benefits from "./Components/Benefits/Benefits";
-import Speech from "./Components/Speech/Speech";
+// import Speech from "./Components/Speech/Speech";
 import Carousel from "./Components/Carousel/Carousel";
 import Infographics from "./Components/Infographics/Infographics";
 import MapApi from "../../Components/Map-API/Map-API.js";

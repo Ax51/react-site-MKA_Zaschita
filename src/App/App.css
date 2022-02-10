@@ -57,6 +57,12 @@ p {
     line-height: 1.5rem;
 }
 
+@media screen and (max-width:650px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
 @media screen and (max-width: 240px), (max-height:240px) {
     * {
         display: none !important;
