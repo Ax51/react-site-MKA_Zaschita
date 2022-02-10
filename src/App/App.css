@@ -51,7 +51,7 @@ h3 {
     font-size: 1rem;
     color: rgb(165, 131, 93)
 }
-p {
+p, li, span {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     line-height: 1.5rem;

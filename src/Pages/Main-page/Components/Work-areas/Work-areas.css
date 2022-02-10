@@ -1,0 +1,65 @@
+.areas {
+    margin: 150px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.areas > img {
+    max-width: 1023px;
+    width: 100%;
+}
+
+.areas_wrapper {
+    margin-right: 160px;
+}
+
+.areas_wrapper > h2 {
+    margin-bottom: 70px;
+}
+
+.areas_wrapper > ul {
+    position: relative;
+    margin-right: 43px; 
+    left: 43px;
+
+    list-style: none;
+}
+.areas_wrapper > ul > li {
+    margin: 20px 0;
+}
+.areas_wrapper > ul > li::before {
+    content:url(../../../../img/logos_v2/checkbox.svg);
+    width: 25px;
+    color: var(--brown);
+    display: block;
+    position: absolute;
+    left:-37px;
+}
+
+.areas_sub-list {
+    display: block;
+    margin: 20px 0;
+    color: rgb(0,0,0,0.7)
+}
+
+@media screen and (max-width:800px) {
+    .areas {
+        margin: 150px 100px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .areas img {
+        margin-top: 30px;
+    }
+    .areas_wrapper {
+        margin-right: unset;
+    }
+}
+@media screen and (max-width: 650px) {
+    .areas {
+        margin: 100px 20px;
+    }
+    .areas_wrapper > h2 {
+        margin-bottom: 55px;
+    }
+}
