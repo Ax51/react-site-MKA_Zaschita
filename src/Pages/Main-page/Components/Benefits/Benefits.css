@@ -1,0 +1,18 @@
+.benefits {
+    padding: 150px 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: var(--light-brown)
+}
+.benefits > h2 {
+    margin-bottom: 39px;
+}
+.benefits img {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    max-width: 44px;
+    max-height: 44px;
+}
