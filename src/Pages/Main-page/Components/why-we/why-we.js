@@ -2,7 +2,7 @@
 import React from "react";
 
 //styles
-import './why-we.css';
+import './Why-we.css';
 
 function WhyWe() {
     return (

@@ -107,7 +107,7 @@ const HeaderMenu = ({ menuItems }) => {
             }
             // console.log(`Remain ${Math.floor(remainTimeToWork/86400000)} days, ${Math.floor((remainTimeToWork % 86400000)/3600000)} hours, ${Math.floor((remainTimeToWork % 3600000)/60000)} minutes`);
             setTimeout(isWorkingTime, remainTimeToWork)
-            console.log(`next timer will be in ${new Date(Date.now()+remainTimeToWork)}`);
+            // console.log(`next timer will be in ${new Date(Date.now()+remainTimeToWork)}`);
         }
     }
 

@@ -3,7 +3,7 @@ import React from "react";
 
 // Components
 import Greet from "./Components/Greet/Greet";
-import WhyWe from "./Components/why-we/why-we";
+import WhyWe from "./Components/Why-we/Why-we";
 import Benefits from "./Components/Benefits/Benefits";
 // import Speech from "./Components/Speech/Speech";
 import Carousel from "./Components/Carousel/Carousel";
