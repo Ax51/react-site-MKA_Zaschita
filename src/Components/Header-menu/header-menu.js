@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-import CallbackForm from '../Callback-form/Callback-form.js';
+// import CallbackForm from '../Callback-form/Callback-form.js';
 
 import MapDb from '../../Db/Map-API-Db/Map-coordinates.js';
 
@@ -177,7 +177,7 @@ const HeaderMenu = ({ menuItems }) => {
                     src={arrowUp}
                     alt='scroll up' />
             </button>
-            <CallbackForm />
+            {/* <CallbackForm /> */}
         </>
     );
 };

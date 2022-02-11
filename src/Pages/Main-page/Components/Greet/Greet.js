@@ -2,11 +2,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 
-// pics
-import mouseImg from "../../../../img/mz_mouse.7e7e.png";
-// import animatedMouse from "../../../../img/animated_scroll_mouse_transparent.gif";
-import logo from "../../../../img/mz_logo-wh.a5b7.png";
-
 // data
 import branchesDb from '../../../../Db/Map-API-Db/Map-coordinates.js';
 import teamDb from '../../../../Db/Team-Db/Team-Db.json';
@@ -51,48 +46,36 @@ const Greet = () => {
     return (
         <div className="greet">
             <div className="greet__info">
-                <p className="greet__info__big">
-                    <span className="greet__info__years">{companyAge}</span>
-                    {correctAgeSpelling("год", companyAge)} защищаем Ваши интересы
-                </p>
+                <div className="greet__info__big">
+                    <div className="greet__info__years">{companyAge}</div>
+                    <h1>{correctAgeSpelling("год", companyAge)} <br/>защищаем <br/>Ваши интересы</h1>
+                </div>
                 <div className="greet__info__stat">   
                     <div>
                         <div className="greet__info__stat__num">
                             <NavLink to="/about">1995</NavLink>
                         </div>
-                        год основания
+                        год <br/>основания
                     </div>
                     <div>
                         <div className="greet__info__stat__num">
                         <NavLink to="/team">{numberOfAdv}</NavLink>
                         </div>
-                        {correctSpelling('Адвокат', numberOfAdv)} в реестре
+                        {correctSpelling('Адвокат', numberOfAdv)} <br/>в реестре
                     </div>
                     <div>
                         <div className="greet__info__stat__num">
                         <NavLink to="/contacts">{numberOfBranches}</NavLink>
                         </div>
-                        {correctSpelling('Филиал', numberOfBranches)} в Москве и МО
+                        {correctSpelling('Филиал', numberOfBranches)} <br/>в Москве и МО
                     </div>
                 </div>
                 <NavLink to='/about'>
                     <button
-                        className="btn btn-white">
-                        Подробнее
+                        className="greet-btn">
+                        Оставить заявку
                     </button>
                 </NavLink>
-            </div>
-            <div>
-                <img
-                className="greet__scroll"
-                src={mouseImg}
-                alt="scroll" />
-            </div>
-            <div>
-                <img
-                className="greet__logo"
-                src={logo}
-                alt="logo" />
             </div>
         </div>
     );
