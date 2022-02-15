@@ -12,7 +12,8 @@ import './Greet.css';
 const Greet = () => {
     const companyAge = new Date().getFullYear() - 1995,
         numberOfBranches = Object.keys(branchesDb).length,
-        numberOfAdv = Object.keys(teamDb).filter(i => i !== "_comment" && teamDb[i]["shown"]).length;
+        numberOfAdv = Object.keys(teamDb).filter(i => i !== "_comment" && teamDb[i]["shown"]).length,
+        windowWidth = window.innerWidth;
 
     function correctSpelling(word, number) {
         if ((number % 100) >= 10 && (number % 100) <= 20) {
@@ -47,8 +48,14 @@ const Greet = () => {
         <div className="greet">
             <div className="greet__info">
                 <div className="greet__info__big">
-                    <div className="greet__info__years">{companyAge}</div>
-                    <h1>{correctAgeSpelling("год", companyAge)} <br/>защищаем <br/>Ваши интересы</h1>
+                    {windowWidth > 700 
+                        ? <>
+                            <div className="greet__info__years">{companyAge}</div>
+                            <h1>{correctAgeSpelling("год", companyAge)} <br/>защищаем <br/>Ваши интересы</h1>
+                        </>
+                        :    <h1><span className="greet__info__years__mobile">{companyAge} </span>{correctAgeSpelling("год", companyAge)} <br/>защищаем <br/>Ваши интересы</h1>
+                            
+                    }
                 </div>
                 <div className="greet__info__stat">   
                     <div>

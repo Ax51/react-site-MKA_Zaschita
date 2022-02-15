@@ -1,8 +1,8 @@
 .greet {
-    /* margin-top: 130px; */
-    min-height: 100vh;
+    height: 100vh;
     max-height: 1080px;
-    min-width: 100vw;
+    min-height: 610px;
+    width: 100vw;
     max-width: 1920px;
 
     background: linear-gradient(148.11deg, rgba(0, 0, 0, 0.7) 47.12%, rgba(0, 0, 0, 0) 59.94%),
@@ -16,16 +16,14 @@
 
 .greet__info {
     position: absolute;
-    top: 25%;
+    top: 140px;
     left: 10%;
 }
 
 .greet__info__big {
     position: relative;
-    /* left: 220px; */
 }
 .greet__info__big > h1 {
-    /* line-height: 90%; */
     position: absolute;
     top: 2rem;
     left: 14rem;
@@ -33,8 +31,6 @@
 }
 .greet__info__years {
     position: relative;
-    /* left: -230px; */
-    /* top: -2.2rem; */
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     font-size: 11.25rem;
@@ -70,4 +66,36 @@
     background-color: var(--brown);
     border: none;
     border-radius: unset;
+}
+
+@media screen and (max-width: 760px) {
+    .greet {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%),
+        url(../../../../img/main-background.jpg);
+        background-size: cover;
+        background-position: 65% 50%;
+    }
+    .greet__info {
+        left: 50px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .greet__info__big > h1 {
+        position: static;
+        font-size: 2.5rem;
+        width: auto;
+    }
+    .greet__info__stat {
+        gap: 24px;
+    }
+    .greet__info__years__mobile {
+        font-size: 2.5rem;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+    }
+}
+@media screen and (max-width:400px) {
+    .greet__info {
+        left: 10px;
+    }
 }
