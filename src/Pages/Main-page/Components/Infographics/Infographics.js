@@ -11,7 +11,7 @@ import Db from '../../../../Db/Infographics-Db/InfographicsDb.json';
 // styles
 import './Infographics.css';
 
-export default function Infographics () {
+export default function Infographics() {
     const posts = Db.posts.map((item, count, array) => {
         const isMirror = !!(count % 2),
             isLast = count + 1 === array.length;
@@ -23,18 +23,16 @@ export default function Infographics () {
                 text={item.text}
                 mirror={isMirror}
                 last={isLast}
-                />
+            />
         )
     })
     return (
-        <div className="infographics_colored-bcg">
-            <div className="infographics_title">
-                <h1>Как мы работаем?</h1>
-                <div className="header-block header-block_dark"/>
-            </div>
+        <div className="infographics">
+            <h2>Как мы работаем?</h2>
             <div className="infographics_wrapper">
                 {posts}
             </div>
+            <div className="infographics-line-thru"/>
         </div>
     )
 }
