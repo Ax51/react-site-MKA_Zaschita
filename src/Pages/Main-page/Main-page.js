@@ -19,18 +19,18 @@ const MainPage = ({ buisnessActive, setBuisnessActive }) => {
     return (
         <div className="main-page">
             <main>
-                {/* <Greet/> */}
+                <Greet/>
                 {/* <Speech/> */}
-                {/* <WhyWe/> */}
-                {/* <Benefits/> */}
-                {/* <WorkAreas/> */}
+                <WhyWe/>
+                <Benefits/>
+                <WorkAreas/>
                 <Carousel
                     buisnessActive={buisnessActive}
                     setBuisnessActive={setBuisnessActive}/>
-                {/* <Infographics/> */}
+                <Infographics/>
                 <Awards/>
-                {/* <MapApi
-                    fromMainPage={true}/> */}
+                <MapApi
+                    fromMainPage={true}/>
             </main>
         </div>
     );

@@ -85,7 +85,10 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
         }
 
     function newSlides(array) {
-        return array.map((i, n) => {
+        if (array[array.length - 1].length === totalBars) {  // if last slide exceeds totalBars, then create a new slide for callback block
+            array.push([])
+        }
+        return array.map((i, n, a) => {
             const slides = i.map(item => {
                 const { name, img, site } = item;
                 return (
@@ -114,7 +117,7 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
                     </NavLink>
                 )
             })
-            if (array[array.length - 1] === i) {  // add callback button
+            if (array[array.length - 1] === i) {  // find last slide and push callback block
                 slides.push(
                     <NavLink to='#' key='last'>
                         <div className="swiper-slide-flex swiper-slide-last"
@@ -128,7 +131,7 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
                                 не нашли подходящую услугу?
                             </h3>
                             <button
-                                /* onClick={} */>
+                                    /* onClick={} */>
                                 оставить заявку
                             </button>
                         </div>
