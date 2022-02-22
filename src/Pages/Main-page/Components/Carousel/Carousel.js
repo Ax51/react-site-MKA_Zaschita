@@ -73,7 +73,7 @@ const Carousel = ({ buisnessActive, setBuisnessActive }) => {
         height: 'auto',
         aspectRatio: 'unset',
         flexDirection: 'row'
-    },
+        },
         mobileSwiperSlideLogoStyles = {
             maxWidth: '65px',
             maxHeight: '65px'
