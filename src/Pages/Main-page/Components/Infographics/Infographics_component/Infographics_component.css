@@ -20,7 +20,7 @@
     /* height: 115px - padding-top */
     height: calc(115px - 28px); 
 
-    background-color: #fff;
+    background-color: var(--light-brown);
     border: 1px solid var(--brown);
     border-radius: 100%;
     z-index: 3;
