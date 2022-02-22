@@ -9,6 +9,7 @@ import WorkAreas from "./Components/Work-areas/Work-areas";
 // import Speech from "./Components/Speech/Speech";
 import Carousel from "./Components/Carousel/Carousel";
 import Infographics from "./Components/Infographics/Infographics";
+import Awards from "./Components/Awards/Awards";
 import MapApi from "../../Components/Map-API/Map-API.js";
 
 // styles
@@ -18,17 +19,18 @@ const MainPage = ({ buisnessActive, setBuisnessActive }) => {
     return (
         <div className="main-page">
             <main>
-                <Greet/>
+                {/* <Greet/> */}
                 {/* <Speech/> */}
-                <WhyWe/>
-                <Benefits/>
-                <WorkAreas/>
+                {/* <WhyWe/> */}
+                {/* <Benefits/> */}
+                {/* <WorkAreas/> */}
                 <Carousel
                     buisnessActive={buisnessActive}
                     setBuisnessActive={setBuisnessActive}/>
-                <Infographics/>
-                <MapApi
-                    fromMainPage={true}/>
+                {/* <Infographics/> */}
+                <Awards/>
+                {/* <MapApi
+                    fromMainPage={true}/> */}
             </main>
         </div>
     );

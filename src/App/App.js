@@ -24,7 +24,7 @@ import privateServiceDb from '../Db/Carousel-Db/Private-carousel_items.json';
 import buisnessServiceDb from '../Db/Carousel-Db/Buisness-carousel_items.json';
 
 // styles
-import './App_old.css';
+// import './App_old.css';
 import './App.css';
 
 function App() {
