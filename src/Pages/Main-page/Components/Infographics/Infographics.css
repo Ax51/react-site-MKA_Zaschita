@@ -2,6 +2,8 @@
     padding: 150px 160px;
     padding-left: calc(20vw + 150px);
 
+    background-color: var(--light-brown);
+
     position: relative;
 }
 
