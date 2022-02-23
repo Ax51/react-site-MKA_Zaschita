@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import styles from './footer.module.css';
+import styles from './Footer.module.css';
 
 import logo from '../../img/footer-logo.svg';
 import apMoscowLogo from '../../img/logos/ap_moscow_logo.png';
@@ -18,7 +18,7 @@ export default function Footer() {
 
     const buisnessMenu = buisnessArray.map(({name, site}, number) => {
         return (
-            <li>
+            <li key={number}>
                 <NavLink
                     to={`/services/buisness/${site}`}
                     key={number} >
@@ -29,10 +29,9 @@ export default function Footer() {
     });
     const privateMenu = privateArray.map(({name, site}, number) => {
         return (
-            <li>
+            <li key={number}>
                 <NavLink
-                    to={`/services/private/${site}`}
-                    key={number} >
+                    to={`/services/private/${site}`} >
                     {name}
                 </NavLink>
             </li>

@@ -15,10 +15,11 @@ import './Map-API.css';
 
 const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
 
-    const [ zoomActive, setZoomActive ] = useState(false);
+    const [zoomActive, setZoomActive] = useState(false);
 
     const branches = Object.keys(Db);
     const someBranch = Db[Object.keys(Db)[branchCode]];
+    const { adress, eMail, phones, workingTime } = Db.branch_1.comment;
 
     const showAllBrances = branches.map((i) => {
         let balloonImg = Db[i].balloonImg ? `<br><img src=${Db[i].balloonImg} height="200" width="250">` : "";
@@ -30,8 +31,8 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
                 properties={{
                     iconContent: Db[i].iconContent,
                     iconCaption: Db[i].iconCaption,
-                    balloonContentHeader:`<a href=${Db[i].link || "http://мказащита.рф"} target="_blank" rel="noreferrer">${Db[i].iconCaption || Db[i].iconContent}</a>`,
-                    balloonContentBody:`${Db[i].balloonText}${balloonImg}`
+                    balloonContentHeader: `<a href=${Db[i].link || "http://мказащита.рф"} target="_blank" rel="noreferrer">${Db[i].iconCaption || Db[i].iconContent}</a>`,
+                    balloonContentBody: `${Db[i].balloonText}${balloonImg}`
                 }}
                 options={{
                     preset: Db[i].preset,
@@ -41,6 +42,10 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
         )
     })
 
+    function getWorkingTime() {
+        return workingTime.map((i, b) => <p key={b} className="buisness-card_working-time">{i}</p>)
+    }
+
     const showOneBranch =
         <Placemark
             key={someBranch.iconCaption}
@@ -49,8 +54,8 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
             properties={{
                 iconContent: someBranch.iconContent,
                 iconCaption: someBranch.iconCaption,
-                balloonContentHeader:`<a href=${someBranch.link || "http://мказащита.рф"} target="_blank" rel="noreferrer">${someBranch.iconCaption || someBranch.iconContent}</a>`,
-                balloonContentBody:`${someBranch.balloonText}
+                balloonContentHeader: `<a href=${someBranch.link || "http://мказащита.рф"} target="_blank" rel="noreferrer">${someBranch.iconCaption || someBranch.iconContent}</a>`,
+                balloonContentBody: `${someBranch.balloonText}
                 ${someBranch.balloonImg ? `<br><img src=${someBranch.balloonImg} height="200" width="250">` : ""}`
             }}
             options={{
@@ -62,17 +67,44 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
     return (
         <div className="map-api"
             onClick={() => setZoomActive(true)}>
+            <div className="map-api_buisness-card">
+                <h2>Контакты</h2>
+                <div className="map-api_buisness-card_item">  {/* adress */}
+                    <a href={adress[1]}>
+                        <i className="bi bi-geo-alt"/>
+                        <p>{adress[0].slice(0, 36)}</p>
+                        <p>{adress[0].slice(36)}</p>
+                    </a>
+                </div>
+                <div className="map-api_buisness-card_item">  {/* working time */}
+                    <i className="bi bi-clock"/>
+                    {getWorkingTime()}
+                </div>
+                <div className="map-api_buisness-card_item">  {/* telephones */}
+                    <a href={`tel:${phones[0]}`} style={{ paddingBottom: 0 }}>
+                        <i className="bi bi-telephone" />{phones[0]}
+                    </a>
+                    <br />
+                    <a href={`tel:${phones[1]}`} style={{ paddingTop: 0 }}>{phones[1]}</a>
+                </div>
+                <div className="map-api_buisness-card_item">  {/* email */}
+                    <a href={`mailto:${eMail[0]}?subject=Вопрос адвокату`}>
+                        <i className="bi bi-envelope"/>
+                        {eMail[0]}
+                    </a>
+                </div>
+            </div>
             <YMaps
                 lang={'ru_RU'}>
                 <div className="map-container">
                     <Map
                         state={{
-                            center: fromMainPage ? [55.767379, 37.584293] : (Db[Object.keys(Db)[branchCode]].geometry || [55.767379, 37.584293]),
+                            center: fromMainPage ? window.innerWidth <= 900 ? [55.767379, 37.584293] : [55.767379, 37.5828093] : (Db[Object.keys(Db)[branchCode]].geometry || [55.767379, 37.584293]),
                             zoom: 18,
-                            behaviors: zoomActive ? ['drag','scrollZoom','multiTouch'] : ['drag','multiTouch'] 
+                            behaviors: zoomActive ? ['drag', 'scrollZoom', 'multiTouch'] : ['drag', 'multiTouch']
                         }}
                         width={'100%'}
-                        height={500}>
+                        height={720}>
                         {fromMainPage ? showAllBrances : showOneBranch}
                         <ZoomControl />
                     </Map>

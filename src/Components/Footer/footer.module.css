@@ -9,10 +9,6 @@
     column-gap: 70px;
     grid-template-columns: 2.1fr 3.1fr 3.1fr;
 }
-.grid-item {
-    /* background-color: var(--light-brown);
-    border: 1px solid var(--brown); */
-}
 .grid-item h3 {
     margin-bottom: 40px;
 }
@@ -42,10 +38,13 @@
 }
 
 .credits {
-    color: rgba(0,0,0, 0.5);
+    color: rgba(0,0,0, 0.4);
     display: flex;
     flex-direction: column;
-    gap: 15px
+    gap: 12px
+}
+.credits * {
+    font-size: 12px;
 }
 .credits a {
     text-decoration: none;

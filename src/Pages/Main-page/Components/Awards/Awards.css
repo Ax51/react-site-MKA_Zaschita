@@ -126,4 +126,7 @@
     .awards {
         padding: 100px 20px;
     }
+    .awards-summary {
+        gap: 10vw;
+    }
 }

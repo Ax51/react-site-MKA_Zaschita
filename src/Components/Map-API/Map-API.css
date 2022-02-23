@@ -1,3 +1,79 @@
 .map-api {
-    min-height: 500px;
+    min-height: 720px;
+    position: relative;
+}
+.map-api_buisness-card {
+    padding: 50px;
+
+    position: absolute;
+    top:50%;
+    left:10%;
+    transform: translateY(-50%);
+
+    background-color: var(--light-brown);
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    z-index: 1;
+}
+.map-api_buisness-card_item {
+    margin-left: 50px;
+
+    position: relative;
+}
+
+.map-api_buisness-card_item i {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    font-size: 1.7rem;
+    color: var(--brown);
+}
+.map-api_buisness-card_item .bi-envelope { /* last icon (mail) */
+    transform: translateY(-0.4rem);
+}
+
+.map-api_buisness-card_item a {
+    color: #000;
+}
+.map-api_buisness-card_item a:hover {
+    text-decoration: underline;
+}
+
+.ymaps-2-1-79-map-copyrights-promo {
+    bottom: 20px !important;
+    left: calc(10% + 440px) !important;
+}
+
+@media screen and (max-width:900px) {
+    .map-api_buisness-card {
+        margin: 20px auto 50px;
+        position: relative;
+        top: unset;
+        left: unset;
+        transform: none;
+        max-width: 400px;
+    }
+    .ymaps-2-1-79-map-copyrights-promo {
+        bottom: 0 !important;
+        left: 0 !important;
+    }
+}
+@media screen and (max-width: 500px) {
+    .map-api_buisness-card {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 370px) {
+    .map-api_buisness-card {
+        padding: 30px;
+    }
+    .map-api_buisness-card_item {
+        margin-left: 20px;
+    }
+    .map-api_buisness-card_item i {
+        left: -30px;
+    }
 }

@@ -95,7 +95,7 @@ function App() {
     });
 
     smoothscroll.polyfill()
-    // console.log(Object.keys(teamDb).filter(i => !teamDb[i]["shown"])); 
+    // console.log(Object.keys(teamDb).filter(i => !teamDb[i]["shown"]).map(i => teamDb[i])); 
     // uncomment these line, if you want to see in console.log array of hidden adv
 
     return (
@@ -118,8 +118,7 @@ function App() {
                         <NotFoundPage/>
                 </Route>
             </Switch>
-            <Footer
-                menuItems={menuItems}/>
+            <Footer />
             <div className="low-width-alert-message"><h4>Сайт не может быть отображен на Вашем устройстве!</h4></div>
         </>
     );

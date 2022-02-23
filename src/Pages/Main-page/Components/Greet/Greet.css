@@ -88,6 +88,7 @@
     }
     .greet__info__stat {
         gap: 24px;
+        flex-wrap: wrap;
     }
     .greet__info__years__mobile {
         font-size: 2.5rem;
