@@ -15,6 +15,10 @@
 .grid-item a {
     color: #000;
 }
+.grid-item a:hover {
+    color: var(--brown);
+    text-decoration: underline;
+}
 .grid ul {
     columns: 2;
     display: flex;
