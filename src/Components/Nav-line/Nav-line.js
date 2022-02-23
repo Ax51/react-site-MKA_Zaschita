@@ -2,9 +2,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-//pics
-import arrowRight from "../../img/arrow-right.png";
-
 //styles
 import './Nav-line.css';
 
@@ -15,15 +12,12 @@ const NavLine = ({ pathArray }) => {
     const pathNesting = pathArray.map((item) => {
         return (
             <React.Fragment key={item.name}>
-                <img
-                    className="_nav-route_img"
-                    src={arrowRight}
-                    alt="path" />
+                <div className="_nav-route_arrow"/>
                 {item.path ?
                     <NavLink className="_nav-main" to={`/${item.path}`}>
                         {item.name}
                     </NavLink> :
-                    <div className="_nav-main">
+                    <div className="_nav-main _nav-main_last">
                         {item.name}
                     </div>
                 }

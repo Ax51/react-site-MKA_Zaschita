@@ -1,9 +1,40 @@
 ._nav-line {
-    margin-bottom: 20px;
+    margin-bottom: 70px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
+
+._nav-route_arrow {
+    position: relative;
+    width: 2rem;
+    height: 1rem;
+}
+._nav-route_arrow::before,
+._nav-route_arrow::after {
+    content:'';
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    transform: translateY(65%) translateX(100%) rotate(-45deg);
+}
+._nav-route_arrow::after {
+    left: 6px;
+}
+
 ._nav-route_img {
     height: 1rem;
+}
+._nav-main {
+    color: #000;
+    font-family: var(--font1);
+}
+._nav-main:hover:not(._nav-main_last) {
+    color: var(--brown);
+}
+._nav-main_last {
+    color: rgba(0,0,0,0.5);
 }
