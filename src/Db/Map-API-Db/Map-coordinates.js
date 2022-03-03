@@ -115,7 +115,7 @@ const coordinates = {
         }
     },
     branch_3:{
-        geometry:null,
+        geometry:[55.767379, 37.584293],
         iconContent:'',
         iconCaption:"Филиал №3",
         preset:"islands#blueCircleDotIconWithCaption",

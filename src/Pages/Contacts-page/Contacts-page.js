@@ -1,5 +1,5 @@
 // modules
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 // Components
@@ -13,25 +13,19 @@ import './Contacts-page.css';
 
 const ContactsPage = () => {
     const [branchCode, setBranchCode] = useState(8),
-        [paymentVisible, setPaymentVisible] = useState(false),
-        contactsRef = useRef(null);
+        [paymentVisible, setPaymentVisible] = useState(false);
 
     let selectedBranch = MapDb[Object.keys(MapDb)[branchCode]];
 
     const { head, adress, workingTime, phones, site, eMail, payment } = selectedBranch.comment,
         [managerName, managerID] = head;
 
-    function chooseBranch(num) {
-        setBranchCode(num);
-        // setTimeout(() => contactsRef.current.scrollIntoView({ block: 'start', behavior: 'smooth' }), 100);
-    }
-
     let buttons = Object.keys(MapDb).map((item, num) => {
         return (
             <button
                 key={MapDb[item].iconCaption}
                 className={branchCode === num ? "contacts-page_branch-button active" : "contacts-page_branch-button"}
-                onClick={() => chooseBranch(num)}>
+                onClick={() => setBranchCode(num)}>
                 {MapDb[item].iconCaption || MapDb[item].iconContent}
             </button>
         )

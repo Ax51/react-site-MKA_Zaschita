@@ -4,7 +4,6 @@
     min-height: 930px;
 }
 
-
 .contacts-page h2 {
     margin-bottom: 50px;
     
@@ -17,11 +16,11 @@
     text-decoration: underline;
 }
 
-
 .contacts-page_buttons {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
+    flex-wrap: wrap-reverse;
     gap: 24px;
 }
 .contacts-page_branch-button {
@@ -54,6 +53,7 @@
 
     position: relative;
     transform: translateY(140px);
+    left: calc(10% - 150px);
 
     background-color: var(--light-brown);
     
@@ -79,6 +79,7 @@
 }
 
 ._contacts_show-payment {
+    margin: 10px 0 20px;
     width: 120px;
     height: 40px;
     border: none;
@@ -91,4 +92,62 @@
     border: 1px solid var(--brown);
     color:var(--brown);
     background-color:var(--light-brown);
+}
+
+@media screen and (max-width: 1460px) {
+    .contacts-page_absolute-map {
+        top: 570px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .contacts-page {
+        padding: 100px;
+        padding-top: 200px;
+    }
+    .contacts-page_absolute-map {
+        top: 530px;
+    }
+    .contacts-page_contacts {
+        left: calc(10% - 100px);
+    }
+}
+@media screen and (max-width: 900px) {
+    .contacts-page {
+        padding-bottom: 0;
+    }
+    .contacts-page_absolute-map {
+        position: static;
+    }
+    .contacts-page_contacts {
+        margin: 50px auto;
+        
+        transform: unset;
+        left: 0;
+    }
+}
+@media screen and (max-width: 650px) {
+    .contacts-page {
+        padding-left: 50px ;
+        padding-right: 50px ;
+        min-height: 0;
+    }
+    .contacts-page_contacts {
+        margin: 50px 0;
+        position: static;
+        background-color:#fff;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    .contacts-page {
+        padding-left: 20px ;
+        padding-right: 20px ;
+    }
+    .contacts-page_contacts {
+        margin: 20px 0;
+        padding: 0 20px;
+    }
+    .contacts-page a {
+        word-break: break-all;
+    }
 }

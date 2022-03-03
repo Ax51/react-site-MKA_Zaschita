@@ -20,6 +20,15 @@ const MapApi = ({ fromMainPage = false, branchCode = 8 }) => {
     const branches = Object.keys(Db);
     const someBranch = Db[branches[branchCode]];
     const { adress, eMail, phones, workingTime } = someBranch.comment;
+    console.log(Db[branches[branchCode]].geometry);
+    const offsetCoordinates = Db[branches[branchCode]].geometry ? [Db[branches[branchCode]].geometry[0], (Db[branches[branchCode]].geometry[1]) - 0.0015] : [55.767379, 37.582793];
+
+    let mapCenter;
+    if (window.innerWidth <= 900) {
+        mapCenter = someBranch.geometry ?? Db[branches[8]]
+    } else {
+        mapCenter = offsetCoordinates;
+    }
 
     const showAllBrances = branches.map((i) => {
         let balloonImg = Db[i].balloonImg ? `<br><img src=${Db[i].balloonImg} height="200" width="250">` : "";
@@ -111,7 +120,7 @@ const MapApi = ({ fromMainPage = false, branchCode = 8 }) => {
                 <div className="map-container">
                     <Map
                         state={{
-                            center: fromMainPage ? window.innerWidth <= 900 ? [55.767379, 37.584293] : [55.767379, 37.5828093] : (Db[Object.keys(Db)[branchCode]].geometry || [55.767379, 37.584293]),
+                            center: mapCenter,
                             zoom: 18,
                             behaviors: zoomActive ? ['drag', 'scrollZoom', 'multiTouch'] : ['drag', 'multiTouch']
                         }}
