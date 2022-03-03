@@ -18,26 +18,26 @@ const ContactsPage = () => {
 
     let selectedBranch = MapDb[Object.keys(MapDb)[branchCode]];
 
-    const {head, adress, workingTime, phones, site, eMail, payment} = selectedBranch.comment,
+    const { head, adress, workingTime, phones, site, eMail, payment } = selectedBranch.comment,
         [managerName, managerID] = head;
 
     function chooseBranch(num) {
         setBranchCode(num);
-        setTimeout(() => contactsRef.current.scrollIntoView({ block: 'start', behavior: 'smooth' }), 100);
+        // setTimeout(() => contactsRef.current.scrollIntoView({ block: 'start', behavior: 'smooth' }), 100);
     }
 
     let buttons = Object.keys(MapDb).map((item, num) => {
         return (
             <button
                 key={MapDb[item].iconCaption}
-                className={branchCode === num ? "btn btn-dark active" : "btn btn-dark"}
+                className={branchCode === num ? "contacts-page_branch-button active" : "contacts-page_branch-button"}
                 onClick={() => chooseBranch(num)}>
                 {MapDb[item].iconCaption || MapDb[item].iconContent}
             </button>
         )
     })
 
-    function paragraphFromArray(array,modifier) {
+    function paragraphFromArray(array, modifier) {
         if (Array.isArray(array)) {
             switch (modifier) {
                 case "workingTime":
@@ -62,61 +62,71 @@ const ContactsPage = () => {
             <div className="contacts-page">
                 <NavLine
                     pathArray={[{ name: "Контакты" }]} />
-                <div className="contacts-page_header">
-                    <h1>Реквизиты наших филиалов</h1>
-                    <div className="header-block header-block_dark" />
+                <h2>Контакты</h2>
+                <div className='contacts-page_buttons'>
+                    {buttons}
                 </div>
-                <div className="contacts-page_wrapper">
-                    <div className='contacts-page_buttons'>
-                        {buttons}
-                    </div>
-                    <div className="contacts-page_contacts">
-                        <div className="contacts-page_contacts_anchor" ref={contactsRef} /> {/* scroll anchor */}
-                        <h2>{selectedBranch.iconCaption || selectedBranch.iconContent}</h2>
-                        <div className="header-block header-block_dark" />
-                        {head
-                            ? TeamDb[managerID].gender === "female"
-                                ? <><h3><i className="bi bi-person"/> Заведующая филиалом:</h3>
-                                <p><NavLink to={`/${managerID}`}>{ managerName }</NavLink></p></>
-                                : <><h3><i className="bi bi-person"/> Заведующий филиалом:</h3>
-                                <p><NavLink to={`/${managerID}`}>{ managerName }</NavLink></p></>
-                            : null}
-                        {adress 
-                            ? <><h3><i className="bi bi-geo-alt" /> Наш офис расположен по адресу:</h3>
-                            <p>
-                                {adress[1]
-                                ? <a href={adress[1]} target="_blank" rel="noreferrer">{adress[0]}</a>
-                                : <>{adress[0]}</>}</p></>
+                <div className="contacts-page_contacts">
+                    {/* <div className="contacts-page_contacts_anchor" ref={contactsRef} /> */} {/* scroll anchor */}
+                    <h2>{selectedBranch.iconCaption || selectedBranch.iconContent}</h2>
+                    <div className="contacts-page_contacts_container">
+                        {adress
+                            ? <div className="contacts-page_item"><i className="bi bi-geo-alt" /> {/* <h3>Наш офис расположен по адресу:</h3> */}
+                                <p>
+                                    {adress[1]
+                                        ? <a href={adress[1]} target="_blank" rel="noreferrer">{adress[0]}</a>
+                                        : <>{adress[0]}</>}</p></div>
                             : null}
                         {workingTime
-                            ? <><h3><i className="bi bi-clock" /> Режим работы:</h3>
-                            {paragraphFromArray(workingTime, "workingTime")}</>
+                            ? <div className="contacts-page_item"><i className="bi bi-clock" /> {/* <h3>Режим работы:</h3> */}
+                                {paragraphFromArray(workingTime, "workingTime")}</div>
                             : null}
                         {phones
-                            ? <><h3><i className="bi bi-telephone-outbound" /> Телефон:</h3>
-                            {paragraphFromArray(phones,"phones")}</>
+                            ? <div className="contacts-page_item"><i className="bi bi-telephone" /> {/* <h3>Телефон:</h3> */}
+                                {paragraphFromArray(phones, "phones")}</div>
+                            : null}
+                        {eMail
+                            ? <div className="contacts-page_item"><i className="bi bi-envelope" /> {/* <h3>E-Mail:</h3> */}
+                                {paragraphFromArray(eMail, "eMail")}</div>
                             : null}
                         {site
-                            ? <><h3><i className="bi bi-display" /> Web-сайт:</h3>
-                            {paragraphFromArray(site,"site")}</>
+                            ? <div className="contacts-page_item"><i className="bi bi-display" /> {/* <h3>Web-сайт:</h3> */}
+                                {paragraphFromArray(site, "site")}</div>
                             : null
                         }
-                        {eMail
-                            ? <><h3><i className="bi bi-envelope-open" /> E-Mail:</h3>
-                            {paragraphFromArray(eMail,"eMail")}</>
+                        {head
+                            ? TeamDb[managerID].gender === "female"
+                                ? <div className="contacts-page_item"><i className="bi bi-person" /> <h3>Заведующая филиалом:</h3>
+                                    <p><NavLink to={`/${managerID}`}>{managerName}</NavLink></p></div>
+                                : <div className="contacts-page_item"><i className="bi bi-person" /> <h3>Заведующий филиалом:</h3>
+                                    <p><NavLink to={`/${managerID}`}>{managerName}</NavLink></p></div>
                             : null}
                         {payment
-                            ? <><h3 onClick={togglePaymentVisible}>
-                                    <i className="bi bi-cash-coin" /> 
-                                    Платежные реквизиты: {paymentVisible ? <button className="_contacts_show-payment _contacts_show-payment-active">Скрыть</button> : <button className="_contacts_show-payment">Показать</button>}
+                            ? <div className="contacts-page_item">
+                                <h3>
+                                    <i className="bi bi-cash-coin" />
+                                    Платежные реквизиты:
                                 </h3>
-                            {paymentVisible ? paragraphFromArray(payment) : null}</>
+                                {paymentVisible
+                                    ? <button
+                                        className="_contacts_show-payment _contacts_show-payment-active"
+                                        onClick={togglePaymentVisible}>
+                                        Скрыть
+                                    </button>
+                                    : <button
+                                        className="_contacts_show-payment"
+                                        onClick={togglePaymentVisible}>
+                                        Показать
+                                    </button>}
+                                {paymentVisible ? paragraphFromArray(payment) : null}</div>
                             : null}
                     </div>
                 </div>
             </div>
-            <MapApi
-                branchCode={branchCode} />
+            <div className="contacts-page_absolute-map">
+                <MapApi
+                    branchCode={branchCode} />
+            </div>
         </>
     )
 }

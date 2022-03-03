@@ -13,13 +13,13 @@ import './Map-API.css';
 // 2) 4abe14abc9b3e46c
 // 3) 3Aa5ef8364e7502fbfcf8ea8ab9e7fada5c2752129afd88ddbd71a807f2dfe1378
 
-const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
+const MapApi = ({ fromMainPage = false, branchCode = 8 }) => {
 
     const [zoomActive, setZoomActive] = useState(false);
 
     const branches = Object.keys(Db);
-    const someBranch = Db[Object.keys(Db)[branchCode]];
-    const { adress, eMail, phones, workingTime } = Db.branch_1.comment;
+    const someBranch = Db[branches[branchCode]];
+    const { adress, eMail, phones, workingTime } = someBranch.comment;
 
     const showAllBrances = branches.map((i) => {
         let balloonImg = Db[i].balloonImg ? `<br><img src=${Db[i].balloonImg} height="200" width="250">` : "";
@@ -46,6 +46,44 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
         return workingTime.map((i, b) => <p key={b} className="buisness-card_working-time">{i}</p>)
     }
 
+    function buisnessCard() {
+        if (fromMainPage) {
+            return (
+                <div className="map-api_buisness-card">
+                    <h2>Контакты</h2>
+                    <div className="map-api_buisness-card_item">  {/* adress */}
+                        <a href={adress[1]}>
+                            <i className="bi bi-geo-alt" />
+                            <p>{adress[0].slice(0, 36)}</p>
+                            <p>{adress[0].slice(36)}</p>
+                        </a>
+                    </div>
+                    <div className="map-api_buisness-card_item">  {/* working time */}
+                        <i className="bi bi-clock" />
+                        {getWorkingTime()}
+                    </div>
+                    <div className="map-api_buisness-card_item">  {/* telephones */}
+                        <a href={`tel:${phones[0]}`} style={{ paddingBottom: 0 }}>
+                            <i className="bi bi-telephone" />{phones[0]}
+                        </a>
+                        <br />
+                        <a href={`tel:${phones[1]}`} style={{ paddingTop: 0 }}>{phones[1]}</a>
+                    </div>
+                    <div className="map-api_buisness-card_item">  {/* email */}
+                        <a href={`mailto:${eMail[0]}?subject=Вопрос адвокату`}>
+                            <i className="bi bi-envelope" />
+                            {eMail[0]}
+                        </a>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                null
+            )
+        }
+    }
+
     const showOneBranch =
         <Placemark
             key={someBranch.iconCaption}
@@ -67,33 +105,7 @@ const MapApi = ({ fromMainPage = false, branchCode = [7] }) => {
     return (
         <div className="map-api"
             onClick={() => setZoomActive(true)}>
-            <div className="map-api_buisness-card">
-                <h2>Контакты</h2>
-                <div className="map-api_buisness-card_item">  {/* adress */}
-                    <a href={adress[1]}>
-                        <i className="bi bi-geo-alt"/>
-                        <p>{adress[0].slice(0, 36)}</p>
-                        <p>{adress[0].slice(36)}</p>
-                    </a>
-                </div>
-                <div className="map-api_buisness-card_item">  {/* working time */}
-                    <i className="bi bi-clock"/>
-                    {getWorkingTime()}
-                </div>
-                <div className="map-api_buisness-card_item">  {/* telephones */}
-                    <a href={`tel:${phones[0]}`} style={{ paddingBottom: 0 }}>
-                        <i className="bi bi-telephone" />{phones[0]}
-                    </a>
-                    <br />
-                    <a href={`tel:${phones[1]}`} style={{ paddingTop: 0 }}>{phones[1]}</a>
-                </div>
-                <div className="map-api_buisness-card_item">  {/* email */}
-                    <a href={`mailto:${eMail[0]}?subject=Вопрос адвокату`}>
-                        <i className="bi bi-envelope"/>
-                        {eMail[0]}
-                    </a>
-                </div>
-            </div>
+            {buisnessCard()}
             <YMaps
                 lang={'ru_RU'}>
                 <div className="map-container">
